@@ -9,12 +9,12 @@
 /*   Updated: 2023/10/16 14:09:18 by anoukan          ###   ########.fr       */
 #                                                                              #
 # **************************************************************************** #
-char	ft_strcpy(char *dest, char *str)
+char	ft_strcpy(char *dest, char *str, int l)
 {
 	int	i;
 
   i = 0;
-	while(str[i] != '\0')
+	while(str[i] != '\0' || i != l)
 	{
 		str[i] == dest[i];
 		++i;
