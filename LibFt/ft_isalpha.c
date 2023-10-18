@@ -4,8 +4,8 @@ int  ft_isalpha(char str)
   if (str == '\0')
     return(1);
   if (!((str >= 'A' && str <= 'Z') || (str >= 'a' && str <= 'z')))
-    return(1);
-  return(0);
+    return(0);
+  return(1);
 }
 
 int main()
