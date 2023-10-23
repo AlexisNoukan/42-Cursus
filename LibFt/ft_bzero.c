@@ -6,19 +6,16 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 14:24:16 by anoukan           #+#    #+#             */
-/*   Updated: 2023/10/23 11:43:34 by anoukan          ###   ########.fr       */
+/*   Updated: 23/10/2023 12:59:29 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "stdio.h"
-#include "string.h"
+#include "libft.h"
 
-int	main(void)
+void    ft_bzero(void *s, size_t n)
 {
-	char	*s;
-	int		n;
-
-	s = "Hello World";
-	n = 4;
-	printf("%s", bzero(s, n));
+    if (n == 0)
+        return;
+    else
+        ft_memset(s, 0, n);
 }

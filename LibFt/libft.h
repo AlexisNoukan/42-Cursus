@@ -6,12 +6,17 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 09:50:46 by anoukan           #+#    #+#             */
-/*   Updated: 2023/10/23 11:57:37 by anoukan          ###   ########.fr       */
+/*   Updated: 2023/10/23 12:45:02 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifdef LIBFT_H
 # define LIBFT_H
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
 
 int ft_isalpha(char str)
 int ft_atoi(char *str)

@@ -6,12 +6,12 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 13:06:01 by anoukan           #+#    #+#             */
-/*   Updated: 2023/10/23 11:42:22 by anoukan          ###   ########.fr       */
+/*   Updated: 2023/10/23 12:44:28 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "stdio.h"
-#include "string.h"
+#include "libft.h"
+
 
 char	*ft_strnstr(char *str, char *to_find, size_t len)
 {

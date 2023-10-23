@@ -6,13 +6,11 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 0002/10/20 12:20:50 by noukan            #+#    #+#             */
-/*   Updated: 2023/10/23 11:50:17 by anoukan          ###   ########.fr       */
+/*   Updated: 2023/10/23 12:43:01 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {

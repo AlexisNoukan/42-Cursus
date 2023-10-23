@@ -6,11 +6,11 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 0003/10/20 10:30:01 by noukan            #+#    #+#             */
-/*   Updated: 2023/10/23 11:05:50 by anoukan          ###   ########.fr       */
+/*   Updated: 2023/10/23 12:44:41 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "stdio.h"
+#include "libft.h"
 
 int	ft_toupper(int n)
 {

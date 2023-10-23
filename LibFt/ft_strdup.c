@@ -6,13 +6,11 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 0003/10/20 10:54:29 by noukan            #+#    #+#             */
-/*   Updated: 2023/10/23 11:45:04 by anoukan          ###   ########.fr       */
+/*   Updated: 2023/10/23 12:43:45 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include "libft.h"
 
 int	ft_strlen(char *str)
 {

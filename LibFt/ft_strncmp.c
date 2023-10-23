@@ -6,12 +6,12 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 13:07:29 by anoukan           #+#    #+#             */
-/*   Updated: 2023/10/23 11:45:26 by anoukan          ###   ########.fr       */
+/*   Updated: 2023/10/23 12:44:18 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "stdio.h"
-#include "string.h"
+#include "libft.h"
+
 
 int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
