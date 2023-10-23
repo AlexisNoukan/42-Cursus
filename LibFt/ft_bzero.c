@@ -6,16 +6,16 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 14:24:16 by anoukan           #+#    #+#             */
-/*   Updated: 23/10/2023 15:14:04 by anoukan          ###   ########.fr       */
+/*   Updated: 2023/10/23 17:14:37 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    ft_bzero(void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
-    if (n == 0)
-        return;
-    else
-        ft_memset(s, 0, n);
+	if (n == 0)
+		return ;
+	else
+		ft_memset(s, 0, n);
 }
