@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anoukan <anoukan@student.42mulhouse.fr>    +#+  +:+       +#+        */
+/*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 13:07:29 by anoukan           #+#    #+#             */
-/*   Updated: 2023/10/19 13:07:37 by anoukan          ###   ########.fr       */
+/*   Updated: 2023/10/23 10:59:19 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,7 @@ int ft_strncmp(char *s1, char *s2, unsigned int n)
   }
   return(0);
 }
-
-int	main(void)
+/*int	main(void)
 {
 	int	n = 50;
 	char s1[] = "Hello";
@@ -47,4 +46,5 @@ int	main(void)
 
 	printf("%d\n", ft_strncmp(s1, s2, n));
 	printf("%d", strncmp(s1, s2, n));
-}
+}*/
+

@@ -1,30 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/19 14:29:44 by anoukan           #+#    #+#             */
-/*   Updated: 2023/10/23 11:05:39 by anoukan          ###   ########.fr       */
+/*   Created: 0009/10/20 17:16:24 by noukan            #+#    #+#             */
+/*   Updated: 2023/10/23 10:58:09 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "stdio.h"
-#include "string.h"
-
-void	*ft_memset(void *s, int c, int len)
+int  main()
 {
-	char	*str;
-
-	str = s;
-	while (len--)
-		*str++ = c;
-	return (s);
+    return (0);
 }
-/*int	main(void)
-{
-	char tab[100];
-//	printf("%s/n", memset(tab, 0, 4));
-	printf("%s", ft_memset(tab, 'A', 4));
-}*/
