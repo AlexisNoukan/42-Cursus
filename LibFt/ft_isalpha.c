@@ -12,11 +12,11 @@
 
 #include "libft.h"
 
-int	ft_isalpha(char str)
+int	ft_isalpha(int c)
 {
-	if (str == '\0')
+	if (c == '\0')
 		return (1);
-	if (!((str >= 'A' && str <= 'Z') || (str >= 'a' && str <= 'z')))
+	if (!((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z')))
 		return (0);
 	return (1);
 }
