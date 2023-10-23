@@ -6,27 +6,27 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 11:38:08 by anoukan           #+#    #+#             */
-/*   Updated: 2023/10/23 11:38:10 by anoukan          ###   ########.fr       */
+/*   Updated: 2023/10/23 11:45:09 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char  *ft_strlcat(char *dest, char *src, int l)
+char	*ft_strlcat(char *dest, char *src, int l)
 {
-  int i;
-  int j;
+	int	i;
+	int	j;
 
-  i = 0;
-  j = 0;
-  while (dest[i])
-  {
-    ++i;
-  }
-  while (src[j] && j != l)
-  {
-    dest[i] = src[j];
-    ++i;
-    ++j;
-  }
-  dest[i] = '\0';
-  return (dest);
+	i = 0;
+	j = 0;
+	while (dest[i])
+	{
+		++i;
+	}
+	while (src[j] && j != l)
+	{
+		dest[i] = src[j];
+		++i;
+		++j;
+	}
+	dest[i] = '\0';
+	return (dest);
 }

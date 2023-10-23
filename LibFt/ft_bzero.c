@@ -3,20 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anoukan <anoukan@student.42mulhouse.fr>    +#+  +:+       +#+        */
+/*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 14:24:16 by anoukan           #+#    #+#             */
-/*   Updated: 2023/10/19 14:28:36 by anoukan          ###   ########.fr       */
+/*   Updated: 2023/10/23 11:43:34 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "stdio.h"
 #include "string.h"
 
-int	main()
+int	main(void)
 {
-	char	*s = "Hello World";
-	int	n = 4;
+	char	*s;
+	int		n;
 
+	s = "Hello World";
+	n = 4;
 	printf("%s", bzero(s, n));
 }

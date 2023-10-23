@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 0002/10/20 12:20:50 by noukan            #+#    #+#             */
-/*   Updated: 2023/10/23 11:05:31 by anoukan          ###   ########.fr       */
+/*   Updated: 2023/10/23 11:50:17 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,16 +42,15 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	}
 	return (dst);
 }
-/*int main()
+/* int main()
 {
 	char str1[] = "Geeks"; // Array of size 100
 	char str2[] = "Quiz"; // Array of size 5
 	puts("str1 before memmove ");
 	puts(str1);
-	/* Copies contents of str2 to sr1 */
-ft_memmove(str1, str2, sizeof(str2));
-puts("\nstr1 after memmove ");
-puts(str1);
-return (0);
+    ft_memmove(str1, str2, sizeof(str2));
+    puts("\nstr1 after memmove ");
+    puts(str1);
+    return (0);
 }
-* /
+*/

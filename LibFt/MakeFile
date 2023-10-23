@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    MakeFile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: anoukan <anoukan@student.42mulhouse.fr>    +#+  +:+       +#+         #
+#    By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/19 12:59:54 by anoukan           #+#    #+#              #
-#    Updated: 2023/10/19 13:00:01 by anoukan          ###   ########.fr        #
+#    Updated: 2023/10/23 11:59:18 by anoukan          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,6 +40,7 @@ SRC =   ft_isalpha.c\
         ft_atoi.c\
         ft_calloc.c\
         ft_strdup.c\
+        
 OBJ = $(SRC:.c=.o)
 INC = -I$(INCDIR)
 

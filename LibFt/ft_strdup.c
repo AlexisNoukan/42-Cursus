@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                         :::     ::::::::   */
-/*  ft_strdup.c                                           :+:     :+:    :+:  */
-/*                                                      +:+ +:+        +:+    */
-/*  By: anoukan <anoukan@student.42mulhouse.fr>       +#+  +:+      +#+       */
-/*                                                  +#+#+#+#+#+  +#+          */
-/*  Created: 23/10/2023 10:54:29 by anoukan              #+#   #+#            */
-/*  Updated: 23/10/2023 10:54:34 by anoukan             ###  ##########.fr    */
+/*                                                        :::      ::::::::   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 0003/10/20 10:54:29 by noukan            #+#    #+#             */
+/*   Updated: 2023/10/23 11:45:04 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <stdio.h>
 
 int	ft_strlen(char *str)
 {
@@ -49,4 +49,3 @@ int	main(void)
 	printf("%s\n", ft_strdup("Hello World!"));
 	printf("%s", strdup("Hello World!"));
 }*/
-
