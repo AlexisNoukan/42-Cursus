@@ -17,9 +17,8 @@ size_t	ft_strlcpy(char *dest, char const *str, size_t l)
 {
 	size_t	i;
 
-	l = -1;
 	i = 0;
-	while (str[i] != '\0' && i < l - 1)
+	while (str[i] != '\0' && i <= l)
 	{
 		dest[i] = str[i];
 		++i;

@@ -20,9 +20,8 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 
 	cdst = (unsigned char *)dst;
 	csrc = (unsigned char *)src;
-	i = 0;
-	if (!dst || !src)
-		return (dst);
+	if (cdst  == csrc)
+		return (cdst);
 	if (cdst > csrc)
 	{
 		i = 0;
@@ -34,21 +33,21 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	}
 	else if (cdst < csrc)
 	{
-		i = len;
-		while (--i > len)
-			cdst[i - 1] = csrc[i - 1];
+		while (len--)
+			cdst[len] = csrc[len];
 	}
-	return (dst);
+	return (cdst);
 }
-/* int main()
+/*
+ int main()
 {
-	char str1[] = "Geeks"; // Array of size 100
-	char str2[] = "Quiz"; // Array of size 5
+	char str1[] = "123"; // Array of size 100
+	char str2[] = "321"; // Array of size 5
 	puts("str1 before memmove ");
 	puts(str1);
     ft_memmove(str1, str2, sizeof(str2));
     puts("\nstr1 after memmove ");
     puts(str1);
     return (0);
-}
-*/
+}*/
+
