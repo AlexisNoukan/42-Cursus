@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 int	ft_atoi(const char *str)
 {
@@ -24,25 +25,24 @@ int	ft_atoi(const char *str)
 	c = 1;
     cstr = (char *)str;
 	while (cstr[i] == 32 || (cstr[i] >= 9 && cstr[i] <= 13))
-	{
 		++i;
-	}
-	while (cstr[i] == '-' || cstr[i] == '+')
+	if (cstr[i] == '-' || cstr[i] == '+')
 	{
 		if (cstr[i] == '-')
 			c *= -1;
-		++i;
+        i++;
 	}
 	while (cstr[i] >= '0' && cstr[i] <= '9')
 	{
 		j *= 10;
-		j += cstr[i] + '0';
+		j += cstr[i] - '0';
 		++i;
 	}
 	return (j * c);
 }
-
+/*
 int main(void)
 {
-
-}
+    printf("%d\n", atoi(" -+-+123"));
+    printf("%d", ft_atoi(" -+-+123"));
+} */
