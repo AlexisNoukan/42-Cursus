@@ -10,19 +10,45 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+#include "string.h"
+
 char	*ft_strrchr(const char *s, int c)
 {
 	int		i;
-	char	*str;
+	const char	*str;
 
-	str = (char *)s;
+	str = (const char *)s;
 	i = ft_strlen(str);
 	if (c == '\0')
-		return (str + ft_strlen(str));
-	while (str[i--])
+		return ((char *)(str + i));
+	while (i >= 0)
 	{
 		if (str[i] == c)
-			return (&str[i]);
+			return ((char *)(str + i));
+        i--;
 	}
-	return (0);
+	return (NULL);
 }
+/*
+int main() {
+    const char *str = "Hello, World!";
+    char target = 'o';
+    // Use your ft_strrchr to find the last occurrence of the character 'o' in the string
+    char *result1 = ft_strrchr(str, target);
+
+    if (result1 != NULL) {
+        printf("Your ft_strrchr: Last occurrence of '%c' found at index %ld\n", target, result1 - str);
+    } else {
+        printf("Your ft_strrchr: '%c' not found in the string.\n", target);
+    }
+    // Use the standard library strrchr
+    char *result2 = strrchr(str, target);
+
+    if (result2 != NULL) {
+        printf("Standard strrchr: Last occurrence of '%c' found at index %ld\n", target, result2 - str);
+    } else {
+        printf("Standard strrchr: '%c' not found in the string.\n", target);
+    }
+    return 0;
+}*/
