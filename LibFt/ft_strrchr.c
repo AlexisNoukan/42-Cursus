@@ -13,6 +13,7 @@
 #include "libft.h"
 #include "string.h"
 
+
 char	*ft_strrchr(const char *s, int c)
 {
 	int		i;
@@ -30,6 +31,7 @@ char	*ft_strrchr(const char *s, int c)
 	}
 	return (NULL);
 }
+
 /*
 int main() {
     const char *str = "Hello, World!";
