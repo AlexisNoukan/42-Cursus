@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 0003/10/20 10:54:29 by noukan            #+#    #+#             */
-/*   Updated: 2023/10/23 17:36:14 by anoukan          ###   ########.fr       */
+/*   Updated: 2023/10/26 17:56:29 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ char	*ft_strdup(const char *src)
 	csrc = (char *)src;
 	length = ft_strlen(csrc);
 	dest = (char *)malloc((length + 1) * sizeof(char));
-    if (!dest)
-        return (NULL);
+	if (!dest)
+		return (NULL);
 	while (csrc[i])
 	{
 		dest[i] = csrc[i];

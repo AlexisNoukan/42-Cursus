@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 0003/10/20 10:30:01 by noukan            #+#    #+#             */
-/*   Updated: 24/10/2023 11:33:56 by anoukan          ###   ########.fr       */
+/*   Updated: 2023/10/26 18:08:25 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,3 @@ int	ft_toupper(int n)
 		return (n - 32);
 	return (n);
 }
-/*int main()
-{
-	printf("%c\n", ft_toupper('a'));
-}*/

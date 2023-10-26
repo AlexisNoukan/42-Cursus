@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 11:38:08 by anoukan           #+#    #+#             */
-/*   Updated: 24/10/2023 16:20:31 by anoukan          ###   ########.fr       */
+/*   Updated: 2023/10/26 17:56:09 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,35 +14,35 @@
 #include <stddef.h>
 #include <string.h>
 
-size_t  ft_strlcat(char *dst, const char *src, size_t dstsize)
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-    size_t  i;
-    size_t  j;
+	size_t	i;
+	size_t	j;
 
-    i = ft_strlen(dst);
-    j = 0;
-    if (i >= dstsize)
-        return (ft_strlen(src) + dstsize);
-    while(src[j] && j < (dstsize - i - 1))
-    {
-        dst[i + j] = src[j];
-        j++;
-    }
-    dst[i + j] = '\0';
-    return (i + ft_strlen(src));
+	i = ft_strlen(dst);
+	j = 0;
+	if (i >= dstsize)
+		return (ft_strlen(src) + dstsize);
+	while (src[j] && j < (dstsize - i - 1))
+	{
+		dst[i + j] = src[j];
+		j++;
+	}
+	dst[i + j] = '\0';
+	return (i + ft_strlen(src));
 }
 /*
-int main()
+int	main(void)
 {
-    // Write C code here
-    char str[] = "the cake is a lie !\0I'm hidden lol\r\n";
-    char buff1[] = "there is no stars in the sky";
-    char buff2[] = "there is no stars in the sky";
- 	size_t max = strlen("the cake is a lie !\0I'm hidden lol\r\n") + 4;
- 	
- 	printf("%lu\n", ft_strlcat(buff2, str, max));
- 	printf("%s\n",buff2);
- 	printf("%lu\n", strlcat(buff1, str, max));
- 	printf("%s\n",buff1);
-    return 0;
+	// Write C code here
+	char str[] = "the cake is a lie !\0I'm hidden lol\r\n";
+	char buff1[] = "there is no stars in the sky";
+	char buff2[] = "there is no stars in the sky";
+	size_t max = strlen("the cake is a lie !\0I'm hidden lol\r\n") + 4;
+
+	printf("%lu\n", ft_strlcat(buff2, str, max));
+	printf("%s\n",buff2);
+	printf("%lu\n", strlcat(buff1, str, max));
+	printf("%s\n",buff1);
+	return (0);
 }*/

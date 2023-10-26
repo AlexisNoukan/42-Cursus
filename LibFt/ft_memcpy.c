@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 11:38:00 by anoukan           #+#    #+#             */
-/*   Updated: 2023/10/23 17:14:18 by anoukan          ###   ########.fr       */
+/*   Updated: 2023/10/26 17:54:00 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,12 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	i = 0;
 	csrc = (char *)src;
 	cdst = (char *)dst;
-    if (csrc == cdst)
-        return (cdst);
-   	while (i < n)
+	if (csrc == cdst)
+		return (cdst);
+	while (i < n)
 	{
-        cdst[i] = csrc[i];
-        i++;
-    }
+		cdst[i] = csrc[i];
+		i++;
+	}
 	return (cdst);
 }

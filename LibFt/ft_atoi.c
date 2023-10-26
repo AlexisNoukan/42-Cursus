@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 11:46:19 by anoukan           #+#    #+#             */
-/*   Updated: 2023/10/23 11:46:20 by anoukan          ###   ########.fr       */
+/*   Updated: 2023/10/26 17:56:38 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,22 +15,22 @@
 
 int	ft_atoi(const char *str)
 {
-	int	    i;
-	int	    j;
-	int	    c;
-    char    *cstr;
+	int		i;
+	int		j;
+	int		c;
+	char	*cstr;
 
 	i = 0;
 	j = 0;
 	c = 1;
-    cstr = (char *)str;
+	cstr = (char *)str;
 	while (cstr[i] == 32 || (cstr[i] >= 9 && cstr[i] <= 13))
 		++i;
 	if (cstr[i] == '-' || cstr[i] == '+')
 	{
 		if (cstr[i] == '-')
 			c *= -1;
-        i++;
+		i++;
 	}
 	while (cstr[i] >= '0' && cstr[i] <= '9')
 	{
@@ -41,8 +41,8 @@ int	ft_atoi(const char *str)
 	return (j * c);
 }
 /*
-int main(void)
+int	main(void)
 {
-    printf("%d\n", atoi(" -+-+123"));
-    printf("%d", ft_atoi(" -+-+123"));
+	printf("%d\n", atoi(" -+-+123"));
+	printf("%d", ft_atoi(" -+-+123"));
 } */
