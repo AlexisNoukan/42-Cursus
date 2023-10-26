@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 0002/10/20 12:20:50 by noukan            #+#    #+#             */
-/*   Updated: 2023/10/26 18:04:32 by anoukan          ###   ########.fr       */
+/*   Updated: 2023/10/26 18:11:30 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 		return (cdst);
 	if (cdst > csrc && cdst < csrc + len)
 	{
-		while (len)
-			cdst[len--] = csrc[len--];
+		while (len--)
+			cdst[len] = csrc[len];
 	}
 	else
 	{
