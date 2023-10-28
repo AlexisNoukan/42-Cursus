@@ -19,7 +19,7 @@ size_t	ft_countword(const char *s, char c)
 	size_t	j;
 
 	i = 0;
-	j = 0;
+	j = 1;
 	while (s[i])
 	{
 		if ((s[i] == c || s[i] == '\0') == 1 \
@@ -102,12 +102,11 @@ char	**ft_split(char const *s, char c)
 /*
 int	main(void)
 {
-								char delimiter;
+	char delimiter;
 	char	**result;
 	size_t	i;
 
-	const char *input_string = "lorem ipsum dolor sit amet,
-								consectetur adipiscing elit.Sed non risus.Suspendisse ";
+	const char *input_string = "lorem ipsum dolor sit amet, consectetur adipiscing elit.Sed non risus.Suspendisse ";
 	delimiter = ' ';
 	result = ft_split(input_string, delimiter);
 	if (result != NULL)

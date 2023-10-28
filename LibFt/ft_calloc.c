@@ -25,3 +25,5 @@ void	*ft_calloc(size_t count, size_t size)
 
 // if (size == 0 || count * size > INT_MAX) ajouter ça si problème
 // return (NULL);
+//
+
