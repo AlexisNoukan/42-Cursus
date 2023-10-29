@@ -6,12 +6,13 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 0007/10/20 10:29:27 by noukan            #+#    #+#             */
-/*   Updated: 2023/10/28 23:34:35 by anoukan          ###   ########.fr       */
+/*   Updated: 2023/10/28 23:35:42 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <limits.h>
+#include <stddef.h>
 #include <stdio.h>
 
 int	ft_digits(long n)
@@ -22,8 +23,11 @@ int	ft_digits(long n)
 	if (n == 0)
 		i++;
 	if (n < 0)
-		i++;
-	while (n > 0)
+    {
+	    i++;
+        n = -n;
+    }
+		while (n > 0)
 	{
 		n /= 10;
 		i++;
@@ -31,7 +35,7 @@ int	ft_digits(long n)
 	return (i);
 }
 
-void	ft_itoa_2(long nbr, char *dest, int *i)
+void	ft_itoa_2(long nbr, char *dest, size_t *i)
 {
 	if (nbr >= 10)
 	{
@@ -45,7 +49,7 @@ void	ft_itoa_2(long nbr, char *dest, int *i)
 char	*ft_itoa(int n)
 {
 	char	*dest;
-	int		i;
+	size_t		i;
 	long	nbr;
 
 	nbr = n;
@@ -63,6 +67,7 @@ char	*ft_itoa(int n)
 	return (dest);
 }
 
+/*
 int	main(void)
 {
 	int		max_int;
@@ -74,7 +79,7 @@ int	main(void)
 
 	max_int = 2147483647;
 	min_int = -2147483648;
-	number = -113353520;
+	number = -5859;
 	max_str = ft_itoa(max_int);
 	min_str = ft_itoa(min_int);
 	number_str = ft_itoa(number);
@@ -106,4 +111,5 @@ int	main(void)
 		printf("Conversion of Number failed.\n");
 	}
 	return (0);
-}
+}*/
+
