@@ -14,9 +14,12 @@
 
 void	ft_putstr_fd(char *str, int fd)
 {
-	while (str)
+    int i;
+
+    i = 0;
+	while (str[i])
 	{
-		ft_putchar_fd(*str, fd);
-		++str;
+		ft_putchar_fd(str[i], fd);
+		i++;
 	}
 }
