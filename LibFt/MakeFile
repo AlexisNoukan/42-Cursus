@@ -51,8 +51,13 @@ SRC =   ft_isalpha.c\
 		ft_putendl_fd.c\
 		ft_putnbr_fd.c
 
+BONUS = ft_lstnew_bonus.c\
+
         
 OBJ = $(SRC:.c=.o)
+
+OBJ_BONUS = $(BONUS:.c=.o)
+
 INC = -I$(INCDIR)
 
 .PHONY: all clean fclean re
@@ -62,11 +67,15 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	ar rc $(NAME) $(OBJ)
 
+bonus: $(BONUS) $(OBJ_BONUS)
+	ar rc $(NAME) $(OBJ_BONUS)
+
+
 $(OBJ): %.o: %.c
 	$(CC) $(CFLAGS) $(INC) -c $< -o $@
 
 clean:
-	rm -f $(OBJ)
+	rm -f $(OBJ) $(OBJ_BONUS)
 
 fclean: clean
 	rm -f $(NAME)
