@@ -19,7 +19,9 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	size_t	i;
 	size_t	j;
 
-	i = ft_strlen(dst);
+    if (!dst && src && dstsize == 0)
+        return (ft_strlen(src));
+    i = ft_strlen(dst);
 	j = 0;
 	if (i >= dstsize)
 		return (ft_strlen(src) + dstsize);
@@ -36,13 +38,12 @@ int	main(void)
 {
 	// Write C code here
 	char str[] = "the cake is a lie !\0I'm hidden lol\r\n";
-	char buff1[] = "there is no stars in the sky";
-	char buff2[] = "there is no stars in the sky";
-	size_t max = strlen("the cake is a lie !\0I'm hidden lol\r\n") + 4;
+	char *buff2 = NULL;
+	size_t max = 0;
 
 	printf("%lu\n", ft_strlcat(buff2, str, max));
 	printf("%s\n",buff2);
-	printf("%lu\n", strlcat(buff1, str, max));
-	printf("%s\n",buff1);
+	printf("%lu\n", strlcat(buff2, str, max));
+	printf("%s\n",buff2);
 	return (0);
 }*/
