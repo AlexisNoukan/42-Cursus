@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 0005/10/20 11:13:12 by noukan            #+#    #+#             */
-/*   Updated: 2023/10/26 17:55:46 by anoukan          ###   ########.fr       */
+/*   Updated: 2023/10/30 13:22:16 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-char	*ft_strncpy(char *dest, char *src, unsigned int n)
+static	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
 	unsigned int	i;
 
@@ -54,20 +54,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 	dest[end - start] = '\0';
 	return (dest);
 }
-
-/*
-int	main(void) {
-	const char *input = "  \tHello, World!  \n";
-	const char *set = " \t\n";
-
-	char *trimmed = ft_strtrim(input, set);
-
-	if (trimmed != NULL) {
-		printf("Trimmed string: \"%s\"\n", trimmed);
-		free(trimmed); // Don't forget to free the allocated memory
-	} else {
-		printf("Memory allocation failed.\n");
-	}
-
-	return (0);
-}*/

@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                         :::     ::::::::   */
-/*  ft_lstsize_bonus.c                                    :+:     :+:    :+:  */
-/*                                                      +:+ +:+        +:+    */
-/*  By: anoukan <anoukan@student.42mulhouse.fr>       +#+  +:+      +#+       */
-/*                                                  +#+#+#+#+#+  +#+          */
-/*  Created: 29/10/2023 16:39:51 by anoukan              #+#   #+#            */
-/*  Updated: 29/10/2023 16:39:51 by anoukan             ###  ##########.fr    */
+/*                                                        :::      ::::::::   */
+/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 0009/10/20 16:39:51 by noukan            #+#    #+#             */
+/*   Updated: 2023/10/30 13:14:04 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_lstsize(t_list *lst)
+int	ft_lstsize(t_list *lst)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    while (lst)
-    {
-        lst = lst->next;
-        i++;
-    }
-    return (i);
+	i = 0;
+	while (lst)
+	{
+		lst = lst->next;
+		i++;
+	}
+	return (i);
 }

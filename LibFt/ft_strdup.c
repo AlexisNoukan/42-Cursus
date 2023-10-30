@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 0003/10/20 10:54:29 by noukan            #+#    #+#             */
-/*   Updated: 2023/10/26 17:56:29 by anoukan          ###   ########.fr       */
+/*   Updated: 2023/10/30 13:20:38 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,3 @@ char	*ft_strdup(const char *src)
 	dest[length] = '\0';
 	return (dest);
 }
-/*
-int	main(void)
-{
-	printf("%s\n", ft_strdup("Hello World!"));
-	printf("%s", strdup("Hello World!"));
-}*/

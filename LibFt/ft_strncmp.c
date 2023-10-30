@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 13:07:29 by anoukan           #+#    #+#             */
-/*   Updated: 2023/10/26 17:55:36 by anoukan          ###   ########.fr       */
+/*   Updated: 2023/10/30 13:21:32 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,3 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	}
 	return (0);
 }
-/*int	main(void)
-{
-	int	n = 50;
-	char s1[] = "Hello";
-	char s2[] = "Hqllo";
-
-	printf("%d\n", ft_strncmp(s1, s2, n));
-	printf("%d", strncmp(s1, s2, n));
-}*/

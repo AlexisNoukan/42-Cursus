@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 13:06:01 by anoukan           #+#    #+#             */
-/*   Updated: 2023/10/23 17:11:10 by anoukan          ###   ########.fr       */
+/*   Updated: 2023/10/30 13:21:42 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,3 @@ char	*ft_strnstr(const char *str, const char *to_find, size_t len)
 	}
 	return (NULL);
 }
-/*int	main(void)
-{
-	char	s1[] = "lolHelloWorldloo";
-	char	s2[] = "HelloWorld";
-	size_t len = 8;
-	printf("ft_strnstr : %s\n", ft_strnstr(s1, s2, len));
-	printf("strnstr : %s", strnstr(s1, s2, len));
-}*/

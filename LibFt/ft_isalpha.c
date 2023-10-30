@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 11:43:53 by anoukan           #+#    #+#             */
-/*   Updated: 2023/10/23 17:14:56 by anoukan          ###   ########.fr       */
+/*   Updated: 2023/10/30 13:18:21 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,3 @@ int	ft_isalpha(int c)
 		return (0);
 	return (1);
 }
-/*int	main(void)
-{
-	char	c;
-	int		i;
-
-	c = 'C';
-	i = ft_isalpha(c);
-	printf("%d", i);
-}*/

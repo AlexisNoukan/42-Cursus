@@ -6,9 +6,11 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 11:43:42 by anoukan           #+#    #+#             */
-/*   Updated: 2023/10/26 17:56:45 by anoukan          ###   ########.fr       */
+/*   Updated: 2023/10/30 13:18:14 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isalnum(int i)
 {

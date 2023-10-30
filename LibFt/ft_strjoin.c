@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 0005/10/20 10:07:55 by noukan            #+#    #+#             */
-/*   Updated: 2023/10/26 17:54:26 by anoukan          ###   ########.fr       */
+/*   Updated: 2023/10/30 13:20:58 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-char	*ft_strcpy(char *dest, char *src)
+static	*ft_strcpy(char *dest, char *src)
 {
 	int	i;
 
@@ -44,18 +44,3 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	ft_strcpy(d + i, (char *)s2);
 	return (d);
 }
-/*
-int	main(void)
-{
-	const char *s1 = "Hello";
-	const char *s2 = "World";
-
-	char *joined = ft_strjoin(s1, s2);
-
-	if (joined != NULL) {
-		printf("%s", joined);
-		free(joined); // Don't forget to free the allocated memory
-	}
-
-	return (0);
-}*/

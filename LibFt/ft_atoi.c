@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 11:46:19 by anoukan           #+#    #+#             */
-/*   Updated: 2023/10/26 17:56:38 by anoukan          ###   ########.fr       */
+/*   Updated: 2023/10/30 13:17:38 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,3 @@ int	ft_atoi(const char *str)
 	}
 	return (j * c);
 }
-/*
-int	main(void)
-{
-	printf("%d\n", atoi(" -+-+123"));
-	printf("%d", ft_atoi(" -+-+123"));
-} */

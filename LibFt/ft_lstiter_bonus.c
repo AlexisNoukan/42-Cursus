@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                         :::     ::::::::   */
-/*  ft_lstiter_bonus.c                                    :+:     :+:    :+:  */
-/*                                                      +:+ +:+        +:+    */
-/*  By: anoukan <anoukan@student.42mulhouse.fr>       +#+  +:+      +#+       */
-/*                                                  +#+#+#+#+#+  +#+          */
-/*  Created: 30/10/2023 09:10:13 by anoukan              #+#   #+#            */
-/*  Updated: 30/10/2023 09:10:13 by anoukan             ###  ##########.fr    */
+/*                                                        :::      ::::::::   */
+/*   ft_lstiter_bonus.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 0000/10/20 09:10:13 by noukan            #+#    #+#             */
+/*   Updated: 2023/10/30 13:13:42 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_lstiter(t_list *lst, void (*f)(void *))
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-    while (lst)
-    {
-        (*f)(lst->content);
-        lst = lst->next;
-    }
+	while (lst)
+	{
+		(*f)(lst->content);
+		lst = lst->next;
+	}
 }
