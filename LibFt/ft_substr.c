@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 0005/10/20 09:16:28 by noukan            #+#    #+#             */
-/*   Updated: 2023/10/26 17:55:25 by anoukan          ###   ########.fr       */
+/*   Updated: 2023/10/30 14:52:57 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	unsigned int	i;
 	char			*d;
 	char			*void_str;
-
+	
 	if (start >= ft_strlen(s))
 	{
 		void_str = (char *)malloc(1);
