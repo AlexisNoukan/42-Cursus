@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 0007/10/20 10:29:27 by noukan            #+#    #+#             */
-/*   Updated: 2023/10/30 13:19:06 by anoukan          ###   ########.fr       */
+/*   Updated: 2023/10/30 13:27:07 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include <stddef.h>
 #include <stdio.h>
 
-static	ft_digits(long n)
+static	int	ft_digits(long n)
 {
 	int	i;
 
@@ -35,7 +35,7 @@ static	ft_digits(long n)
 	return (i);
 }
 
-static	ft_itoa_2(long nbr, char *dest, size_t *i)
+static	void	ft_itoa_2(long nbr, char *dest, size_t *i)
 {
 	if (nbr >= 10)
 	{

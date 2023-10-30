@@ -6,14 +6,14 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 0005/10/20 13:45:58 by noukan            #+#    #+#             */
-/*   Updated: 2023/10/30 13:20:25 by anoukan          ###   ########.fr       */
+/*   Updated: 2023/10/30 13:27:50 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stddef.h>
 
-static	ft_countword(const char *s, char c)
+static size_t	ft_countword(const char *s, char c)
 {
 	size_t	i;
 	size_t	j;
@@ -22,8 +22,8 @@ static	ft_countword(const char *s, char c)
 	j = 1;
 	while (s[i])
 	{
-		if ((s[i] == c || s[i] == '\0') == 1 \
-		&& (s[i + 1] == '\0' || s[i + 1] == c) == 0)
+		if ((s[i] == c || s[i] == '\0') == 1 && (s[i + 1] == '\0' || s[i
+				+ 1] == c) == 0)
 		{
 			j++;
 		}
@@ -32,7 +32,7 @@ static	ft_countword(const char *s, char c)
 	return (j);
 }
 
-static	ft_split_free(char **dest)
+static int	ft_split_free(char **dest)
 {
 	int	i;
 
@@ -46,7 +46,7 @@ static	ft_split_free(char **dest)
 	return (0);
 }
 
-static	ft_split_write_word(char *dest, const char *src, char c)
+static void	ft_split_write_word(char *dest, const char *src, char c)
 {
 	size_t	i;
 
@@ -59,7 +59,7 @@ static	ft_split_write_word(char *dest, const char *src, char c)
 	dest[i] = '\0';
 }
 
-static	int	ft_split_write(char **dest, char const *s, char c)
+static int	ft_split_write(char **dest, char const *s, char c)
 {
 	size_t	i;
 	size_t	j;

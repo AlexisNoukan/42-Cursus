@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 0005/10/20 10:07:55 by noukan            #+#    #+#             */
-/*   Updated: 2023/10/30 13:20:58 by anoukan          ###   ########.fr       */
+/*   Updated: 2023/10/30 13:28:15 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-static	*ft_strcpy(char *dest, char *src)
+static	char	*ft_strcpy(char *dest, char *src)
 {
 	int	i;
 
