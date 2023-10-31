@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 0000/10/20 09:40:34 by noukan            #+#    #+#             */
-/*   Updated: 2023/10/30 14:37:04 by anoukan          ###   ########.fr       */
+/*   Updated: 2023/10/31 09:42:57 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,9 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*new;
 	t_list	*current;
 	void	*temp;
-	
-	//segfault f et del NULL
+
+	if (!f && !del)
+		return (NULL);
 	new = NULL;
 	while (lst)
 	{
