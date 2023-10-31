@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 09:50:46 by anoukan           #+#    #+#             */
-/*   Updated: 2023/10/30 13:22:30 by anoukan          ###   ########.fr       */
+/*   Updated: 2023/10/31 14:34:18 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
+#include <limits.h>
+#include <stddef.h>
 
 int					ft_isalpha(int c);
 int					ft_isdigit(int c);

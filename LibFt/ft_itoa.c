@@ -6,14 +6,12 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 0007/10/20 10:29:27 by noukan            #+#    #+#             */
-/*   Updated: 2023/10/30 13:27:07 by anoukan          ###   ########.fr       */
+/*   Updated: 2023/10/31 14:34:02 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <limits.h>
-#include <stddef.h>
-#include <stdio.h>
+
 
 static	int	ft_digits(long n)
 {

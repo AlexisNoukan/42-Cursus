@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 13:06:01 by anoukan           #+#    #+#             */
-/*   Updated: 2023/10/30 13:21:42 by anoukan          ###   ########.fr       */
+/*   Updated: 31/10/2023 14:02:35 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,19 @@ char	*ft_strnstr(const char *str, const char *to_find, size_t len)
 	char	*cstr;
 	char	*cto_find;
 
+
 	i = 0;
 	cstr = (char *)str;
 	cto_find = (char *)to_find;
-	while (i < len)
+    if (cstr[0] == '\0' && cto_find[0] == '\0' && len == 0)
+        return (cstr);
+    if (cto_find[0] == '\0')
+		return (cstr);
+	while (cstr[i] != '\0' && i < len)
 	{
 		n = i;
 		j = 0;
-		if (cto_find[j] == '\0')
-			return (cstr);
+
 		while (cstr[n] == cto_find[j] && cstr[n] && cto_find[j] && n < len)
 		{
 			n++;
@@ -40,3 +44,4 @@ char	*ft_strnstr(const char *str, const char *to_find, size_t len)
 	}
 	return (NULL);
 }
+
