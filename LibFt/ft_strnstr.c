@@ -24,24 +24,28 @@ char	*ft_strnstr(const char *str, const char *to_find, size_t len)
 	i = 0;
 	cstr = (char *)str;
 	cto_find = (char *)to_find;
-    if (cstr[0] == '\0' && cto_find[0] == '\0' && len == 0)
-        return (cstr);
     if (cto_find[0] == '\0')
-		return (cstr);
-	while (cstr[i] != '\0' && i < len)
-	{
-		n = i;
-		j = 0;
+        return (cstr);
+    while (i < len && cstr[i] != '\0')
+    {
+        if (!cstr)
+            return (NULL);
 
-		while (cstr[n] == cto_find[j] && cstr[n] && cto_find[j] && n < len)
-		{
-			n++;
-			j++;
-		}
-		if (cto_find[j] == '\0')
-			return (cstr + i);
-		++i;
-	}
-	return (NULL);
+        n = i;
+        j = 0;
+
+        while (cstr[n] == cto_find[j] && cstr[n] && cto_find[j] && n < len)
+        {
+            n++;
+            j++;
+        }
+
+        if (cto_find[j] == '\0')
+            return (cstr + i);
+
+        i++;
+    }
+
+    return (NULL);
 }
 
