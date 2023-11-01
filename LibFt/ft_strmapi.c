@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 0009/10/20 13:28:38 by noukan            #+#    #+#             */
-/*   Updated: 2023/10/30 13:16:57 by anoukan          ###   ########.fr       */
+/*   Updated: 2023/11/01 06:49:03 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	int		i;
 	char	*dest;
 
-    if (!s || !f)
-        return (NULL);
+	if (!s || !f)
+		return (NULL);
 	dest = malloc(ft_strlen(s) + 1);
 	if (!dest)
 		return (NULL);
