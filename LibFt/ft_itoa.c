@@ -12,7 +12,6 @@
 
 #include "libft.h"
 
-
 static	int	ft_digits(long n)
 {
 	int	i;
