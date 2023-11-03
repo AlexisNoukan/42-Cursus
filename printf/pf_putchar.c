@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                         :::     ::::::::   */
-/*  ft_printf.c                                           :+:     :+:    :+:  */
+/*  pf_putchar.c                                          :+:     :+:    :+:  */
 /*                                                      +:+ +:+        +:+    */
 /*  By: anoukan <anoukan@student.42mulhouse.fr>       +#+  +:+      +#+       */
 /*                                                  +#+#+#+#+#+  +#+          */
-/*  Created: 03/11/2023 13:05:51 by anoukan              #+#   #+#            */
-/*  Updated: 03/11/2023 13:05:51 by anoukan             ###  ##########.fr    */
+/*  Created: 03/11/2023 14:29:49 by anoukan              #+#   #+#            */
+/*  Updated: 03/11/2023 14:29:49 by anoukan             ###  ##########.fr    */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "LibFt/libft.h"
+#include "libft.h"
 
-int ft_printf(const char *format, ...)
+void	ft_putchar_fd(char c, int fd)
 {
-
+	write(fd, &c, 1);
 }
