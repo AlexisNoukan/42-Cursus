@@ -10,14 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PF_LIBFT_H
-# define PF_LIBFT_H
+#ifndef LIBFTPRINTF_H
+# define LIBFTPRINTF_H
 
 # include <stdio.h>
 # include <unistd.h>
+#include <stdarg.h>
 
-void				ft_putchar_fd(char c, int fd);
-void				ft_putstr_fd(char *s, int fd);
-void				ft_putnbr_fd(int n, int fd);
+
+void				ft_putchar(char c);
+void				ft_putstr(char *s);
+void				ft_putnbr(int n);
 
 #endif

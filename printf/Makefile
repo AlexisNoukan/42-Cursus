@@ -1,12 +1,14 @@
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
-NAME = libft.a
+NAME = libftprintf.a
 
 INCDIR = includes
 
 
-SRC = 
-
+SRC = pf_prinf.c\
+	  pf_putchar.c\
+	  pf_putstr.c\
+	  pf_putnbr.c\
 
 
 BONUS = 
