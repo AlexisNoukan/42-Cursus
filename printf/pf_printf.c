@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                         :::     ::::::::   */
-/*  pf_printf.c                                           :+:     :+:    :+:  */
+/*  ft_printf.c                                           :+:     :+:    :+:  */
 /*                                                      +:+ +:+        +:+    */
 /*  By: anoukan <anoukan@student.42mulhouse.fr>       +#+  +:+      +#+       */
 /*                                                  +#+#+#+#+#+  +#+          */
 /*  Created: 03/11/2023 13:05:51 by anoukan              #+#   #+#            */
-/*  Updated: 07/11/2023 09:29:10 by anoukan             ###  ##########.fr    */
+/*  Updated: 03/11/2023 13:05:51 by anoukan             ###  ##########.fr    */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 #include <stdarg.h>
 
-int pf_printf(const char *format, ...)
+int ft_printf(const char *format, ...)
 {
     va_list args;
     va_start(args, format);
@@ -69,14 +69,14 @@ int main() {
     unsigned int unsignedInteger = 123;
     //void *pointer = (void *)0x12345678;
 
-    pf_printf("Character: %c\n", character);
-    pf_printf("String: %s\n", string);
+    ft_printf("Character: %c\n", character);
+    ft_printf("String: %s\n", string);
     //ft_printf("Pointer: %p\n", pointer);
-    pf_printf("Decimal: %d\n", integer);
-    pf_printf("Unsigned Decimal: %u\n", unsignedInteger);
-    pf_printf("Hexadecimal (lowercase): %x\n", unsignedInteger);
-    pf_printf("Hexadecimal (uppercase): %X\n", unsignedInteger);
-    pf_printf("Percent Sign: %%\n");
+    ft_printf("Decimal: %d\n", integer);
+    ft_printf("Unsigned Decimal: %u\n", unsignedInteger);
+    ft_printf("Hexadecimal (lowercase): %x\n", -4642);
+    ft_printf("Hexadecimal (uppercase): %X\n", -4642);
+    ft_printf("Percent Sign: %%\n");
 
     return 0;
 }

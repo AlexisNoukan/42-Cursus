@@ -5,10 +5,11 @@ NAME = libftprintf.a
 INCDIR = includes
 
 
-SRC = pf_prinf.c\
+SRC = pf_printf.c\
 	  pf_putchar.c\
 	  pf_putstr.c\
 	  pf_putnbr.c\
+	  pf_hex.c\
 
 
 BONUS = 
