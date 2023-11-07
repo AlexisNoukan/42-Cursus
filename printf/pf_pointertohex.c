@@ -1,27 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libftprintf.h                                      :+:      :+:    :+:   */
+/*   pf_pointertohex.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 0003/11/20 13:05:09 by noukan            #+#    #+#             */
-/*   Updated: 2023/11/07 16:09:45 by anoukan          ###   ########.fr       */
+/*   Created: 0007/11/20 11:39:26 by noukan            #+#    #+#             */
+/*   Updated: 2023/11/07 16:09:51 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFTPRINTF_H
-# define LIBFTPRINTF_H
+#include "libftprintf.h"
 
-# include <stdarg.h>
-# include <stdio.h>
-# include <unistd.h>
+void	pf_pointertohex(void *ptr)
+{
+	unsigned long	cptr;
 
-int		ft_printf(const char *format, ...);
-void	ft_putchar(char c);
-void	ft_putstr(char *s);
-void	ft_putnbr(int n);
-void	pf_hex(int n, int params);
-void	pf_pointertohex(void *ptr);
-
-#endif
+	cptr = (unsigned long)ptr;
+	pf_hex(cptr, 0);
+}
