@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 0003/11/20 13:05:51 by noukan            #+#    #+#             */
-/*   Updated: 2023/11/07 16:10:21 by anoukan          ###   ########.fr       */
+/*   Updated: 2023/11/07 16:11:28 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,23 +26,22 @@ int	ft_printf(const char *format, ...)
 		{
 			format++;
 			if (*format == 'd' || *format == 'i')
-			{ // int
+			{
 				ft_putnbr(va_arg(args, int));
 				count++;
 			}
 			else if (*format == 's')
-			{ // string
+			{
 				ft_putstr(va_arg(args, char *));
 				count++;
 			}
 			else if (*format == 'c')
-			{ // char
+			{
 				ft_putchar(va_arg(args, int));
 				count++;
 			}
 			else if (*format == 'u')
 			{
-				// unsigned int
 				ft_putnbr(va_arg(args, unsigned int));
 				count++;
 			}
@@ -50,24 +49,22 @@ int	ft_printf(const char *format, ...)
 			{
 				if (*format == 'x')
 				{
-					// lower hex
 					pf_hex(va_arg(args, int), 0);
 					count++;
 				}
 				else
-				{ // upper hex
+				{
 					pf_hex(va_arg(args, int), 1);
 					count++;
 				}
 			}
 			else if (*format == 'p')
 			{
-				// void pointer in hex
 				pf_pointertohex(va_arg(args, void *));
 				count++;
 			}
 			else if (*format == '%')
-			{ // unsigned int
+			{
 				ft_putchar('%');
 				count++;
 			}
