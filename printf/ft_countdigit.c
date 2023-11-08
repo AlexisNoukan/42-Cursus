@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 #include "libftprintf.h"
 
-int	ft_countdigit(int n)
+int	ft_countdigit(long n)
 {
 	int	i;
 

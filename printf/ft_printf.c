@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 0003/11/20 13:05:51 by noukan            #+#    #+#             */
-/*   Updated: 2023/11/08 16:01:10 by anoukan          ###   ########.fr       */
+/*   Updated: 2023/11/08 16:02:38 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,13 @@ int	ft_printf(const char *format, ...)
 	va_list	args;
 	int		count;
 	char	*str;
-    int totalchars;
-    int value;
+	int		totalchars;
+	int		value;
 
 	va_start(args, format);
 	count = 0;
-    totalchars = 0;
-    value = 0;
+	totalchars = 0;
+	value = 0;
 	while (*format)
 	{
 		if (*format == '%')
@@ -32,8 +32,8 @@ int	ft_printf(const char *format, ...)
 			format++;
 			if (*format == 'd' || *format == 'i')
 			{
-                value = va_arg(args, int);
-                totalchars = ft_countdigit(value);
+				value = va_arg(args, int);
+				totalchars = ft_countdigit(value);
 				ft_putnbr(value);
 				count += totalchars;
 			}
@@ -95,7 +95,7 @@ int	ft_printf(const char *format, ...)
 	va_end(args);
 	return (count);
 }
-
+/*
 #include <stdio.h>
 
 int	ft_printf(const char *format, ...);
@@ -133,4 +133,4 @@ int	main(void)
 	printf("Upper Hex Count: %d\n", countUpperHex);
 	printf("Percent Count: %d\n", countPercent);
 	return (0);
-}
+}*/

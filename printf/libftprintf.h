@@ -24,6 +24,6 @@ void	ft_putnbr(int n);
 void	pf_hex(int n, int params);
 void	pf_pointertohex(void *ptr);
 size_t	ft_strlen(const char *str);
-int     ft_countdigit(int n);
+int     ft_countdigit(long n);
 
 #endif
