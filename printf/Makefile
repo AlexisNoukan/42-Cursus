@@ -23,7 +23,8 @@ SRC = ft_printf.c\
 	  pf_putnbr.c\
 	  pf_hex.c\
 	  pf_pointertohex.c\
-	  ft_strlen.c
+	  ft_strlen.c\
+	  ft_countdigit.c
 
 OBJ = $(SRC:.c=.o)
 
