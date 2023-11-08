@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 0003/11/20 13:05:09 by noukan            #+#    #+#             */
-/*   Updated: 2023/11/07 16:09:45 by anoukan          ###   ########.fr       */
+/*   Updated: 2023/11/08 11:17:03 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,6 @@ void	ft_putstr(char *s);
 void	ft_putnbr(int n);
 void	pf_hex(int n, int params);
 void	pf_pointertohex(void *ptr);
+size_t	ft_strlen(const char *str);
 
 #endif

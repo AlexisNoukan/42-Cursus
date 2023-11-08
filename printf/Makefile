@@ -22,7 +22,8 @@ SRC = ft_printf.c\
 	  pf_putstr.c\
 	  pf_putnbr.c\
 	  pf_hex.c\
-	  pf_pointertohex.c
+	  pf_pointertohex.c\
+	  ft_strlen.c
 
 OBJ = $(SRC:.c=.o)
 
