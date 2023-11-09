@@ -13,7 +13,7 @@
 #include "libftprintf.h"
 #include <limits.h>
 
-void	pf_hex2(int n, char *alpha)
+int	pf_hex2(int n, char *alpha)
 {
 	char	hex[20];
 	int		i;
@@ -57,9 +57,10 @@ void	pf_hex2(int n, char *alpha)
 	}
 	hex[i] = '\0';
 	ft_putstr(hex);
+    return (i);
 }
 
-void	pf_hex(int n, int params)
+int	pf_hex(int n, int params)
 {
 	char	*upperCase;
 	char	*lowerCase;
@@ -67,7 +68,7 @@ void	pf_hex(int n, int params)
 	upperCase = "0123456789ABCDEF";
 	lowerCase = "0123456789abcdef";
 	if (params == 0)
-		pf_hex2(n, lowerCase);
+		return(pf_hex2(n, lowerCase));
 	else
-		pf_hex2(n, upperCase);
+		return(pf_hex2(n, upperCase));
 }

@@ -12,10 +12,8 @@
 
 #include "libftprintf.h"
 
-void	pf_pointertohex(void *ptr)
+int	pf_pointertohex(void *ptr)
 {
-	unsigned long	cptr;
-
-	cptr = (unsigned long)ptr;
-	pf_hex(cptr, 0);
+    ft_putstr("0x");
+	return (pf_hex((unsigned long)ptr, 0));
 }

@@ -18,12 +18,10 @@ int	ft_printf(const char *format, ...)
 	va_list	args;
 	int		count;
 	char	*str;
-	int		totalchars;
 	int		value;
 
 	va_start(args, format);
 	count = 0;
-	totalchars = 0;
 	value = 0;
 	while (*format)
 	{
@@ -33,9 +31,8 @@ int	ft_printf(const char *format, ...)
 			if (*format == 'd' || *format == 'i')
 			{
 				value = va_arg(args, int);
-				totalchars = ft_countdigit(value);
 				ft_putnbr(value);
-				count += totalchars;
+				count = ft_countdigit(value);
 			}
 			else if (*format == 's')
 			{
@@ -52,33 +49,23 @@ int	ft_printf(const char *format, ...)
 				}
 			}
 			else if (*format == 'c')
-			{
-				ft_putchar(va_arg(args, int));
-				count++;
-			}
+			    count += ft_putchar(va_arg(args, int));
 			else if (*format == 'u')
 			{
-				ft_putnbr(va_arg(args, unsigned int));
-				count++;
+                value = va_arg(args, unsigned int);
+				ft_putnbr(value);
+                count += ft_countdigit(value);
 			}
 			else if (*format == 'X' || *format == 'x')
 			{
+                value = va_arg(args, int);
 				if (*format == 'x')
-				{
-					pf_hex(va_arg(args, int), 0);
-					count++;
-				}
+				    count += pf_hex(value, 0);
 				else
-				{
-					pf_hex(va_arg(args, int), 1);
-					count++;
-				}
+                    count += pf_hex(value, 1);
 			}
 			else if (*format == 'p')
-			{
-				pf_pointertohex(va_arg(args, void *));
-				count++;
-			}
+				count += pf_pointertohex(va_arg(args, void *));
 			else if (*format == '%')
 			{
 				ft_putchar('%');

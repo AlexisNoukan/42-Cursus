@@ -18,12 +18,13 @@
 # include <unistd.h>
 
 int		ft_printf(const char *format, ...);
-void	ft_putchar(char c);
+int 	ft_putchar(char c);
 void	ft_putstr(char *s);
 void	ft_putnbr(int n);
-void	pf_hex(int n, int params);
-void	pf_pointertohex(void *ptr);
+int 	pf_hex(int n, int params);
+int 	pf_pointertohex(void *ptr);
 size_t	ft_strlen(const char *str);
 int     ft_countdigit(long n);
+size_t  ft_strcpy(char *dest, const char *src);
 
 #endif
