@@ -6,7 +6,7 @@
 #    By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/07 11:38:23 by anoukan           #+#    #+#              #
-#    Updated: 2023/11/10 18:56:22 by anoukan          ###   ########.fr        #
+#    Updated: 2023/11/10 19:26:07 by anoukan          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,63 +16,24 @@ NAME = libftprintf.a
 
 INCDIR = includes
 
-LIBFT_SRCS = /LibFt
+#Libft
 
-LIBFT =   ft_isalpha.c\
-        ft_isdigit.c\
-        ft_isalnum.c\
-        ft_isascii.c\
-        ft_isprint.c\
-        ft_strlen.c\
-        ft_memset.c\
-        ft_bzero.c\
-        ft_memcpy.c\
-        ft_memmove.c\
-        ft_strlcpy.c\
-        ft_strlcat.c\
-        ft_toupper.c\
-        ft_tolower.c\
-        ft_strchr.c\
-		ft_strrchr.c\
-        ft_strncmp.c\
-        ft_memchr.c\
-        ft_memcmp.c\
-        ft_strnstr.c\
-        ft_atoi.c\
-		ft_calloc.c\
-        ft_strdup.c\
-		ft_substr.c\
-		ft_strjoin.c\
-		ft_strtrim.c\
-		ft_split.c\
-		ft_itoa.c\
-		ft_strmapi.c\
-		ft_striteri.c\
-		ft_putchar_fd.c\
-		ft_putstr_fd.c\
-		ft_putendl_fd.c\
-		ft_putnbr_fd.c
+LIBFT_SRCDIR = LibFt
+LIBFT_SRCS = $(wildcard $(LIBFT_SRCDIR)/*.c)
+LIBFT = $(LIBFT_SRCS:$(LIBFT_SRCDIR)/%.c=$(LIBFT_SRCDIR)/%.o)
 
-BONUS = ft_lstnew_bonus.c\
-		ft_lstadd_front_bonus.c\
-		ft_lstsize_bonus.c\
-		ft_lstlast_bonus.c\
-		ft_lstadd_back_bonus.c\
-		ft_lstdelone_bonus.c\
-		ft_lstclear_bonus.c\
-		ft_lstiter_bonus.c\
-		ft_lstmap_bonus.c
+BONUS_SRCS = $(wildcard $(LIBFT_SRCDIR)/bonus/*.c)
+BONUS = $(BONUS_SRCS:$(LIBFT_SRCDIR)/%.c=$(LIBFT_SRCDIR)/%.o)
 
-PTF_SRCS = /Srcs
+#Printf
 
-PTF =	ft_printf\
-		ft_countdigit\
-		ft_hex
-	  
+PTF_SRCDIR = Srcs
+PTF_SRCS = $(wildcard $(PTF_SRCDIR)/*.c)
+PTF = $(PTF_SRCS:$(PTF_SRCDIR)/%.c=$(PTF_SRCDIR)/%.o)
 
-        
-OBJ = $(LIBFT_SRCS:$(LIBFT_SRCDIR)/%.c=%.o) $(BONUS_SRCS:$(LIBFT_SRCDIR)/bonus/%.c=%.o) $(PTF_SRCS:$(PTF_SRCDIR)/%.c=%.o)
+#Makefile Command
 
+OBJ = $(LIBFT) $(BONUS) $(PTF)
 
 INC = -I$(INCDIR)
 
@@ -93,3 +54,4 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
+

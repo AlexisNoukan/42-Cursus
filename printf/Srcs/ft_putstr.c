@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 0003/11/20 13:05:09 by noukan            #+#    #+#             */
-/*   Updated: 2023/11/10 19:50:48 by anoukan          ###   ########.fr       */
+/*   Created: 2023/11/10 19:46:49 by anoukan           #+#    #+#             */
+/*   Updated: 2023/11/10 19:51:44 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-# include "../LibFt/libft.h"
-# include <limits.h>
-# include <stdarg.h>
-# include <stdio.h>
-# include <unistd.h>
+int	ft_putstr(char *str)
+{
+	int i;
 
-int	ft_printf(const char *format, ...);
-int	ft_hex(int n, int params);
-int	ft_pointertohex(void *ptr);
-int	ft_countdigit(long n);
-int	ft_printchar(char c);
-int	ft_putstr(char *str);
-
-#endif
+	i = 0;
+	while (*str)
+	{
+		ft_putchar_fd(str[i], 1);
+		++i;
+	}
+	return (i);
+}

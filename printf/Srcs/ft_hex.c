@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 0006/11/20 14:18:23 by noukan            #+#    #+#             */
-/*   Updated: 2023/11/10 18:57:15 by anoukan          ###   ########.fr       */
+/*   Updated: 2023/11/10 19:32:25 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int	ft_hex2(int n, char *alpha, char sign)
 		end--;
 	}
 	hex[i] = '\0';
-	ft_putstr(hex);
+	ft_putstr_fd(hex, 1);
 	return (i);
 }
 
@@ -81,6 +81,6 @@ int	ft_hex(int n, int params)
 
 int	ft_pointertohex(void *ptr)
 {
-	ft_putstr("0x");
+	ft_putstr_fd("0x", 1);
 	return (ft_hex((unsigned long)ptr, 0));
 }
