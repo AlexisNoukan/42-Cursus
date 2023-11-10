@@ -1,19 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pf_hex.c                                           :+:      :+:    :+:   */
+/*   ft_hex.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 0006/11/20 14:18:23 by noukan            #+#    #+#             */
-/*   Updated: 2023/11/10 18:33:07 by anoukan          ###   ########.fr       */
+/*   Updated: 2023/11/10 18:57:15 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-
-int	pf_hex2(int n, char *alpha, char sign)
+int	ft_hex2(int n, char *alpha, char sign)
 {
 	char	hex[20];
 	int		i;
@@ -58,7 +57,7 @@ int	pf_hex2(int n, char *alpha, char sign)
 	return (i);
 }
 
-int	pf_hex(int n, int params)
+int	ft_hex(int n, int params)
 {
 	char	*alpha;
 	char	sign;
@@ -77,12 +76,11 @@ int	pf_hex(int n, int params)
 		alpha = upperCase;
 		sign = 'F';
 	}
-	return (pf_hex2(n, alpha, sign));
+	return (ft_hex2(n, alpha, sign));
 }
 
-
-int	pf_pointertohex(void *ptr)
+int	ft_pointertohex(void *ptr)
 {
 	ft_putstr("0x");
-	return (pf_hex((unsigned long)ptr, 0));
+	return (ft_hex((unsigned long)ptr, 0));
 }
