@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pf_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 0003/11/20 14:29:11 by noukan            #+#    #+#             */
-/*   Updated: 2023/11/08 11:52:45 by anoukan          ###   ########.fr       */
+/*   Created: 0007/10/20 15:16:43 by noukan            #+#    #+#             */
+/*   Updated: 2023/10/30 14:35:29 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "libft.h"
 
-void	ft_putstr(char *str)
+void	ft_putstr_fd(char *str, int fd)
 {
 	int	i;
 
 	i = 0;
-	while (str[i] != '\0')
+	if (!str)
+		return ;
+	while (str[i])
 	{
-		ft_putchar(str[i]);
+		ft_putchar_fd(str[i], fd);
 		i++;
 	}
 }

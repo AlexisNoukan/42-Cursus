@@ -6,12 +6,11 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 0003/11/20 13:05:51 by noukan            #+#    #+#             */
-/*   Updated: 2023/11/08 16:02:38 by anoukan          ###   ########.fr       */
+/*   Updated: 2023/11/10 18:32:18 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
-#include <stdarg.h>
+#include "ft_printf.h"
 
 int	ft_printf(const char *format, ...)
 {
@@ -32,21 +31,15 @@ int	ft_printf(const char *format, ...)
 			{
 				value = va_arg(args, int);
 				ft_putnbr(value);
-				count = ft_countdigit(value);
+				count += ft_countdigit(value);
 			}
 			else if (*format == 's')
 			{
 				str = va_arg(args, char *);
 				if (str)
-				{
-					ft_putstr(str);
-					count += ft_strlen(str);
-				}
+					count += ft_putstr(str);
 				else
-				{
-					ft_putstr("(null)");
-					count += ft_strlen("(null)");
-				}
+					count += ft_putstr("(null)");
 			}
 			else if (*format == 'c')
 			    count += ft_putchar(va_arg(args, int));
@@ -67,25 +60,18 @@ int	ft_printf(const char *format, ...)
 			else if (*format == 'p')
 				count += pf_pointertohex(va_arg(args, void *));
 			else if (*format == '%')
-			{
-				ft_putchar('%');
-				count++;
-			}
+				count += ft_putchar('%');
 		}
 		else
-		{
-			ft_putchar(*format);
-			count++;
-		}
+			count += ft_putchar(*format);
 		format++;
 	}
 	va_end(args);
 	return (count);
 }
+
 /*
 #include <stdio.h>
-
-int	ft_printf(const char *format, ...);
 
 int	main(void)
 {
@@ -97,8 +83,8 @@ int	main(void)
 
 	character = 'A';
 	string = "Hello, world!";
-	integer = 42;
-	unsignedInteger = 123;
+	integer = -14523;
+	unsignedInteger = -14523;
 	pointer = (void *)0x12345678;
 	// Initialize variables to store character counts
 	int countCharacter, countString, countPointer, countDecimal, countUnsigned,

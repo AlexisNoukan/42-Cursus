@@ -1,31 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pf_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 0003/11/20 14:30:22 by noukan            #+#    #+#             */
-/*   Updated: 2023/11/07 16:09:55 by anoukan          ###   ########.fr       */
+/*   Created: 2023/10/19 14:24:16 by anoukan           #+#    #+#             */
+/*   Updated: 2023/10/30 17:05:42 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "libft.h"
 
-void	ft_putnbr(int nb)
+void	ft_bzero(void *s, size_t n)
 {
-	if (nb == -2147483648)
-		write(1, "-2147483648", 11);
-	else if (nb >= 0 && nb <= 9)
-		ft_putchar(nb + '0');
-	else if (nb < 0)
-	{
-		ft_putchar('-');
-		ft_putnbr(nb * -1);
-	}
-	else
-	{
-		ft_putnbr(nb / 10);
-		ft_putchar(nb % 10 + '0');
-	}
+	ft_memset(s, '\0', n);
 }

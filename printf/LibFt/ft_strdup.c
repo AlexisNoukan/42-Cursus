@@ -1,30 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libftprintf.h                                      :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 0003/11/20 13:05:09 by noukan            #+#    #+#             */
-/*   Updated: 2023/11/08 11:17:03 by anoukan          ###   ########.fr       */
+/*   Created: 0003/10/20 10:54:29 by noukan            #+#    #+#             */
+/*   Updated: 2023/10/30 13:20:38 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFTPRINTF_H
-# define LIBFTPRINTF_H
+#include "libft.h"
 
-# include <stdarg.h>
-# include <stdio.h>
-# include <unistd.h>
+char	*ft_strdup(const char *src)
+{
+	size_t	length;
+	char	*dest;
+	size_t	i;
+	char	*csrc;
 
-int		ft_printf(const char *format, ...);
-int 	ft_putchar(char c);
-void	ft_putstr(char *s);
-void	ft_putnbr(int n);
-int 	pf_hex(int n, int params);
-int 	pf_pointertohex(void *ptr);
-size_t	ft_strlen(const char *str);
-int     ft_countdigit(long n);
-size_t  ft_strcpy(char *dest, const char *src);
-
-#endif
+	i = 0;
+	csrc = (char *)src;
+	length = ft_strlen(csrc);
+	dest = (char *)malloc((length + 1) * sizeof(char));
+	if (!dest)
+		return (NULL);
+	while (csrc[i])
+	{
+		dest[i] = csrc[i];
+		i++;
+	}
+	dest[length] = '\0';
+	return (dest);
+}

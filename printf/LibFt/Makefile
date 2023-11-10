@@ -1,22 +1,20 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
+#    MakeFile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/11/07 11:38:23 by anoukan           #+#    #+#              #
-#    Updated: 2023/11/10 18:38:30 by anoukan          ###   ########.fr        #
+#    Created: 2023/10/19 12:59:54 by anoukan           #+#    #+#              #
+#    Updated: 24/10/2023 11:33:37 by anoukan          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
-NAME = libftprintf.a
+NAME = libft.a
 
 INCDIR = includes
-
-LIBFT_SRCS = /Libft
 
 SRC =   ft_isalpha.c\
         ft_isdigit.c\
@@ -62,10 +60,6 @@ BONUS = ft_lstnew_bonus.c\
 		ft_lstclear_bonus.c\
 		ft_lstiter_bonus.c\
 		ft_lstmap_bonus.c
-
-PTF_SRCS = /Srcs
-
-PTF = ft_printf\
 
         
 OBJ = $(SRC:.c=.o)
