@@ -4,6 +4,7 @@
     "*.embeddedhtml": "html",
     "__bit_reference": "c",
     "bitset": "c",
-    "unordered_map": "c"
+    "unordered_map": "c",
+    "ft_printf.h": "c"
   }
 }
