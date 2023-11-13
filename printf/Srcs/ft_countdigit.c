@@ -6,27 +6,27 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 0008/11/20 12:27:11 by noukan            #+#    #+#             */
-/*   Updated: 2023/11/13 14:46:15 by anoukan          ###   ########.fr       */
+/*   Updated: 2023/11/13 14:52:59 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_countdigit(long n)
+int	ft_countdigit(long nbr)
 {
 	int	i;
 
 	i = 0;
-	if (n == 0)
+	if (nbr == 0)
 		return (1);
-	if (n < 0)
+	if (nbr < 0)
 	{
 		i++;
-		n = -n;
+		nbr = -nbr;
 	}
-	while (n > 0)
+	while (nbr > 0)
 	{
-		n /= 10;
+		nbr /= 10;
 		i++;
 	}
 	return (i);

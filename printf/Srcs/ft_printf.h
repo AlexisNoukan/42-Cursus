@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 0003/11/20 13:05:09 by noukan            #+#    #+#             */
-/*   Updated: 2023/11/13 14:46:22 by anoukan          ###   ########.fr       */
+/*   Updated: 2023/11/13 14:53:13 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,12 @@ int	ft_printchar(char c);
 int	ft_putstr(char *str);
 
 // Decimal part
-int	ft_countdigit(long n);
+int	ft_countdigit(long nbr);
 
 // Hex part
 int	ft_hex(unsigned int nbr, const char c);
 int	ft_hexcount(unsigned int n);
 int	ft_pointertohex(unsigned long long ptr);
-int	ft_ptrlen(uintptr_t ptr)
+int	ft_ptrlen(uintptr_t ptr);
 
 #endif
