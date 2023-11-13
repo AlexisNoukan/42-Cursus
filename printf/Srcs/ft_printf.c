@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 0003/11/20 13:05:51 by noukan            #+#    #+#             */
-/*   Updated: 2023/11/10 19:51:07 by anoukan          ###   ########.fr       */
+/*   Updated: 2023/11/13 14:42:21 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ int	ft_printf(const char *format, ...)
 {
 	va_list	args;
 	int		count;
-	char	*str;
 	int		value;
+	char	*str;
 
 	va_start(args, format);
 	count = 0;
@@ -50,15 +50,9 @@ int	ft_printf(const char *format, ...)
 				count += ft_countdigit(value);
 			}
 			else if (*format == 'X' || *format == 'x')
-			{
-				value = va_arg(args, int);
-				if (*format == 'x')
-					count += ft_hex(value, 0);
-				else
-					count += ft_hex(value, 1);
-			}
+				count += ft_hex(va_arg(args, unsigned int), *format);
 			else if (*format == 'p')
-				count += ft_pointertohex(va_arg(args, void *));
+				count += ft_pointertohex(va_arg(args, unsigned long long));
 			else if (*format == '%')
 				count += ft_printchar('%');
 		}

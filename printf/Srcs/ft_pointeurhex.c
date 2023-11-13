@@ -1,59 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_countdigit.c                                    :+:      :+:    :+:   */
+/*   ft_pointeurhex.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 0008/11/20 12:27:11 by noukan            #+#    #+#             */
-/*   Updated: 2023/11/13 14:46:15 by anoukan          ###   ########.fr       */
+/*   Created: 2023/11/13 12:14:14 by anoukan           #+#    #+#             */
+/*   Updated: 2023/11/13 14:46:46 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_countdigit(long n)
+void	ft_printptr(uintptr_t ptr)
 {
-	int	i;
-
-	i = 0;
-	if (n == 0)
-		return (1);
-	if (n < 0)
+	if (ptr >= 16)
 	{
-		i++;
-		n = -n;
+		ft_printptr(ptr / 16);
+		ft_printptr(ptr % 16);
 	}
-	while (n > 0)
+	else
 	{
-		n /= 10;
-		i++;
+		if (ptr <= 9)
+			ft_printchar(ptr + '0');
+		else
+			ft_printchar(ptr - 10 + 'a');
 	}
-	return (i);
 }
 
-int	ft_hexcount(unsigned int nbr)
-{
-	int	i;
-
-	i = 0;
-	while (nbr)
-	{
-		nbr = nbr / 16;
-		i++;
-	}
-	return (i);
-}
-
-int	ft_ptrlen(uintptr_t ptr)
+int	ft_pointertohex(unsigned long long ptr)
 {
 	int i;
 
 	i = 0;
-	while (ptr)
+	i += ft_putstr("0x");
+	if (ptr == 0)
+		i += ft_printchar('0');
+	else
 	{
-		ptr = ptr / 16;
-		i++;
+		ft_printptr(ptr);
+		i += ft_ptrlen(ptr);
 	}
 	return (i);
 }

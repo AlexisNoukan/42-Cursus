@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 0003/11/20 13:05:09 by noukan            #+#    #+#             */
-/*   Updated: 2023/11/10 19:50:48 by anoukan          ###   ########.fr       */
+/*   Updated: 2023/11/13 14:46:22 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,18 @@
 # include <unistd.h>
 
 int	ft_printf(const char *format, ...);
-int	ft_hex(int n, int params);
-int	ft_pointertohex(void *ptr);
-int	ft_countdigit(long n);
+
+// Char/String part
 int	ft_printchar(char c);
 int	ft_putstr(char *str);
+
+// Decimal part
+int	ft_countdigit(long n);
+
+// Hex part
+int	ft_hex(unsigned int nbr, const char c);
+int	ft_hexcount(unsigned int n);
+int	ft_pointertohex(unsigned long long ptr);
+int	ft_ptrlen(uintptr_t ptr)
 
 #endif

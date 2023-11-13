@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 19:46:49 by anoukan           #+#    #+#             */
-/*   Updated: 2023/11/10 19:51:44 by anoukan          ###   ########.fr       */
+/*   Updated: 2023/11/10 20:19:38 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_putstr(char *str)
 	int i;
 
 	i = 0;
-	while (*str)
+	while (str[i])
 	{
 		ft_putchar_fd(str[i], 1);
 		++i;

@@ -6,81 +6,38 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 0006/11/20 14:18:23 by noukan            #+#    #+#             */
-/*   Updated: 2023/11/10 19:32:25 by anoukan          ###   ########.fr       */
+/*   Updated: 2023/11/13 14:45:41 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_hex2(int n, char *alpha, char sign)
+void	ft_putnb(int nb, const char c)
 {
-	char	hex[20];
-	int		i;
-	int		reminder;
-	int		start;
-	int		end;
-	char	temp;
-	int		isNegative;
-
-	i = 0;
-	if (n == 0)
-		hex[i++] = '0';
-	else
+	if (nb >= 16)
 	{
-		isNegative = 0;
-		if (n < 0)
-		{
-			isNegative = 1;
-			n = -n;
-		}
-		while (n > 0)
-		{
-			reminder = n % 16;
-			hex[i++] = alpha[reminder];
-			n /= 16;
-		}
-		if (isNegative == 1)
-			hex[i++] = sign;
-	}
-	start = 0;
-	end = i - 1;
-	while (start < end)
-	{
-		temp = hex[start];
-		hex[start] = hex[end];
-		hex[end] = temp;
-		start++;
-		end--;
-	}
-	hex[i] = '\0';
-	ft_putstr_fd(hex, 1);
-	return (i);
-}
-
-int	ft_hex(int n, int params)
-{
-	char	*alpha;
-	char	sign;
-	char	*upperCase;
-	char	*lowerCase;
-
-	upperCase = "0123456789ABCDEF";
-	lowerCase = "0123456789abcdef";
-	if (params == 0)
-	{
-		alpha = lowerCase;
-		sign = 'f';
+		ft_putnb(nb / 16, c);
+		ft_putnb(nb % 16, c);
 	}
 	else
 	{
-		alpha = upperCase;
-		sign = 'F';
+		if (nb <= 9)
+			ft_printchar(nb + '0');
+		else
+		{
+			if (c == 'x')
+				ft_printchar(nb - 10 + 'a');
+			if (c == 'X')
+				ft_printchar(nb - 10 + 'A');
+		}
 	}
-	return (ft_hex2(n, alpha, sign));
 }
 
-int	ft_pointertohex(void *ptr)
+int	ft_hex(unsigned int nb, const char c)
 {
-	ft_putstr_fd("0x", 1);
-	return (ft_hex((unsigned long)ptr, 0));
+	if (nb == 0)
+		return (ft_printchar('0'));
+	else
+		ft_putnb(nb, c);
+	return (ft_hexcount(nb));
 }
