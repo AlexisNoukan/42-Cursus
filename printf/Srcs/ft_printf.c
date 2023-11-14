@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 0003/11/20 13:05:51 by noukan            #+#    #+#             */
-/*   Updated: 2023/11/14 14:57:41 by anoukan          ###   ########.fr       */
+/*   Updated: 2023/11/14 15:24:30 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,7 @@ int	ft_printf(const char *format, ...)
 
 	va_start(args, format);
 	count = 0;
-	while (*format)
-	{
-		if (*format == '%')
-		{
-			format++;
-			ft_selector(*format, args, &count);
-		}
-		else
-			count += ft_printchar(*format);
-		format++;
-	}
+	count += ft_selector(format, args);
 	va_end(args);
 	return (count);
 }

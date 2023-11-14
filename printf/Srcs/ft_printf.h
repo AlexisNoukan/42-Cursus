@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 0003/11/20 13:05:09 by noukan            #+#    #+#             */
-/*   Updated: 2023/11/14 14:09:30 by anoukan          ###   ########.fr       */
+/*   Updated: 2023/11/14 15:16:29 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 int		ft_printf(const char *format, ...);
 
 // Selector
-void	ft_selector(char format, va_list args, int *count);
+int		ft_selector(const char *format, va_list args);
 
 // Char/String part
 int		ft_printchar(char c);
