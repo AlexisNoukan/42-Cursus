@@ -12,15 +12,10 @@
 
 #include "ft_printf.h"
 
-void	ft_putnbr_u(unsigned long long nbr)
+void	ft_putnbr_u(unsigned long nbr)
 {
-	if (nbr >= 0 && nbr <= 9)
+	if (nbr <= 9)
 		ft_printchar(nbr + '0');
-	else if (nbr < 0)
-	{
-		ft_printchar('-');
-		ft_putnbr_u(nbr * -1);
-	}
 	else
 	{
 		ft_putnbr_u(nbr / 10);

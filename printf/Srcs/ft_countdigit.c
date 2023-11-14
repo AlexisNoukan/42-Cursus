@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 0008/11/20 12:27:11 by noukan            #+#    #+#             */
-/*   Updated: 2023/11/13 15:00:18 by anoukan          ###   ########.fr       */
+/*   Updated: 2023/11/14 10:47:03 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,22 +58,17 @@ int	ft_ptrlen(uintptr_t ptr)
 	return (i);
 }
 
-int	ft_countdigit_u(unsigned long long nbr)
-{
-	int	i;
 
-	i = 0;
-	if (nbr == 0)
-		return (1);
-	if (nbr < 0)
-	{
-		i++;
-		nbr = -nbr;
-	}
-	while (nbr > 0)
-	{
-		nbr /= 10;
-		i++;
-	}
-	return (i);
+
+int ft_countdigit_u(unsigned long nbr)
+{
+    int i = 0;
+    if (nbr == 0)
+        return 1;
+    while (nbr > 0)
+    {
+        nbr /= 10;
+        i++;
+    }
+    return i;
 }

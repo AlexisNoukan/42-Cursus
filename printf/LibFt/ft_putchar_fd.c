@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 0007/10/20 15:14:35 by noukan            #+#    #+#             */
-/*   Updated: 2023/10/30 13:15:07 by anoukan          ###   ########.fr       */
+/*   Updated: 2023/11/14 10:27:52 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,6 @@
 
 void	ft_putchar_fd(char c, int fd)
 {
-	write(fd, &c, 1);
+	if (write(fd, &c, 1) == -1)
+		return ;
 }
