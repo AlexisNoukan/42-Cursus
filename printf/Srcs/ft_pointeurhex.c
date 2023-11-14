@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 12:14:14 by anoukan           #+#    #+#             */
-/*   Updated: 2023/11/13 14:46:46 by anoukan          ###   ########.fr       */
+/*   Updated: 2023/11/14 10:52:27 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	ft_printptr(uintptr_t ptr)
 
 int	ft_pointertohex(unsigned long long ptr)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	i += ft_putstr("0x");
