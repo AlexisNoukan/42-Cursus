@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 19:41:43 by anoukan           #+#    #+#             */
-/*   Updated: 2023/11/15 14:20:04 by anoukan          ###   ########.fr       */
+/*   Updated: 2023/11/15 14:42:53 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,7 @@
 
 int	ft_printchar(char c)
 {
-	return (write(1, &c, 1));
+	if (write(1, &c, 1) == -1)
+		return (-1);
+	return (1);
 }
