@@ -83,14 +83,22 @@ char	*ft_clean(char *stash)
 	j = 0;
 	while (stash[i] != '\n')
 		i++;
+	i++;
 	while (stash[i])
 	{
 		tmp[j] = stash[i];
 		i++;
 		j++;
 	}
-	free(tmp);
-	return (stash);
+	tmp[i] = '\0';
+	free(stash);
+	return (tmp);
+}
+
+void	ft_free(char *buffer)
+{
+	free(buffer);
+	return ;
 }
 
 char	*get_next_line(int fd)
@@ -99,18 +107,31 @@ char	*get_next_line(int fd)
 	char *line;
 	char *buffer;
 
-	stash = (char *)malloc(BUFFER_SIZE + 1);
+	stash = NULL;
+	buffer = (char *)malloc(BUFFER_SIZE + 1);
+	if (!buffer)
+		return (NULL);
 	if (!stash)
-		return (NULL);
-	if (read(fd, buffer, BUFFER_SIZE) == -1)
-		return (NULL);
-	ft_strcpy(stash, ft_strjoin(stash, buffer));
+		stash = (char *)malloc(BUFFER_SIZE + 1);
+	if (!stash)
+		ft_free(buffer);
+	ft_strcpy(stash, buffer);
+	while (ft_verify(stash) != 1)
+	{
+		if (read(fd, buffer, BUFFER_SIZE) == -1)
+			return (NULL);
+		ft_strcpy(stash, ft_strjoin(stash, buffer));
+	}
 	if (ft_verify(stash) == 1)
 	{
+		line = (char *)malloc(BUFFER_SIZE + 1);
+		if (!line)
+			ft_free(buffer);
 		ft_line(stash, line);
-		ft_clean(stash);
+		stash = ft_clean(stash);
+		free(buffer);
+		return (line);
 	}
-	else
-		get_next_line(fd);
-	return (line);
+	free(buffer);
+	return (NULL);
 }

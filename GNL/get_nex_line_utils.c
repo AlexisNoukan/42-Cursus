@@ -6,11 +6,9 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 12:20:46 by anoukan           #+#    #+#             */
-/*   Updated: 2023/12/13 16:57:09 by anoukan          ###   ########.fr       */
+/*   Updated: 2023/12/14 10:42:30 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "get_nex_line.h"
 
 int	ft_strlen(char const *s)
 {
@@ -95,12 +93,14 @@ char	*ft_clean(char *stash)
 	j = 0;
 	while (stash[i] != '\n')
 		i++;
+	i++;
 	while (stash[i])
 	{
 		tmp[j] = stash[i];
 		i++;
 		j++;
 	}
-	free(tmp);
-	return (stash);
+	tmp[i] = '\0';
+	free(stash);
+	return (tmp);
 }
