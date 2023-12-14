@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   get_next_line_utils.c                              :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/29 12:20:46 by anoukan           #+#    #+#             */
-/*   Updated: 2023/12/14 13:50:33 by anoukan          ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "get_next_line.h"
 
 int	ft_strlen(char const *s)
@@ -78,7 +66,7 @@ int	ft_line(char *stash, char *line)
 		line[i] = stash[i];
 		i++;
 	}
-	line[i] = '\n';
+	line[i] = '\0';
 	return (i);
 }
 
