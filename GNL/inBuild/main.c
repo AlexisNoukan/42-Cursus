@@ -1,22 +1,22 @@
-#include "get_nex_line.h"
-#include <fcntl.h>
-#include <stdio.h>
+#include "get_next_line.h"
+#include <sys/fcntl.h>
 
-int main(void)
+int	main(void)
 {
-    int fd;
-    char *line;
+	int		fd;
+	char	*line;
 
-    fd = open("test.txt", O_RDONLY);
-    while (1)
-    {
-        line = get_next_line(fd);
-        printf ("%s", line);
-        if (line == NULL)
-        {
-            free(line);
-            return (0);
-        }
-        free (line);
-    }
+	fd = open("test.txt", O_RDONLY);
+	if (fd == -1)
+	{
+		perror("Error opening file");
+		return (1);
+	}
+	while ((line = get_next_line(fd)) != NULL)
+	{
+		printf("%s\n", line);
+		free(line); // Don't forget to free the line
+	}
+	close(fd);
+	return (0);
 }

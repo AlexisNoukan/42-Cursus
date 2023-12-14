@@ -1,4 +1,4 @@
-#include "get_nex_line.h"
+#include "get_next_line.h"
 
 int	ft_strlen(char const *s)
 {
@@ -66,7 +66,7 @@ int	ft_line(char *stash, char *line)
 		line[i] = stash[i];
 		i++;
 	}
-	line[i] = '\n';
+	line[i] = '\0';
 	return (i);
 }
 
@@ -103,11 +103,10 @@ void	ft_free(char *buffer)
 
 char	*get_next_line(int fd)
 {
-	static char *stash;
-	char *line;
-	char *buffer;
+	static char	*stash;
+	char		*line;
+	char		*buffer;
 
-	stash = NULL;
 	buffer = (char *)malloc(BUFFER_SIZE + 1);
 	if (!buffer)
 		return (NULL);
@@ -122,16 +121,13 @@ char	*get_next_line(int fd)
 			return (NULL);
 		ft_strcpy(stash, ft_strjoin(stash, buffer));
 	}
-	if (ft_verify(stash) == 1)
-	{
-		line = (char *)malloc(BUFFER_SIZE + 1);
-		if (!line)
-			ft_free(buffer);
-		ft_line(stash, line);
-		stash = ft_clean(stash);
-		free(buffer);
-		return (line);
-	}
+	if (ft_verify(stash) != 1)
+		ft_free(buffer);
+	line = (char *)malloc(BUFFER_SIZE + 1);
+	if (!line)
+		ft_free(buffer);
+	ft_line(stash, line);
+	stash = ft_clean(stash);
 	free(buffer);
-	return (NULL);
+	return (line);
 }
