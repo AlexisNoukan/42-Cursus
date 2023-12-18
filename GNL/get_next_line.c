@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 12:20:10 by anoukan           #+#    #+#             */
-/*   Updated: 2023/12/14 14:33:08 by anoukan          ###   ########.fr       */
+/*   Updated: 2023/12/15 14:28:49 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,9 @@ char	*get_next_line(int fd)
 
 	if (!stash)
 		stash = NULL;
-	if (fd < 0 || BUFFER_SIZE <= 0)
-		return (NULL);
 	if (!stash)
 		stash = (char *)malloc(1);
-	if (!stash)
+	if (fd < 0 || BUFFER_SIZE <= 0 || !stash)
 		return (NULL);
 	line = (char *)malloc(BUFFER_SIZE + 1);
 	if (!line)
