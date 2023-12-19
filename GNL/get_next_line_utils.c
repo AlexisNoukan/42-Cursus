@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 10:05:51 by anoukan           #+#    #+#             */
-/*   Updated: 2023/12/19 10:05:52 by anoukan          ###   ########.fr       */
+/*   Updated: 2023/12/19 14:40:53 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int	ft_strlen(char const *s)
 		i++;
 	return (i);
 }
+
 
 char	*ft_strcpy(char *dest, char *src)
 {
@@ -67,8 +68,7 @@ int	ft_verify(char *stash)
 	}
 	return (0);
 }
-
-int	ft_line(char *stash, char *line)
+void	ft_line(char *stash, char *line)
 {
 	size_t	i;
 
@@ -79,30 +79,6 @@ int	ft_line(char *stash, char *line)
 		i++;
 	}
 	line[i] = '\0';
-	return (i);
 }
 
-char	*ft_clean(char *stash)
-{
-	int		i;
-	int		j;
-	char	*tmp;
 
-	tmp = (char *)malloc(BUFFER_SIZE + 1);
-	if (!tmp)
-		return (NULL);
-	i = 0;
-	j = 0;
-	while (stash[i] != '\n')
-		i++;
-	i++;
-	while (stash[i])
-	{
-		tmp[j] = stash[i];
-		i++;
-		j++;
-	}
-	tmp[i] = '\0';
-	free(stash);
-	return (tmp);
-}

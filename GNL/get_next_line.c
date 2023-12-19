@@ -6,44 +6,65 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 12:20:10 by anoukan           #+#    #+#             */
-/*   Updated: 2023/12/15 14:28:49 by anoukan          ###   ########.fr       */
+/*   Updated: 2023/12/19 14:35:33 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
+char	*ft_clean(char *stash)
+{
+	int		i;
+	int		j;
+	char	*tmp;
+
+	tmp = (char *)malloc(BUFFER_SIZE + 1);
+	if (!tmp)
+		return (NULL);
+	i = 0;
+	j = 0;
+	while (stash[i] != '\n')
+		i++;
+	i++;
+	while (stash[i])
+	{
+		tmp[j] = stash[i];
+		i++;
+		j++;
+	}
+	tmp[i] = '\0';
+	free(stash);
+	return (tmp);
+}
+
 char	*get_next_line(int fd)
 {
 	static char	*stash;
 	char		*line;
-	char		buffer[BUFFER_SIZE + 1];
 	int			bytes_read;
 
-	if (!stash)
+	if (fd < 0 || BUFFER_SIZE <= 0 || !stash || read(fd, 0, 0) < 0)
+	{
+		free(stash);
 		stash = NULL;
-	if (!stash)
-		stash = (char *)malloc(1);
-	if (fd < 0 || BUFFER_SIZE <= 0 || !stash)
 		return (NULL);
+	}
+	bytes_read = 1;
 	line = (char *)malloc(BUFFER_SIZE + 1);
 	if (!line)
 		return (NULL);
-	while (!ft_verify(stash))
+	while (!ft_verify(stash) && bytes_read != 0)
 	{
-		bytes_read = read(fd, buffer, BUFFER_SIZE);
-		if (bytes_read <= 0)
+		bytes_read = read(fd, line, BUFFER_SIZE);
+		if (bytes_read == -1)
 		{
 			free(line);
-			if (bytes_read == 0 && ft_strlen(stash) == 0)
-			{
-				free(stash);
-				stash = NULL;
-			}
 			return (NULL);
 		}
-		buffer[bytes_read] = '\0';
-		stash = ft_strjoin(stash, buffer);
+		line[bytes_read] = '\0';
+		stash = ft_strjoin(stash, line);
 	}
+	free(line);
 	ft_line(stash, line);
 	stash = ft_clean(stash);
 	return (line);
