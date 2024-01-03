@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 12:20:10 by anoukan           #+#    #+#             */
-/*   Updated: 2024/01/03 13:07:13 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/01/03 14:33:44 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*ft_calloc(size_t count, size_t size)
 	int		len;
 
 	len = count * size;
-	i = malloc(len * sizeof(char));
+	i = malloc(len);
 	if(!i)
 		return(NULL);
 	if(i)
