@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 10:05:51 by anoukan           #+#    #+#             */
-/*   Updated: 2023/12/20 14:17:24 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/01/03 13:01:19 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		return (NULL);
 	i = ft_strlen(s1);
 	j = ft_strlen(s2);
-	d = (char *)malloc(i + j + 1);
+	d = ft_calloc(i + j + 1, sizeof(char));
 	if (!d)
 		return (NULL);
 	ft_strcpy(d, (char *)s1);
@@ -60,25 +60,24 @@ int	ft_verify(char *stash)
 	size_t	i;
 
 	i = 0;
-	while (stash[i])
+	while (stash[i] && i < BUFFER_SIZE)
 	{
 		if (stash[i] == '\n')
 			return (1);
 		i++;
 	}
 	return (0);
-}
+}  
+
 void	ft_line(char *stash, char *line)
 {
 	size_t	i;
 
 	i = 0;
-	while (stash[i] != '\n')
+	while (stash[i] != '\n' && stash[i] != '\0' && i < BUFFER_SIZE)
 	{
 		line[i] = stash[i];
 		i++;
 	}
 	line[i] = '\0';
 }
-
-

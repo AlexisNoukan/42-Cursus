@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 12:20:10 by anoukan           #+#    #+#             */
-/*   Updated: 2024/01/03 10:02:00 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/01/03 13:07:13 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,9 @@ void	*ft_calloc(size_t count, size_t size)
 	int		len;
 
 	len = count * size;
-	i = malloc(len);
+	i = malloc(len * sizeof(char));
+	if(!i)
+		return(NULL);
 	if(i)
 	{
 		str = i;
@@ -35,21 +37,21 @@ char	*ft_clean(char *stash)
 	int		j;
 	char	*tmp;
 
-	tmp = (char *)malloc(BUFFER_SIZE + 1);
+	tmp = ft_calloc(BUFFER_SIZE + 1, sizeof(char));
 	if (!tmp)
 		return (NULL);
 	i = 0;
 	j = 0;
-	while (stash[i] != '\n')
+	while (stash[i] != '\n' && stash[i] != '\0' && i < BUFFER_SIZE)
 		i++;
 	i++;
-	while (stash[i])
+	while (stash[i] && j < BUFFER_SIZE)
 	{
 		tmp[j] = stash[i];
 		i++;
 		j++;
 	}
-	tmp[i] = '\0';
+	tmp[j] = '\0';
 	free(stash);
 	return (tmp);
 }
