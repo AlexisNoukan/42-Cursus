@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 10:05:51 by anoukan           #+#    #+#             */
-/*   Updated: 2024/01/04 10:00:24 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/01/04 13:59:19 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ int	ft_strlen(char const *s)
 		i++;
 	return (i);
 }
-
 
 char	*ft_strcpy(char *dest, char *src)
 {
@@ -60,24 +59,69 @@ int	ft_verify(char *stash)
 	size_t	i;
 
 	i = 0;
-	while (!stash && i < BUFFER_SIZE)
-	{
-		if (stash[i] == '\n' || stash[i] == '\0')
-			return (1);
+	while (i < BUFFER_SIZE + 1 && stash[i] != '\0' && stash[i] != '\n')
 		i++;
-	}
+	if (i < BUFFER_SIZE + 1 && (stash[i] == '\n' || stash[i] == '\0'))
+			return (1);
 	return (0);
-}  
+}
 
 void	ft_line(char *stash, char *line)
 {
 	size_t	i;
 
 	i = 0;
-	while (stash[i] != '\n' && stash[i] != '\0' && i < BUFFER_SIZE && !stash)
+	while (stash[i] != '\n' && stash[i] != '\0' && i < BUFFER_SIZE + 1 )
 	{
 		line[i] = stash[i];
 		i++;
 	}
 	line[i] = '\0';
 }
+
+/*
+char *get_next_line(int fd) {
+    static char *stash;
+    char *line;
+    int bytes_read;
+    int index = 0;
+
+    if (!stash)
+        stash = ft_calloc(BUFFER_SIZE + 1, sizeof(char));
+    if (!stash)
+        return (NULL);
+
+    line = ft_calloc(BUFFER_SIZE + 1, sizeof(char));
+    if (!line)
+        return (NULL);
+
+    bytes_read = 1;
+    while (bytes_read > 0) {
+        bytes_read = read(fd, &line[index], 1);
+        if (bytes_read == -1) {
+            free(line);
+            return (NULL);
+        }
+
+        if (line[index] == '\n' || line[index] == '\0') {
+            line[index + 1] = '\0'; // Terminate the line properly
+            break;
+        }
+        
+        index++;
+
+        if (index >= BUFFER_SIZE) {
+            // Handle cases where the line exceeds buffer size
+            char *tmp = line;
+            line = ft_strjoin(line, "\0");
+            free(tmp);
+        }
+    }
+
+    if (index == 0 && bytes_read == 0 && stash[0] == '\0') {
+        free(line);
+        return (NULL);
+    }
+
+    return (line);
+}*/

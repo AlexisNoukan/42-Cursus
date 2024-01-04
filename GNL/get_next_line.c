@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 12:20:10 by anoukan           #+#    #+#             */
-/*   Updated: 2024/01/04 10:05:00 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/01/04 14:00:38 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,15 @@ void	*ft_calloc(size_t count, size_t size)
 
 	len = count * size;
 	i = malloc(len);
-	if(!i)
-		return(NULL);
-	if(i)
+	if (!i)
+		return (NULL);
+	if (i)
 	{
 		str = i;
 		while (len--)
 			*str++ = '\0';
 	}
-	return(i);
+	return (i);
 }
 
 char	*ft_clean(char *stash)
@@ -42,10 +42,10 @@ char	*ft_clean(char *stash)
 		return (NULL);
 	i = 0;
 	j = 0;
-	while (stash[i] != '\n' && stash[i] != '\0' && i < BUFFER_SIZE && !stash)
+	while (stash[i] != '\n' && stash[i] != '\0' && i < BUFFER_SIZE + 1 && !stash)
 		i++;
 	i++;
-	while (!stash && j < BUFFER_SIZE)
+	while (!stash && j < BUFFER_SIZE + 1)
 	{
 		tmp[j] = stash[i];
 		i++;
@@ -62,32 +62,56 @@ char	*get_next_line(int fd)
 	char		*line;
 	int			bytes_read;
 
-	if (!stash)
-		stash = ft_calloc(MAX_FD, sizeof(char));
-	if (!stash)
-		return (NULL);
-	line = ft_calloc(MAX_FD, sizeof(char));
+
+	line = ft_calloc(BUFFER_SIZE + 1, sizeof(char));
 	if (!line)
 		return (NULL);
-	bytes_read = 1;
+	bytes_read = read(fd, line, BUFFER_SIZE);
+	if (bytes_read <= 0)
+	{
+		free(line);
+		return (NULL);
+	}
+	if (!stash)
+		stash = ft_calloc(BUFFER_SIZE + 1, sizeof(char));
+	if (!stash)
+		return (NULL);
 	while (!ft_verify(stash) && bytes_read >= 0)
 	{
-		bytes_read = read(fd, line, BUFFER_SIZE);
-		if (bytes_read == -1)
+		if (bytes_read < 0)
 		{
+			free(stash);
 			free(line);
 			return (NULL);
 		}
-		
 		line[bytes_read] = '\0';
 		stash = ft_strjoin(stash, line);
+		bytes_read = read(fd, line, BUFFER_SIZE);
 	}
 	ft_line(stash, line);
 	stash = ft_clean(stash);
-	if(line[0] == '\0' || line[0] == '\n')
-		{
-			free(line);
-			return(NULL);
-		}
 	return (line);
 }
+
+/*
+int main() {
+    int fd;
+    char *line;
+
+    fd = open("example.txt", O_RDONLY); // Replace "example.txt" with your file
+
+    if (fd == -1) {
+        printf("Error opening the file.\n");
+        return 1;
+    }
+
+    line = get_next_line(fd);
+    while (line != NULL) {
+        printf("%s\n", line);
+        free(line);
+        line = get_next_line(fd);
+    }
+
+    close(fd);
+    return 0;
+}*/
