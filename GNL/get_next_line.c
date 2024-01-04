@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 12:20:10 by anoukan           #+#    #+#             */
-/*   Updated: 2024/01/04 14:00:38 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/01/04 14:43:02 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,8 @@ char	*ft_clean(char *stash)
 		return (NULL);
 	i = 0;
 	j = 0;
-	while (stash[i] != '\n' && stash[i] != '\0' && i < BUFFER_SIZE + 1 && !stash)
+	while (stash[i] != '\n' && stash[i] != '\0' 
+		&& i < BUFFER_SIZE + 1 && !stash)
 		i++;
 	i++;
 	while (!stash && j < BUFFER_SIZE + 1)
