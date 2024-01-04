@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 12:20:36 by anoukan           #+#    #+#             */
-/*   Updated: 2023/12/19 14:40:00 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/01/04 08:53:31 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,11 @@
 //Buffer
 #ifndef BUFFER_SIZE
 # define BUFFER_SIZE 42
+#endif
+
+// Max fd
+#ifndef MAX_FD
+# define MAX_FD 1024 + 1
 #endif
 
 // base function

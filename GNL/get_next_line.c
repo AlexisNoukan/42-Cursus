@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 12:20:10 by anoukan           #+#    #+#             */
-/*   Updated: 2024/01/03 14:33:44 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/01/04 10:05:00 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,10 +42,10 @@ char	*ft_clean(char *stash)
 		return (NULL);
 	i = 0;
 	j = 0;
-	while (stash[i] != '\n' && stash[i] != '\0' && i < BUFFER_SIZE)
+	while (stash[i] != '\n' && stash[i] != '\0' && i < BUFFER_SIZE && !stash)
 		i++;
 	i++;
-	while (stash[i] && j < BUFFER_SIZE)
+	while (!stash && j < BUFFER_SIZE)
 	{
 		tmp[j] = stash[i];
 		i++;
@@ -63,15 +63,14 @@ char	*get_next_line(int fd)
 	int			bytes_read;
 
 	if (!stash)
-		stash = ft_calloc(BUFFER_SIZE + 1, sizeof(char));
+		stash = ft_calloc(MAX_FD, sizeof(char));
 	if (!stash)
 		return (NULL);
-	stash[BUFFER_SIZE + 1] = '\0';
-	line = ft_calloc(BUFFER_SIZE + 1, sizeof(char));
+	line = ft_calloc(MAX_FD, sizeof(char));
 	if (!line)
 		return (NULL);
 	bytes_read = 1;
-	while (!ft_verify(stash) && bytes_read != 0)
+	while (!ft_verify(stash) && bytes_read >= 0)
 	{
 		bytes_read = read(fd, line, BUFFER_SIZE);
 		if (bytes_read == -1)
@@ -79,10 +78,16 @@ char	*get_next_line(int fd)
 			free(line);
 			return (NULL);
 		}
+		
 		line[bytes_read] = '\0';
 		stash = ft_strjoin(stash, line);
 	}
 	ft_line(stash, line);
 	stash = ft_clean(stash);
+	if(line[0] == '\0' || line[0] == '\n')
+		{
+			free(line);
+			return(NULL);
+		}
 	return (line);
 }
