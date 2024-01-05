@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 12:20:10 by anoukan           #+#    #+#             */
-/*   Updated: 2024/01/05 10:59:12 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/01/05 11:19:13 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,26 +100,3 @@ char	*get_next_line(int fd)
 	//printf("-%s\n", stash);
 	return (line);
 }
-
-/*
-int main() {
-    int fd;
-    char *line;
-
-    fd = open("example.txt", O_RDONLY); // Replace "example.txt" with your file
-
-    if (fd == -1) {
-        printf("Error opening the file.\n");
-        return 1;
-    }
-
-    line = get_next_line(fd);
-    while (line != NULL) {
-        printf("%s\n", line);
-        free(line);
-        line = get_next_line(fd);
-    }
-
-    close(fd);
-    return 0;
-}*/
