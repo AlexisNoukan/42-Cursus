@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 10:05:51 by anoukan           #+#    #+#             */
-/*   Updated: 2024/01/05 11:19:01 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/01/05 14:23:42 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ int	ft_verify(char *stash)
 	while (i < BUFFER_SIZE + 1 && stash[i] != '\0' && stash[i] != '\n')
 		i++;
 	if (i < BUFFER_SIZE + 1 && (stash[i] == '\n' || stash[i] == '\0'))
-			return (1);
+		return (1);
 	return (0);
 }
 
@@ -71,7 +71,7 @@ void	ft_line(char *stash, char *line)
 	size_t	i;
 
 	i = 0;
-	while (stash[i] != '\n' && stash[i] != '\0' && i < BUFFER_SIZE + 1 )
+	while (stash[i] != '\n' && stash[i] != '\0' && i < BUFFER_SIZE + 1)
 	{
 		line[i] = stash[i];
 		i++;

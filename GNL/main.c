@@ -1,26 +1,37 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/01/05 14:17:28 by anoukan           #+#    #+#             */
+/*   Updated: 2024/01/05 14:22:25 by anoukan          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "get_next_line.h"
 
-int main() {
-    int fd;
-    char *line;
+int main(void)
+{
+    int     fd;
+    char    line;
+    int     i;
 
-    fd = open("test.txt", O_RDONLY); // Replace "example.txt" with your file
-
-    if (fd == -1) {
+    fd = open("test.txt", O_RDONLY);
+    if (fd == -1)
+    {
         printf("Error opening the file.\n");
         return 1;
     }
-
-    int i;
     i = 0;
-    while (i < 5) 
+    while(i < 1) 
     {
         line = get_next_line(fd);
         printf("%s", line);
         i++;
         free(line);
     }
-
     close(fd);
     return 0;
 }
