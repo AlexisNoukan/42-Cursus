@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 14:17:28 by anoukan           #+#    #+#             */
-/*   Updated: 2024/01/08 10:22:24 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/01/08 15:22:54 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,10 @@ int main(void)
         return 1;
     }
     i = 0;
-    while(i < 1) 
+    while(i < 10) 
     {
         line = get_next_line(fd);
-        printf("%s", line);
+        printf("this is the result      : %s\n", line);
         i++;
         free(line);
     }

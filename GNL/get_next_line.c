@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 12:20:10 by anoukan           #+#    #+#             */
-/*   Updated: 2024/01/08 14:04:05 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/01/08 15:33:58 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,10 +49,8 @@ char	*ft_clean(char *stash)
 	ft_strcpy(tmp, stash +i);
 	free(stash);
 	stash = NULL;
-	printf("this is the tmp : %s\n", tmp);
 	return (tmp);
 }
-
 
 char	*get_next_line(int fd)
 {
@@ -80,14 +78,13 @@ char	*get_next_line(int fd)
 	while (!ft_verify(stash, bytes_read))
 	{
 		line[bytes_read] = '\0';
-		stash = ft_strjoin(stash, line);
 		bytes_read = read(fd, line, BUFFER_SIZE);
-		if (bytes_read <= 0)
-			break;
+		stash = ft_strjoin(stash, line);
+		if (bytes_read < 0)
+			return (NULL);
 	}
+	printf("this is the stash	: %s\n", stash);
 	ft_line(stash, line);
 	stash = ft_clean(stash);
-	printf("this is the stash : %s\n", stash);
-	printf("this is the line : %s", line);
 	return (line);
 }
