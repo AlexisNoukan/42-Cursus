@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 14:17:28 by anoukan           #+#    #+#             */
-/*   Updated: 2024/01/05 14:22:25 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/01/08 10:22:24 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int main(void)
 {
     int     fd;
-    char    line;
+    char    *line;
     int     i;
 
     fd = open("test.txt", O_RDONLY);

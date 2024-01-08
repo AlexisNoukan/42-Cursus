@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 12:20:10 by anoukan           #+#    #+#             */
-/*   Updated: 2024/01/05 14:23:02 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/01/08 14:04:05 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,28 +37,22 @@ void	*ft_calloc(size_t count, size_t size)
 char	*ft_clean(char *stash)
 {
 	int		i;
-	int		j;
 	char	*tmp;
 
-	tmp = ft_calloc(BUFFER_SIZE + 1, sizeof(char));
+	tmp = ft_calloc(ft_strlen(stash) + 1, sizeof(char));
 	if (!tmp)
 		return (NULL);
 	i = 0;
-	j = 0;
-	while ((stash[i] != '\n' && stash[i] != '\0') && i < (BUFFER_SIZE + 1))
+	while ((stash[i] != '\n' || stash[i] != '\0') && i < BUFFER_SIZE)
 		i++;
 	i++;
-	while (stash && j < (BUFFER_SIZE + 1))
-	{
-		tmp[j] = stash[i];
-		i++;
-		j++;
-	}
-	tmp[j] = '\0';
+	ft_strcpy(tmp, stash +i);
 	free(stash);
 	stash = NULL;
+	printf("this is the tmp : %s\n", tmp);
 	return (tmp);
 }
+
 
 char	*get_next_line(int fd)
 {
@@ -77,25 +71,23 @@ char	*get_next_line(int fd)
 		return (NULL);
 	}
 	if (!stash)
-		stash = ft_calloc(BUFFER_SIZE + 1, sizeof(char));
-	if (!stash)
-		return (NULL);
-	stash = ft_strjoin(stash, line);
-	while (!ft_verify(stash))
 	{
-		if (bytes_read <= 0)
-		{
-			free(stash);
-			free(line);
-			stash = NULL;
-			line = NULL;
+		stash = ft_calloc(BUFFER_SIZE + 1, sizeof(char));
+		if (!stash)
 			return (NULL);
-		}
+	}
+	stash = ft_strjoin(stash, line);
+	while (!ft_verify(stash, bytes_read))
+	{
 		line[bytes_read] = '\0';
 		stash = ft_strjoin(stash, line);
 		bytes_read = read(fd, line, BUFFER_SIZE);
+		if (bytes_read <= 0)
+			break;
 	}
 	ft_line(stash, line);
 	stash = ft_clean(stash);
+	printf("this is the stash : %s\n", stash);
+	printf("this is the line : %s", line);
 	return (line);
 }

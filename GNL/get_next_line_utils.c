@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 10:05:51 by anoukan           #+#    #+#             */
-/*   Updated: 2024/01/05 14:23:42 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/01/08 13:53:20 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,14 +54,16 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	return (d);
 }
 
-int	ft_verify(char *stash)
+int	ft_verify(char *stash, int bytes_read)
 {
 	size_t	i;
 
 	i = 0;
-	while (i < BUFFER_SIZE + 1 && stash[i] != '\0' && stash[i] != '\n')
+	while (i < BUFFER_SIZE + 1 && (stash[i] != '\0' || stash[i] != '\n'))
 		i++;
 	if (i < BUFFER_SIZE + 1 && (stash[i] == '\n' || stash[i] == '\0'))
+		return (1);
+	else if (bytes_read == 0 && i == BUFFER_SIZE)
 		return (1);
 	return (0);
 }
