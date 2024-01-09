@@ -6,47 +6,25 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 12:20:10 by anoukan           #+#    #+#             */
-/*   Updated: 2024/01/08 15:33:58 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/01/09 09:51:20 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-
-void	*ft_calloc(size_t count, size_t size)
-{
-	void	*i;
-	char	*str;
-	int		len;
-
-	len = count * size;
-	i = (char *)malloc(len);
-	if (!i)
-	{
-		free(i);
-		return (NULL);
-	}
-	if (i)
-	{
-		str = i;
-		while (len--)
-			*str++ = '\0';
-	}
-	return (i);
-}
 
 char	*ft_clean(char *stash)
 {
 	int		i;
 	char	*tmp;
 
-	tmp = ft_calloc(ft_strlen(stash) + 1, sizeof(char));
+	tmp = malloc(ft_strlen(stash) + 1);
 	if (!tmp)
 		return (NULL);
 	i = 0;
 	while ((stash[i] != '\n' || stash[i] != '\0') && i < BUFFER_SIZE)
 		i++;
 	i++;
-	ft_strcpy(tmp, stash +i);
+	ft_strcpy(tmp, stash + i);
 	free(stash);
 	stash = NULL;
 	return (tmp);
@@ -58,7 +36,7 @@ char	*get_next_line(int fd)
 	char		*line;
 	int			bytes_read;
 
-	line = ft_calloc(BUFFER_SIZE + 1, sizeof(char));
+	line = malloc(BUFFER_SIZE + 1);
 	if (!line)
 		return (NULL);
 	bytes_read = read(fd, line, BUFFER_SIZE);
@@ -70,7 +48,7 @@ char	*get_next_line(int fd)
 	}
 	if (!stash)
 	{
-		stash = ft_calloc(BUFFER_SIZE + 1, sizeof(char));
+		stash = malloc(BUFFER_SIZE + 1);
 		if (!stash)
 			return (NULL);
 	}

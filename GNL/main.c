@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 14:17:28 by anoukan           #+#    #+#             */
-/*   Updated: 2024/01/08 15:22:54 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/01/09 09:48:11 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ int main(void)
         i++;
         free(line);
     }
+    free(line);
     close(fd);
     return 0;
 }
