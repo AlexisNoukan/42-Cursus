@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 12:20:36 by anoukan           #+#    #+#             */
-/*   Updated: 2024/01/09 09:47:17 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/01/10 12:37:02 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,8 @@ char 	*get_next_line(int fd);
 int		ft_strlen(char const *s);
 char	*ft_strcpy(char *dest, char *src);
 char	*ft_strjoin(char *s1, char *s2);
-int	    ft_verify(char *stash, int bytes_read);
+int	    ft_verify(char *stash);
 void	ft_line(char *stash, char *line);
 char	*ft_clean(char *stash);
-void	*ft_calloc(size_t count, size_t size);
 
 #endif
