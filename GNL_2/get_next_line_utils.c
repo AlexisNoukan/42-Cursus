@@ -6,73 +6,86 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 12:42:02 by anoukan           #+#    #+#             */
-/*   Updated: 2024/01/09 13:17:46 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/01/10 14:56:07 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-int    ft_strlen(char *str)
+char	*ft_strdup(char *str)
 {
-    size_t  i;
+	char	*ptr;
+	char	*current_ptr;
 
-    i = 0;
-    while(*str)
-        i++;
-    return (i);
+	ptr = malloc(sizeof(char) * (ft_strlen(str) + 1));
+	if (!ptr)
+		return (NULL);
+	current_ptr = ptr;
+	while (*str)
+		*ptr++ = *str++;
+	*ptr = '\0';
+	return (current_ptr);
 }
 
-char	*ft_strcpy(char *dest, char *src)
+int	ft_strlen(char *str)
 {
 	int	i;
 
+	if (!str)
+		return (0);
 	i = 0;
-	while (src[i] != '\0')
+	while (str[i])
+		i++;
+	return (i);
+}
+
+void	free_stash(char *stash)
+{
+	if (stash)
 	{
-		dest[i] = src[i];
-		++i;
+		free(stash);
+		stash = NULL;
 	}
-	dest[i] = '\0';
-	return (dest);
+}
+
+int	found_newline(char *stash)
+{
+	int	i;
+
+	if (!stash)
+		return (0);
+	i = 0;
+	while (stash[i])
+	{
+		if (stash[i] == '\n')
+			return (1);
+		i++;
+	}
+	return (0);
 }
 
 char	*ft_strjoin(char *s1, char *s2)
 {
-	size_t	i;
-	size_t	j;
-	char	*d;
+	char	*ptr;
+	char	*current_ptr;
+	char	*previous;
 
-	i = ft_strlen(s1);
-	j = ft_strlen(s2);
-	d = malloc(i + j + 1);
-	if (!d)
+	if (!s1 && !s2)
 		return (NULL);
-	ft_strcpy(d, (char *)s1);
-	ft_strcpy(d + i, (char *)s2);
-	free(s1);
-	return (d);
-}
-
-int ft_verify(char *stash)
-{
-    size_t  i;
-
-    if (!stash)
-        return (0);
-    while (stash[i])
-    {
-        if (stash[i] == '\n')
-            return (1);
-        i++;
-    }
-    return (0);
-}
-
-void ft_free(char *stash)
-{
-    if (stash)
-    {
-        free(stash);
-        stash = NULL;
-    }
+	else if (!s2)
+		return (ft_strdup(s1));
+	else if (!s1)
+		return (ft_strdup(s2));
+	ptr = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+	if (!ptr)
+		return (NULL);
+	current_ptr = ptr;
+	previous = s1;
+	while (*s1)
+		*ptr++ = *s1++;
+	while (*s2)
+		*ptr++ = *s2++;
+	*ptr = '\0';
+	free_stash(previous);
+	return (current_ptr);
 }

@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 12:42:12 by anoukan           #+#    #+#             */
-/*   Updated: 2024/01/09 13:20:20 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/01/10 14:56:57 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,23 @@
 # define GET_NEXT_LINE_H
 
 //Include
-# include <stdio.h>
+# include <stdlib.h>
+# include <unistd.h>
 
-//Main
-char    *get_next_line(int fd);
-char	*ft_clean(char *stash);
+//Buffer
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif
 
-//Utils
-int     ft_strlen(char *str);
-char	*ft_strcpy(char *dest, char *src);
+//Functions
+char	*get_next_line(int fd);
+void	read_and_add(int fd, char **line, char **stash, int *readed);
+int		found_newline(char *stash);
 char	*ft_strjoin(char *s1, char *s2);
-int     ft_verify(char *stash);
-void    ft_free(char *stash);
-
+void	free_stash(char *line);
+int		ft_strlen(char *str);
+char	*ft_strdup(char *str);
+void	extract_line(char *stash, char **line);
+void	clear_stash(char **stash);
 
 #endif
