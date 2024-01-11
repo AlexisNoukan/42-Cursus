@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 10:05:51 by anoukan           #+#    #+#             */
-/*   Updated: 2024/01/11 09:21:24 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/01/11 09:49:46 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,17 +22,21 @@ int	ft_strlen(char const *s)
 	return (i);
 }
 
-char	*ft_strcpy(char *dest, char *src)
+char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
-	int	i;
+	unsigned int	i;
 
 	i = 0;
-	while (src[i] != '\0')
+	while (src[i] != '\0' && i < n)
 	{
 		dest[i] = src[i];
 		++i;
 	}
-	dest[i] = '\0';
+	while (i < n)
+	{
+		dest[i] = '\0';
+		++i;
+	}
 	return (dest);
 }
 
@@ -41,14 +45,25 @@ char	*ft_strjoin(char *s1, char *s2)
 	size_t	i;
 	size_t	j;
 	char	*d;
+	size_t	f;
 
 	i = ft_strlen(s1);
 	j = ft_strlen(s2);
 	d = malloc(i + j + 1);
+	f = 0;
 	if (!d)
 		return (NULL);
-	ft_strcpy(d, (char *)s1);
-	ft_strcpy(d + i, (char *)s2);
+	while (s1[f])
+	{
+		d[f] = s1[f];
+		++f;
+	}
+	while (s2[f])
+	{
+		d[f] = s2[f];
+		++f;
+	}
+	d[f] = '\0';
 	free(s1);
 	return (d);
 }
