@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 12:20:10 by anoukan           #+#    #+#             */
-/*   Updated: 2024/01/11 13:16:27 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/01/11 14:48:59 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,17 +39,19 @@ char    *get_next_line(int fd)
     int         bytes_read;
     size_t      len;
     char        *result;
-    char *temp;
 
+    //Allocation de memmoir et verification fichier vide
     line = malloc((BUFFER_SIZE + 1) * sizeof(char));
     if (!line)
         return NULL;
     bytes_read = read(fd, line, BUFFER_SIZE);
-    if (bytes_read <= 0) {
+    if (bytes_read <= 0)
+    {
         free(line);
         line = NULL;
         return NULL;
     }
+    //allocation de la stash si elle n existe pas ainsi que stockage de la premiere iteration du programme
     if (!stash)
     {
         stash = malloc(sizeof(char));
@@ -59,9 +61,10 @@ char    *get_next_line(int fd)
             return NULL;
         }
         *stash = '\0';
+        stash = ft_strjoin(stash, line);
     }  
-    stash = ft_strjoin(stash, line);
-    while (!ft_verify(stash)),
+    //verification et stockage dans la stash
+    while (!ft_verify(stash))
     {
         bytes_read = read(fd, line, BUFFER_SIZE);
         if (bytes_read <= 0)
@@ -69,19 +72,28 @@ char    *get_next_line(int fd)
         line[bytes_read] = '\0';
         stash = ft_strjoin(stash, line);
     }
+    //trouver la len a ecrire
     len = 0;
     while (stash[len] != '\n' && stash[len] != '\0')
         len++;
+    //verification fichier contenant uniquement un \n
+    if (stash[0] == '\n' && len == 0)
+    {
+        free(line);
+        free(stash);
+        return NULL;
+    }
+    //allocation du resultat
     result = malloc((len + 1) * sizeof(char));
     if (!result)
     {
         free(line);  
         return NULL;
     }
+    //copie de la ligne dans le resultat et cleaning de la stash
     ft_strncpy(result, stash, len);
     result[len] = '\0';
-    temp = ft_clean(stash);
-    stash = temp;
+    stash = ft_clean(stash);
     free(line);
     return result;
 } 
