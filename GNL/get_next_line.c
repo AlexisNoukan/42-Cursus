@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 12:20:10 by anoukan           #+#    #+#             */
-/*   Updated: 2024/01/12 15:45:32 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/01/12 15:48:18 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ char	*get_next_line_2(char **stash, char **buffer, int bytes_read, int fd)
 		*stash = ft_strjoin(*stash, *buffer);
 	}
 	len = 0;
-	while (*stash[len] != '\n' && *stash[len] != '\0')
+	while (*stash[len] != '\n' && *stash)
 		len++;
 	result = malloc((len + 1) * sizeof(char));
 	if (!result)
