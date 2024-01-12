@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 12:20:10 by anoukan           #+#    #+#             */
-/*   Updated: 2024/01/12 15:17:41 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/01/12 15:38:18 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,34 +32,11 @@ char	*ft_clean(char *stash)
 	return (tmp);
 }
 
-char	*get_next_line(int fd)
+char    *get_next_line_2(char *stash, char *buffer, int bytes_read)
 {
-	static char	*stash;
-	char		*buffer;
-	int			bytes_read;
-	size_t		len;
-	char		*result;
-
-	// Allocation de memmoir et verification fichier vide
-	buffer = malloc((BUFFER_SIZE + 1) * sizeof(char));
-	if (!buffer)
-		return (NULL);
-	bytes_read = read(fd, buffer, BUFFER_SIZE);
-	buffer[bytes_read] = '\0';
-	if (bytes_read < 0)
-		return (free(buffer), buffer = NULL, NULL);
-	// allocation de la stash si elle n existe pas ainsi que stockage de la premiere iteration du programme
-	if (!stash)
-	{
-		stash = malloc(sizeof(char));
-		if (!stash)
-			return (free(buffer), NULL);
-		*stash = '\0';
-	}
-	stash = ft_strjoin(stash, buffer);
-	// verification et stockage dans la stash
-		+ ajouter ca a une fonction de verification
-	while (!ft_verify(stash))
+    char    *result;
+    
+    while (!ft_verify(stash))
 	{
 		bytes_read = read(fd, buffer, BUFFER_SIZE);
 		if (bytes_read <= 0)
@@ -81,4 +58,36 @@ char	*get_next_line(int fd)
 	stash = ft_clean(stash);
 	free(buffer);
 	return (result);
+}
+
+char	*get_next_line(int fd)
+{
+	static char	*stash;
+	char		*buffer;
+	int			bytes_read;
+	size_t		len;
+	char		*result;
+
+	/*Allocation de memmoir et verification fichier vide*/
+	buffer = malloc((BUFFER_SIZE + 1) * sizeof(char));
+	if (!buffer)
+		return (NULL);
+	bytes_read = read(fd, buffer, BUFFER_SIZE);
+	buffer[bytes_read] = '\0';
+	if (bytes_read < 0)
+		return (free(buffer), buffer = NULL, NULL);
+	// allocation de la stash si elle n existe pas ainsi que stockage de la premiere iteration du programme
+	if (!stash)
+	{
+		stash = malloc(sizeof(char));
+		if (!stash)
+			return (free(buffer), NULL);
+		*stash = '\0';
+	}
+	stash = ft_strjoin(stash, buffer);
+    //securite fichier vide
+    if (stash[0] == '\0')
+		return (free(stash), stash = NULL, free(buffer), buffer = NULL, NULL);
+	// verification et stockage dans la stash + ajouter ca a une fonction de verification
+	return (get_next_line_2(stash, buffer,bytes_read));
 }
