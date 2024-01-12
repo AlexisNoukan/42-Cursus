@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 12:20:10 by anoukan           #+#    #+#             */
-/*   Updated: 2024/01/12 14:24:34 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/01/12 14:39:01 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,20 +47,13 @@ char	*get_next_line(int fd)
 	bytes_read = read(fd, buffer, BUFFER_SIZE);
     buffer[bytes_read] = '\0';
 	if (bytes_read < 0)
-	{
-		free(buffer); 
-		buffer = NULL;
-		return (NULL);
-	}
+		return (free(buffer),buffer = NULL, NULL);
 	// allocation de la stash si elle n existe pas ainsi que stockage de la premiere iteration du programme
 	if (!stash)
 	{
 		stash = malloc(sizeof(char));
 		if (!stash)
-		{
-			free(buffer);
-			return (NULL);
-		}
+			return (free(buffer), NULL);
 		*stash = '\0';
 	}
     stash = ft_strjoin(stash, buffer);
@@ -80,15 +73,11 @@ char	*get_next_line(int fd)
 	// allocation du resultat
 	result = malloc((len + 1) * sizeof(char));
 	if (!result)
-	{
-		free(buffer);
-		return (NULL);
-	}
+		return (free(stash), free(buffer), NULL);
 	// copie de la ligne dans le resultat et cleaning de la stash
 	ft_strncpy(result, stash, len);
 	result[len] = '\0';
 	stash = ft_clean(stash);
 	free(buffer);
-    printf("%s\n" , stash);
 	return (result);
 }

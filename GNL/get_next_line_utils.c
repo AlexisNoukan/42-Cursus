@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 10:05:51 by anoukan           #+#    #+#             */
-/*   Updated: 2024/01/12 14:21:57 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/01/12 14:38:14 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,22 +46,25 @@ char	*ft_strjoin(char *s1, char *s2)
 	size_t	j;
 	char	*d;
 	size_t	f;
+	size_t	g;
 
 	i = ft_strlen(s1);
 	j = ft_strlen(s2);
 	d = malloc(i + j + 1);
 	f = 0;
+	g = 0;
 	if (!d)
-		return (NULL);
+		return (free(s1), NULL);
 	while (s1[f])
 	{
 		d[f] = s1[f];
 		++f;
 	}
-	while (s2[f])
+	while (s2[g])
 	{
-		d[f] = s2[f];
+		d[f] = s2[g];
 		++f;
+		++g;
 	}
 	d[f] = '\0';
 	free(s1);
