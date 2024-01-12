@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 12:20:10 by anoukan           #+#    #+#             */
-/*   Updated: 2024/01/12 15:38:18 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/01/12 15:39:29 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,11 @@ char	*ft_clean(char *stash)
 	return (tmp);
 }
 
-char    *get_next_line_2(char *stash, char *buffer, int bytes_read)
+char	*get_next_line_2(char *stash, char *buffer, int bytes_read)
 {
-    char    *result;
-    
-    while (!ft_verify(stash))
+	char	*result;
+
+	while (!ft_verify(stash))
 	{
 		bytes_read = read(fd, buffer, BUFFER_SIZE);
 		if (bytes_read <= 0)
@@ -66,7 +66,6 @@ char	*get_next_line(int fd)
 	char		*buffer;
 	int			bytes_read;
 	size_t		len;
-	char		*result;
 
 	/*Allocation de memmoir et verification fichier vide*/
 	buffer = malloc((BUFFER_SIZE + 1) * sizeof(char));
@@ -85,9 +84,10 @@ char	*get_next_line(int fd)
 		*stash = '\0';
 	}
 	stash = ft_strjoin(stash, buffer);
-    //securite fichier vide
-    if (stash[0] == '\0')
+	// securite fichier vide
+	if (stash[0] == '\0')
 		return (free(stash), stash = NULL, free(buffer), buffer = NULL, NULL);
-	// verification et stockage dans la stash + ajouter ca a une fonction de verification
-	return (get_next_line_2(stash, buffer,bytes_read));
+	// verification et stockage dans la stash
+	+ajouter ca a une fonction de verification return (get_next_line_2(stash,
+			buffer, bytes_read));
 }
