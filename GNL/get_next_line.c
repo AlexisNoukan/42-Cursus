@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 12:20:10 by anoukan           #+#    #+#             */
-/*   Updated: 2024/01/12 15:43:08 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/01/12 15:45:32 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,29 +32,29 @@ char	*ft_clean(char *stash)
 	return (tmp);
 }
 
-char	*get_next_line_2(char *stash, char *buffer, int bytes_read, int fd)
+char	*get_next_line_2(char **stash, char **buffer, int bytes_read, int fd)
 {
 	char	*result;
 	size_t	len;
 
-	while (!ft_verify(stash))
+	while (!ft_verify(*stash))
 	{
 		bytes_read = read(fd, buffer, BUFFER_SIZE);
 		if (bytes_read <= 0)
 			break ;
-		buffer[bytes_read] = '\0';
-		stash = ft_strjoin(stash, buffer);
+		*buffer[bytes_read] = '\0';
+		*stash = ft_strjoin(*stash, *buffer);
 	}
 	len = 0;
-	while (stash[len] != '\n' && stash[len] != '\0')
+	while (*stash[len] != '\n' && *stash[len] != '\0')
 		len++;
 	result = malloc((len + 1) * sizeof(char));
 	if (!result)
-		return (free(stash), free(buffer), NULL);
-	ft_strncpy(result, stash, len);
+		return (free(*stash), free(*buffer), NULL);
+	ft_strncpy(result, *stash, len);
 	result[len] = '\0';
-	stash = ft_clean(stash);
-	free(buffer);
+	*stash = ft_clean(*stash);
+	free(*buffer);
 	return (result);
 }
 
@@ -81,5 +81,5 @@ char	*get_next_line(int fd)
 	stash = ft_strjoin(stash, buffer);
 	if (stash[0] == '\0')
 		return (free(stash), stash = NULL, free(buffer), buffer = NULL, NULL);
-	return (get_next_line_2(stash, buffer, bytes_read, fd));
+	return (get_next_line_2(&stash, &buffer, bytes_read, fd));
 }
