@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 12:20:10 by anoukan           #+#    #+#             */
-/*   Updated: 2024/01/12 14:39:01 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/01/12 15:17:41 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,9 @@ char	*get_next_line(int fd)
 	if (!buffer)
 		return (NULL);
 	bytes_read = read(fd, buffer, BUFFER_SIZE);
-    buffer[bytes_read] = '\0';
+	buffer[bytes_read] = '\0';
 	if (bytes_read < 0)
-		return (free(buffer),buffer = NULL, NULL);
+		return (free(buffer), buffer = NULL, NULL);
 	// allocation de la stash si elle n existe pas ainsi que stockage de la premiere iteration du programme
 	if (!stash)
 	{
@@ -56,15 +56,16 @@ char	*get_next_line(int fd)
 			return (free(buffer), NULL);
 		*stash = '\0';
 	}
-    stash = ft_strjoin(stash, buffer);
-	// verification et stockage dans la stash + ajouter ca a une fonction de verification
+	stash = ft_strjoin(stash, buffer);
+	// verification et stockage dans la stash
+		+ ajouter ca a une fonction de verification
 	while (!ft_verify(stash))
 	{
 		bytes_read = read(fd, buffer, BUFFER_SIZE);
 		if (bytes_read <= 0)
 			break ;
 		buffer[bytes_read] = '\0';
-		stash = ft_strjoin(stash, buffer);  
+		stash = ft_strjoin(stash, buffer);
 	}
 	// trouver la len a ecrire + creer une fonction avec tous ca
 	len = 0;
