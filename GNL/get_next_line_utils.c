@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 10:05:51 by anoukan           #+#    #+#             */
-/*   Updated: 2024/01/12 09:38:13 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/01/12 14:21:57 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,14 +80,3 @@ int	ft_verify(char *stash)
 	return (0);
 }
 
-void	ft_line(char *stash, char *line)
-{
-	size_t	i;
-
-	i = 0;
-	while (stash[i] != '\n' && stash[i] != '\0')
-	{
-		line[i] = stash[i];
-		i++;
-	}
-}

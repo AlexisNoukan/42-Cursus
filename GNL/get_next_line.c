@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 12:20:10 by anoukan           #+#    #+#             */
-/*   Updated: 2024/01/12 14:00:05 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/01/12 14:24:34 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ char	*get_next_line(int fd)
 		return (NULL);
 	bytes_read = read(fd, buffer, BUFFER_SIZE);
     buffer[bytes_read] = '\0';
-	if (bytes_read <= 0)
+	if (bytes_read < 0)
 	{
 		free(buffer); 
 		buffer = NULL;
