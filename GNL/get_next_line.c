@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 12:20:10 by anoukan           #+#    #+#             */
-/*   Updated: 2024/01/12 09:57:17 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/01/12 14:00:05 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,21 +35,21 @@ char	*ft_clean(char *stash)
 char	*get_next_line(int fd)
 {
 	static char	*stash;
-	char		*line;
+	char		*buffer;
 	int			bytes_read;
 	size_t		len;
 	char		*result;
 
 	// Allocation de memmoir et verification fichier vide
-	line = malloc((BUFFER_SIZE + 1) * sizeof(char));
-	if (!line)
+	buffer = malloc((BUFFER_SIZE + 1) * sizeof(char));
+	if (!buffer)
 		return (NULL);
-	bytes_read = read(fd, line, BUFFER_SIZE);
-    line[bytes_read] = '\0';
+	bytes_read = read(fd, buffer, BUFFER_SIZE);
+    buffer[bytes_read] = '\0';
 	if (bytes_read <= 0)
 	{
-		free(line);
-		line = NULL;
+		free(buffer); 
+		buffer = NULL;
 		return (NULL);
 	}
 	// allocation de la stash si elle n existe pas ainsi que stockage de la premiere iteration du programme
@@ -58,43 +58,37 @@ char	*get_next_line(int fd)
 		stash = malloc(sizeof(char));
 		if (!stash)
 		{
-			free(line);
+			free(buffer);
 			return (NULL);
 		}
 		*stash = '\0';
-		stash = ft_strjoin(stash, line);
 	}
-	// verification et stockage dans la stash
+    stash = ft_strjoin(stash, buffer);
+	// verification et stockage dans la stash + ajouter ca a une fonction de verification
 	while (!ft_verify(stash))
 	{
-		bytes_read = read(fd, line, BUFFER_SIZE);
+		bytes_read = read(fd, buffer, BUFFER_SIZE);
 		if (bytes_read <= 0)
 			break ;
-		line[bytes_read] = '\0';
-		stash = ft_strjoin(stash, line);
+		buffer[bytes_read] = '\0';
+		stash = ft_strjoin(stash, buffer);  
 	}
-	// trouver la len a ecrire
+	// trouver la len a ecrire + creer une fonction avec tous ca
 	len = 0;
 	while (stash[len] != '\n' && stash[len] != '\0')
 		len++;
-	// verification fichier contenant uniquement un \n
-	if (stash[0] == '\n' && len == 0)
-	{
-		free(line);
-		free(stash);
-		return (NULL);
-	}
 	// allocation du resultat
 	result = malloc((len + 1) * sizeof(char));
 	if (!result)
 	{
-		free(line);
+		free(buffer);
 		return (NULL);
 	}
 	// copie de la ligne dans le resultat et cleaning de la stash
 	ft_strncpy(result, stash, len);
 	result[len] = '\0';
 	stash = ft_clean(stash);
-	free(line);
+	free(buffer);
+    printf("%s\n" , stash);
 	return (result);
 }
