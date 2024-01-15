@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 12:42:12 by anoukan           #+#    #+#             */
-/*   Updated: 2024/01/10 14:56:57 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/01/15 13:52:39 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 //Include
 # include <stdlib.h>
 # include <unistd.h>
+# include <fcntl.h>
+# include <stdio.h>
 
 //Buffer
 # ifndef BUFFER_SIZE
