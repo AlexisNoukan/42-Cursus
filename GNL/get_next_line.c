@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 12:20:10 by anoukan           #+#    #+#             */
-/*   Updated: 2024/01/15 15:54:27 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/01/15 16:18:02 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,13 @@ char	*get_next_line_2(char **stash, char **buffer, int *bytes_read, int fd)
 		(*buffer)[*bytes_read] = '\0';
 		*stash = ft_strjoin(*stash, *buffer);
 	}
+    printf("%d\n", ft_verify(*stash)); // this is not verify
+    printf("%s\n", *buffer); // this is not the buffer
+    printf("%s\n", *stash);
 	len = 0;
-	while (*stash[len] != '\n' && (*stash)[len] != '\0')
+	while (*stash[len] != '\n' || (*stash)[len] != '\0')
 		len++;
+    printf("%zu\n", len); // this is the len
 	result = malloc((len + 2) * sizeof(char));
 	if (!result)
 		return (free(*stash), free(*buffer), NULL);
