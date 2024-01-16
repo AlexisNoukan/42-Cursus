@@ -6,32 +6,32 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 14:17:28 by anoukan           #+#    #+#             */
-/*   Updated: 2024/01/12 12:35:29 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/01/16 14:23:04 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-int main(void)
+int	main(void)
 {
-    int     fd;
-    char    *line;
-    int     i;
+	int		fd;
+	char	*line;
+	int		i;
 
-    fd = open("test.txt", O_RDONLY);
-    if (fd == -1)
-    {
-        printf("Error opening the file.\n");
-        return 1;
-    }
-    i = 0;
-    while(i < 6) 
-    {
-        line = get_next_line(fd);
-        printf("this is the result      : %s\n", line);
-        i++;
-        free(line);
-    }
-    close(fd);
-    return 0;
+	fd = open("test.txt", O_RDONLY);
+	if (fd == -1)
+	{
+		printf("Error opening the file.\n");
+		return (1);
+	}
+	i = 0;
+	while (i < 6)
+	{
+		line = get_next_line(fd);
+		printf("this is the result      : %s\n", line);
+		i++;
+		free(line);
+	}
+	close(fd);
+	return (0);
 }
