@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 12:20:10 by anoukan           #+#    #+#             */
-/*   Updated: 2024/01/18 12:24:40 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/01/18 12:56:16 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,6 @@ char	*ft_clean(char *stash)
 	free(stash);
 	stash = NULL;
 	return (tmp);
-}
-
-void	ft_free(char *stash, char *buffer)
-{
-	free(stash);
-	stash = NULL;
-	free(buffer);
-	buffer = NULL;
 }
 
 char	*get_next_line_2(char **stash, char **buffer, int *bytes_read, int fd)
@@ -71,28 +63,28 @@ char	*get_next_line_2(char **stash, char **buffer, int *bytes_read, int fd)
 
 char	*get_next_line(int fd)
 {
-	static char	*stash[1024];
-	char		*buffer;
+	static char	*s[1024];
+	char		*b;
 	int			bytes_read;
 
 	if (fd < 0 || BUFFER_SIZE <= 0 || fd >= 1024)
-		return (free(stash[fd]), stash[fd] = NULL, NULL);
-	buffer = malloc((BUFFER_SIZE + 1) * sizeof(char));
-	if (!buffer)
 		return (NULL);
-	bytes_read = read(fd, buffer, BUFFER_SIZE);
+	b = malloc((BUFFER_SIZE + 1) * sizeof(char));
+	if (!b)
+		return (NULL);
+	bytes_read = read(fd, b, BUFFER_SIZE);
 	if (bytes_read < 0)
-		return (ft_free(stash[fd], buffer), NULL);
-	buffer[bytes_read] = '\0';
-	if (!stash[fd])
+		return (free(s[fd]), s[fd] = NULL, free(b), b = NULL, NULL);
+	b[bytes_read] = '\0';
+	if (!s[fd])
 	{
-		stash[fd] = malloc(sizeof(char));
-		if (!stash[fd])
-			return (free(buffer), NULL);
-		*stash[fd] = '\0';
+		s[fd] = malloc(sizeof(char));
+		if (!s[fd])
+			return (free(b), NULL);
+		*s[fd] = '\0';
 	}
-	stash[fd] = ft_strjoin(stash[fd], buffer);
-	if (stash[fd][0] == '\0')
-		return (ft_free(stash[fd], buffer), NULL);
-	return (get_next_line_2(&stash[fd], &buffer, &bytes_read, fd));
+	s[fd] = ft_strjoin(s[fd], b);
+	if (s[fd][0] == '\0')
+		return (free(s[fd]), s[fd] = NULL, free(b), b = NULL, NULL);
+	return (get_next_line_2(&s[fd], &b, &bytes_read, fd));
 }
