@@ -6,11 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 12:20:10 by anoukan           #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2024/01/17 17:39:08 by anoukan          ###   ########.fr       */
-=======
-/*   Updated: 2024/01/18 10:23:32 by anoukan          ###   ########.fr       */
->>>>>>> d8f65aa3c511b55cc889a77abc2fc4981a25792d
+/*   Updated: 2024/01/18 10:27:31 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +50,6 @@ char	*get_next_line_2(char **stash, char **buffer, int *bytes_read, int fd)
 		len++;
 	if ((*stash)[len] != '\0')
 		len++;
-	len++;
 	result = malloc((len + 1) * sizeof(char));
 	if (!result)
 		return (free(*stash), free(*buffer), NULL);
