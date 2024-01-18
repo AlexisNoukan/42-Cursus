@@ -6,7 +6,7 @@
 #    By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/19 12:59:54 by anoukan           #+#    #+#              #
-#    Updated: 2024/01/18 10:46:43 by anoukan          ###   ########.fr        #
+#    Updated: 2024/01/18 10:49:00 by anoukan          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ NAME = libft.a
 
 INCDIR = includes
 
-SRC = $(wildcard ./src/*.c)
+SRC = $(wildcard ./src/*.c) $(wildcard ./main/*.c)
 
 BONUS = $(wildcard ./bonus/*.c)
 
@@ -49,4 +49,5 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
+
 
