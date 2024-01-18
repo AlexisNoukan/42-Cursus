@@ -54,7 +54,6 @@ char	*get_next_line_2(char **stash, char **buffer, int *bytes_read, int fd)
 		len++;
 	if ((*stash)[len] != '\0')
 		len++;
-	len++;
 	result = malloc((len + 1) * sizeof(char));
 	if (!result)
 		return (free(*stash), free(*buffer), NULL);
