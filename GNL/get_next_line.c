@@ -52,12 +52,9 @@ char	*get_next_line_2(char **stash, char **buffer, int *bytes_read, int fd)
 	len = 0;
 	while ((*stash)[len] != '\n' && (*stash)[len] != '\0')
 		len++;
-<<<<<<< HEAD
 	if ((*stash)[len] != '\0')
 		len++;
-=======
 	len++;
->>>>>>> d8f65aa3c511b55cc889a77abc2fc4981a25792d
 	result = malloc((len + 1) * sizeof(char));
 	if (!result)
 		return (free(*stash), free(*buffer), NULL);
