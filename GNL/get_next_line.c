@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 12:20:10 by anoukan           #+#    #+#             */
-/*   Updated: 2024/01/18 10:31:46 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/01/18 10:33:33 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,7 @@ char	*get_next_line_2(char **stash, char **buffer, int *bytes_read, int fd)
 	ft_strncpy(result, *stash, len);
 	result[len] = '\0';
 	*stash = ft_clean(*stash);
-	free(*buffer);
-	return (result);
+	return (free(*buffer), (*buffer) = NULL, result);
 }
 
 char	*get_next_line(int fd)
