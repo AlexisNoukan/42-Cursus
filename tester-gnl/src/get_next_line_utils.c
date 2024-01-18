@@ -6,11 +6,11 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 10:05:51 by anoukan           #+#    #+#             */
-/*   Updated: 2024/01/16 14:22:37 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/01/18 11:12:10 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "../header/get_next_line.h"
 
 int	ft_strlen(char const *s)
 {

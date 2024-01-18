@@ -6,13 +6,13 @@
 #    By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/19 12:59:54 by anoukan           #+#    #+#              #
-#    Updated: 2024/01/18 10:49:00 by anoukan          ###   ########.fr        #
+#    Updated: 2024/01/18 11:12:49 by anoukan          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
-NAME = libft.a
+NAME = tester
 
 INCDIR = includes
 
@@ -26,20 +26,18 @@ OBJ_BONUS = $(BONUS:.c=.o)
 
 INC = -I$(INCDIR)
 
-.PHONY: all clean fclean re bonus
+.PHONY: all clean fclean re
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
 	ar rc $(NAME) $(OBJ)
 
-bonus: $(OBJ_BONUS)
+bonus: $(BONUS) $(OBJ_BONUS)
 	ar rc $(NAME) $(OBJ_BONUS)
 
-$(OBJ): %.o: %.c
-	$(CC) $(CFLAGS) $(INC) -c $< -o $@
 
-$(OBJ_BONUS): %.o: %.c
+$(OBJ): %.o: %.c
 	$(CC) $(CFLAGS) $(INC) -c $< -o $@
 
 clean:
@@ -49,5 +47,3 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
-
-

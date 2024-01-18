@@ -6,11 +6,11 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 12:20:10 by anoukan           #+#    #+#             */
-/*   Updated: 2024/01/18 10:33:33 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/01/18 11:12:18 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "../header/get_next_line.h"
 
 char	*ft_clean(char *stash)
 {

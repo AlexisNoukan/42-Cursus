@@ -6,11 +6,11 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 14:17:28 by anoukan           #+#    #+#             */
-/*   Updated: 2024/01/16 14:23:04 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/01/18 11:12:38 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "../header/get_next_line.h"
 
 int	main(void)
 {
@@ -18,7 +18,7 @@ int	main(void)
 	char	*line;
 	int		i;
 
-	fd = open("test.txt", O_RDONLY);
+	fd = open("../test/test.txt", O_RDONLY);
 	if (fd == -1)
 	{
 		printf("Error opening the file.\n");
