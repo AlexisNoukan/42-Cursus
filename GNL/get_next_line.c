@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 12:20:10 by anoukan           #+#    #+#             */
-/*   Updated: 2024/01/17 14:39:56 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/01/17 17:39:08 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,9 @@ char	*get_next_line_2(char **stash, char **buffer, int *bytes_read, int fd)
 	len = 0;
 	while ((*stash)[len] != '\n' && (*stash)[len] != '\0')
 		len++;
-	len++;
-	result = malloc((len + 2) * sizeof(char));
+	if ((*stash)[len] != '\0')
+		len++;
+	result = malloc((len + 1) * sizeof(char));
 	if (!result)
 		return (free(*stash), free(*buffer), NULL);
 	if ((*stash)[len] == '\n' && len == 0)
@@ -68,14 +69,14 @@ char	*get_next_line(int fd)
 	int			bytes_read;
 
 	if (fd == -1)
-		return (NULL);
+		return (free(stash), stash = NULL, NULL);
 	buffer = malloc((BUFFER_SIZE + 1) * sizeof(char));
 	if (!buffer)
 		return (NULL);
 	bytes_read = read(fd, buffer, BUFFER_SIZE);
 	buffer[bytes_read] = '\0';
 	if (bytes_read < 0)
-		return (free(buffer), buffer = NULL, NULL);
+		return (free(buffer), buffer = NULL, free(stash), stash = NULL, NULL);
 	if (!stash)
 	{
 		stash = malloc(sizeof(char));
