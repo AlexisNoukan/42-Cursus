@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 12:20:10 by anoukan           #+#    #+#             */
-/*   Updated: 2024/01/17 14:39:56 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/01/18 10:23:32 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,10 +49,10 @@ char	*get_next_line_2(char **stash, char **buffer, int *bytes_read, int fd)
 	while ((*stash)[len] != '\n' && (*stash)[len] != '\0')
 		len++;
 	len++;
-	result = malloc((len + 2) * sizeof(char));
+	result = malloc((len + 1) * sizeof(char));
 	if (!result)
 		return (free(*stash), free(*buffer), NULL);
-	if ((*stash)[len] == '\n' && len == 0)
+	if ((*stash)[0] == '\n' && len == 0)
 		result[len++] = '\n';
 	ft_strncpy(result, *stash, len);
 	result[len] = '\0';
