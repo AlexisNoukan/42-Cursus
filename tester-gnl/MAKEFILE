@@ -6,39 +6,40 @@
 #    By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/19 12:59:54 by anoukan           #+#    #+#              #
-#    Updated: 2024/01/18 10:41:28 by anoukan          ###   ########.fr        #
+#    Updated: 2024/01/18 10:46:43 by anoukan          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
-NAME = test
+NAME = libft.a
 
 INCDIR = includes
 
-SRC =  ./src/*.c
+SRC = $(wildcard ./src/*.c)
 
-BONUS = ./bunus/*.c
+BONUS = $(wildcard ./bonus/*.c)
 
-        
 OBJ = $(SRC:.c=.o)
 
 OBJ_BONUS = $(BONUS:.c=.o)
 
 INC = -I$(INCDIR)
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re bonus
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
 	ar rc $(NAME) $(OBJ)
 
-bonus: $(BONUS) $(OBJ_BONUS)
+bonus: $(OBJ_BONUS)
 	ar rc $(NAME) $(OBJ_BONUS)
 
-
 $(OBJ): %.o: %.c
+	$(CC) $(CFLAGS) $(INC) -c $< -o $@
+
+$(OBJ_BONUS): %.o: %.c
 	$(CC) $(CFLAGS) $(INC) -c $< -o $@
 
 clean:
@@ -48,3 +49,4 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
+
