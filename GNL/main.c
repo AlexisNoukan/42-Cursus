@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 14:17:28 by anoukan           #+#    #+#             */
-/*   Updated: 2024/01/19 13:02:06 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/01/19 15:15:29 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,14 @@ int	main(void)
 	fd = open("test.txt", O_RDONLY);
 	if (fd == -1)
 	{
-		printf("Error opening the file.\n");
+		printf("Error opening the file.");
 		return (1);
 	}
 	i = 0;
-	while (i < 100)
+	while (i < 10)
 	{
 		line = get_next_line(fd);
-		printf("this is the result      : %s\n", line);
+		printf("this is the result      : %s\npa", line);
 		i++;
 		free(line);
 	}
