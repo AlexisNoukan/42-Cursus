@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 10:05:51 by anoukan           #+#    #+#             */
-/*   Updated: 2024/01/18 12:56:15 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/01/19 12:57:56 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,10 +70,15 @@ char	*ft_strjoin(char *s1, char *s2)
 int	ft_verify(char *stash)
 {
 	size_t	i;
+	size_t	v;
 
-	i = 0;
-	while (stash[i] != '\n' && !stash)
-		i++;
+	v = 0;
+	i = ft_strlen(stash);
+	while (stash[v] != '\n' && i != 0)
+	{
+		i--;
+		v++;
+	}
 	if (stash[i] == '\n' || stash[i] == '\0')
 		return (1);
 	return (0);

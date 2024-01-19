@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 12:20:10 by anoukan           #+#    #+#             */
-/*   Updated: 2024/01/19 09:01:34 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/01/19 12:56:29 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_clean(char *stash)
 
 	tmp = malloc(ft_strlen(stash) + 1);
 	if (!tmp)
-		return (NULL);
+		return (free(stash), stash = NULL, NULL);
 	i = 0;
 	while (stash[i] != '\n' && stash[i] != '\0')
 		i++;
