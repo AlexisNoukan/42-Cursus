@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 14:17:28 by anoukan           #+#    #+#             */
-/*   Updated: 2024/01/18 13:14:05 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/01/19 13:02:06 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	main(void)
 		return (1);
 	}
 	i = 0;
-	while (i < 6)
+	while (i < 100)
 	{
 		line = get_next_line(fd);
 		printf("this is the result      : %s\n", line);
