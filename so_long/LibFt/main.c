@@ -6,11 +6,11 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 17:43:53 by anoukan           #+#    #+#             */
-/*   Updated: 2024/01/22 18:08:34 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/01/22 18:12:43 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "GNL/get_next_line.h"
+
 #include "libft/libft.h"
 #include <fcntl.h>
 #include <stdio.h>

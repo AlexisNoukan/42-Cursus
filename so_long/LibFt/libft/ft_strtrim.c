@@ -6,29 +6,11 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 0005/10/20 11:13:12 by noukan            #+#    #+#             */
-/*   Updated: 2023/11/01 06:49:15 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/01/22 18:14:22 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static char	*ft_strncpy(char *dest, char *src, unsigned int n)
-{
-	unsigned int	i;
-
-	i = 0;
-	while (src[i] != '\0' && i < n)
-	{
-		dest[i] = src[i];
-		++i;
-	}
-	while (i < n)
-	{
-		dest[i] = '\0';
-		++i;
-	}
-	return (dest);
-}
 
 char	*ft_strtrim(char const *s1, char const *set)
 {

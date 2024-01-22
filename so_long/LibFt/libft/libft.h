@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 09:50:46 by anoukan           #+#    #+#             */
-/*   Updated: 2024/01/22 17:51:51 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/01/22 18:11:42 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBFT_H
 
 //# include "../GNL/get_next_line.h"
+# include "../GNL/get_next_line.h"
 # include "../printf/ft_printf.h"
 # include <limits.h>
 # include <stddef.h>
