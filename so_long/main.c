@@ -6,8 +6,8 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 #include "include/so_long.h"
+
 int32_t	main(void)
 {
-    ft_window();
+	ft_window();
 }
->>>>>>> 86f59f0a27fcfcaa870a05a2073b5a0c7558466f
