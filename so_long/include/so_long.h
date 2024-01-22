@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 11:45:33 by anoukan           #+#    #+#             */
-/*   Updated: 2024/01/22 11:54:33 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/01/22 13:14:23 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,5 +18,12 @@
 # include "../mlx42/include/MLX42/MLX42.h"
 #include <stdio.h>
 #include <stdbool.h>
+
+//define 
+#define WIDTH 256
+#define HEIGHT 256
+
+//window
+int32_t ft_window(void);
 
 #endif
