@@ -6,7 +6,7 @@
 #    By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/19 12:59:54 by anoukan           #+#    #+#              #
-#    Updated: 2024/01/22 17:09:18 by anoukan          ###   ########.fr        #
+#    Updated: 2024/01/22 17:36:02 by anoukan          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -88,10 +88,3 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
-
-other_makefile:
-	@$(MAKE) -C ./printf || echo "printf make failed with error code $$?"
-	@$(MAKE) -C ./GNL || echo "GNL make failed with error code $$?"
-
-
-

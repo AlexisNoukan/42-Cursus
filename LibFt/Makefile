@@ -1,6 +1,6 @@
-.PHONY: all libft printf GNL clean fclean re
+.PHONY: all libft printf GNL clean fclean re move_libs
 
-all: libft printf GNL
+all: libft printf GNL move_libs
 
 libft:
 	@echo "Compiling in libft"
@@ -18,10 +18,18 @@ clean:
 	@$(MAKE) -C ./libft clean
 	@$(MAKE) -C ./printf clean
 	@$(MAKE) -C ./GNL clean
+	@rm -rf compiled
 
 fclean:
 	@$(MAKE) -C ./libft fclean
 	@$(MAKE) -C ./printf fclean
 	@$(MAKE) -C ./GNL fclean
+	@rm -rf compiled
 
 re: fclean all
+
+move_libs:
+	@mkdir -p compiled
+	@mv ./libft/libft.a compiled/
+	@mv ./printf/printf.a compiled/
+	@mv ./GNL/GNL.a compiled/
