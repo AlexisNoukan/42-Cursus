@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 0003/11/20 13:05:09 by noukan            #+#    #+#             */
-/*   Updated: 2024/01/22 17:58:31 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/01/22 18:04:11 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include "../libft/libft.h"
 # include <stdarg.h>
+# include <stdint.h>
 
 int		ft_printf(const char *format, ...);
 
