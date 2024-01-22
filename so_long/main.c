@@ -5,9 +5,15 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/01/22 14:52:13 by anoukan           #+#    #+#             */
+/*   Updated: 2024/01/22 14:52:55 by anoukan          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "include/so_long.h"
+
 int32_t	main(void)
 {
     ft_window();
+    return(0);
 }
->>>>>>> 86f59f0a27fcfcaa870a05a2073b5a0c7558466f
