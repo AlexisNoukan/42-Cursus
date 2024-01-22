@@ -1,30 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/19 10:05:51 by anoukan           #+#    #+#             */
-/*   Updated: 2024/01/22 17:54:18 by anoukan          ###   ########.fr       */
+/*   Created: 2024/01/22 17:43:53 by anoukan           #+#    #+#             */
+/*   Updated: 2024/01/22 17:53:04 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "libft/libft.h"
 
-int	ft_verify(char *stash)
+int	main(void)
 {
-	size_t	i;
-	size_t	v;
+	char	*str;
 
-	v = 0;
-	i = ft_strlen(stash);
-	while (stash[v] != '\n' && i != 0)
-	{
-		i--;
-		v++;
-	}
-	if (stash[i] == '\n' || stash[i] == '\0')
-		return (1);
+	str = "hello world";
+	ft_printf("%s\n", str);
+	ft_printf("%d", ft_strlen(str));
 	return (0);
 }

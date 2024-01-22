@@ -6,7 +6,7 @@
 #    By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/07 11:38:23 by anoukan           #+#    #+#              #
-#    Updated: 2024/01/22 17:36:32 by anoukan          ###   ########.fr        #
+#    Updated: 2024/01/22 17:48:18 by anoukan          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,6 @@ NAME = printf.a
 INCDIR = includes
 
 # Printf
-PTF_SRCDIR = Srcs
 PTF_SRCS =		ft_countdigit.c \
 				ft_decimal.c\
 				ft_hex.c \
@@ -30,7 +29,7 @@ PTF_SRCS =		ft_countdigit.c \
 				ft_string.c\
 				ft_uint.c
 
-PTF_OBJ = $(PTF_SRCS:%.c=$(PTF_SRCDIR)/%.o)
+PTF_OBJ = $(PTF_SRCS:%.c=%.o)
 
 # Makefile Command
 OBJ = $(PTF_OBJ)
@@ -43,7 +42,7 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	ar rc $(NAME) $(OBJ)
 
-$(PTF_OBJ): $(PTF_SRCDIR)/%.o: $(PTF_SRCDIR)/%.c
+$(PTF_OBJ): %.o: %.c
 	$(CC) $(CFLAGS) $(INC) -c $< -o $@
 
 clean:

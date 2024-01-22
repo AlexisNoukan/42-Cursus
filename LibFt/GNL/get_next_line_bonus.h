@@ -6,18 +6,14 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 12:20:36 by anoukan           #+#    #+#             */
-/*   Updated: 2024/01/18 12:07:20 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/01/22 17:55:21 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_BONUS_H
 # define GET_NEXT_LINE_BONUS_H
 
-# include <stdio.h>
-//# include <stdarg.h>
-# include <fcntl.h>
-# include <stdlib.h>
-# include <unistd.h>
+# include "../libft/libft.h"
 
 // Buffer
 # ifndef BUFFER_SIZE

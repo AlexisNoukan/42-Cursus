@@ -6,18 +6,15 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 0003/11/20 13:05:09 by noukan            #+#    #+#             */
-/*   Updated: 2024/01/22 17:30:59 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/01/22 17:58:31 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-# include "../../libft/libft.h"
-# include <limits.h>
+# include "../libft/libft.h"
 # include <stdarg.h>
-# include <stdio.h>
-# include <unistd.h>
 
 int		ft_printf(const char *format, ...);
 
