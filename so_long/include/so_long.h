@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 11:45:33 by anoukan           #+#    #+#             */
-/*   Updated: 2024/01/23 11:06:23 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/01/23 12:22:30 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ struct s_map
 # include <stdbool.h>
 # include <stdio.h>
 # include <stdlib.h>
+# include <fcntl.h>
 
 // define
 # define WIDTH 256
