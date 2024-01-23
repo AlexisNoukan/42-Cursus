@@ -6,13 +6,13 @@
 #    By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/22 17:10:26 by anoukan           #+#    #+#              #
-#    Updated: 2024/01/22 17:13:34 by anoukan          ###   ########.fr        #
+#    Updated: 2024/01/23 14:42:42 by anoukan          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
-NAME = gnl.a
+NAME = libgnl.a
 
 INCDIR = includes
 

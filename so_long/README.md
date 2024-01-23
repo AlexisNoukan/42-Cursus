@@ -13,3 +13,8 @@ gcc main.c libmlx42.a -Iinclude -lglfw
 compil command mac
 
 cc main.c ./mlx42/build/libmlx42.a -Iinclude -lglfw -L"/opt/homebrew/Cellar/glfw/3.3.9/lib/"
+
+
+commande pour compiler un main sur linux 
+
+cc -LLibFt/compiled  main.c -lgnl -lprintf -lft
