@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 14:52:13 by anoukan           #+#    #+#             */
-/*   Updated: 2024/01/23 12:21:37 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/01/23 13:47:41 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,11 @@ int32_t	main(int argc, char **argv)
 	t_map	map;
 	char	*file;
 
+	if (argc < 2)
+		return (0);
 	file = argv[1];
-	fd = open(file, O_READONLY);
+	fd = open(file, O_RDONLY);
 	map.fd = fd;
-	ft_window();
+	ft_printf("%s", get_next_line(map.fd));
 	return (0);
 }

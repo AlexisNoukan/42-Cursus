@@ -6,13 +6,14 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 10:51:58 by anoukan           #+#    #+#             */
-/*   Updated: 2024/01/23 11:14:48 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/01/23 13:45:40 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/so_long.h"
 
-int ft_map_chequer(t_map)
+int	ft_map_chequer(t_map)
 {
-    
+	map.fd = 0;
+	return (0);
 }
