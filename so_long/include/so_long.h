@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 11:45:33 by anoukan           #+#    #+#             */
-/*   Updated: 2024/01/23 11:01:04 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/01/23 11:06:23 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ struct s_map
     int P;
     int W;
 } t_map
+
 // include
 # include "../mlx42/include/MLX42/MLX42.h"
 # include <stdbool.h>
