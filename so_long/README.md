@@ -1,6 +1,6 @@
 command pour compiler
 
-cc main.c ./mlx42/build/libmlx42.a -Iinclude -ldl -lglfw -pthread -lm
+gcc -Wall -Wextra -Werror main.c ./mlx42/build/libmlx42.a -Iinclude -ldl -lglfw -pthread -lm
 
 mac os flag
 
