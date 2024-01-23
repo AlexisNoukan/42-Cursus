@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 11:45:33 by anoukan           #+#    #+#             */
-/*   Updated: 2024/01/23 12:22:30 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/01/23 13:17:36 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,20 @@
 
 //structure
 
-struct s_map
+typedef struct s_map
 {
     int fd;
     char **map;
     int E;
     int P;
     int W;
-} t_map
+} t_map;
 
 // include
 # include "../mlx42/include/MLX42/MLX42.h"
+# include "../LibFt/GNL/get_next_line.h"
+# include "../LibFt/printf/ft_printf.h"
+# include "../LibFt/libft/libft.h"
 # include <stdbool.h>
 # include <stdio.h>
 # include <stdlib.h>
