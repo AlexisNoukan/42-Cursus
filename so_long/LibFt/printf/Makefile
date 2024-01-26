@@ -6,13 +6,13 @@
 #    By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/07 11:38:23 by anoukan           #+#    #+#              #
-#    Updated: 2024/01/22 17:48:18 by anoukan          ###   ########.fr        #
+#    Updated: 2024/01/23 14:42:31 by anoukan          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
-NAME = printf.a
+NAME = libprintf.a
 
 INCDIR = includes
 
