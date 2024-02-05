@@ -1,0 +1,39 @@
+    arch="$(uname -a)": This line stores the system architecture information in the arch variable using the uname -a command.
+
+    pcpu=$(grep 'physical id' /proc/cpuinfo | sort | uniq | wc -l): This line counts the number of physical CPUs using information from /proc/cpuinfo. It looks for lines containing 'physical id', sorts them, removes duplicates, and then counts the lines.
+
+    vcpu=$(grep '^processor' /proc/cpuinfo | wc -l): This line counts the number of virtual CPUs by counting the lines starting with 'processor' in /proc/cpuinfo.
+
+    uram=$(free -m | grep 'Mem' | awk '{print $3}'): This line retrieves the used RAM in megabytes using the free command, filtering for the line containing 'Mem' and extracting the third column with awk.
+
+    tram=$(free -m | grep 'Mem' | awk '{printf $2}'): This line retrieves the total RAM in megabytes using the same free command but extracting the second column.
+
+    pram=$(free -m | grep 'Mem' | awk '{printf "%.2f", $3 * 100 / $2}'): This line calculates the percentage of used RAM and stores it in pram.
+
+    udisk=$(df -h | grep '/chemin/vers/disk' | awk '{print $3}'): This line retrieves the used disk space in the specified path using the df command, filtering for the line containing the path and extracting the third column.
+
+    tdisk=$(df -h | grep '/chemin/vers/disk' | awk '{print $2}'): Similar to the previous line, this one retrieves the total disk space.
+
+    pdisk=$(df -h | grep '/chemin/vers/disk' | awk '{print $5}'): This line retrieves the percentage of used disk space.
+
+    cpul=$(top -bn1 | grep '^%Cpu' | awk '{print $2}'): This line retrieves the CPU load percentage using the top command.
+
+    **lb="$(who -b | awk '{print $3, $4}')"**: This line retrieves the last boot time using the who -b command and extracts the date and time.
+
+    lvml="$(lsblk | grep 'lvm' | wc -l)": This line counts the number of Logical Volume Management (LVM) devices using lsblk and filtering for lines containing 'lvm'.
+
+    lvm="$(if [ $lvml -eq 0 ]; then echo "no"; else echo "yes"; fi)": This line sets the variable lvm to "yes" if there are LVM devices, and "no" otherwise.
+
+    ctcp="$(ss -t -a | grep 'ESTAB' | wc -l)": This line counts the number of established TCP connections using the ss command.
+
+    ulog="$(users | wc -w)": This line counts the number of logged-in users using the users command.
+
+    **ip="$(hostname -I | awk '{print $1}')"**: This line retrieves the system's IP address using the hostname -I command.
+
+    mac="$(ip link | grep 'ether' | awk '{print $2}' | head -n 1)": This line retrieves the MAC address of the first network interface with ip link.
+
+    sudo="$(sudo -l | wc -l)": This line counts the number of commands available to the user with sudo.
+
+    The last line uses the wall command to broadcast a message containing the system information to all users.
+
+Each line performs a specific system information retrieval task, and the results are formatted and displayed using the wall command. You may need to customize the script according to your specific needs, especially the paths and specific details you want to monitor.
