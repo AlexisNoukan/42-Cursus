@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 11:45:33 by anoukan           #+#    #+#             */
-/*   Updated: 2024/02/08 13:31:08 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/02/08 13:42:56 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,13 +40,13 @@ typedef struct s_map
 # define HEIGHT 256
 
 // parsing
-int	ft_not_square(t_map map);
-int	ft_verify_wall(t_map map);
-int	ft_valid(t_map map);
-int	ft_map_chequer(t_map map);
-void ft_verify_element(t_map map);
+int		ft_not_square(t_map map);
+int		ft_verify_wall(t_map map);
+int		ft_valid(t_map map);
+int		ft_map_chequer(t_map map);
+void	ft_verify_element(t_map map);
 
 // window
-int	ft_window(void);
+int		ft_window(void);
 
 #endif
