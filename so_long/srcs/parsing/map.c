@@ -1,31 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   map.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/22 14:52:13 by anoukan           #+#    #+#             */
-/*   Updated: 2024/02/08 09:46:41 by anoukan          ###   ########.fr       */
+/*   Created: 2024/02/08 10:49:48 by anoukan           #+#    #+#             */
+/*   Updated: 2024/02/08 10:51:06 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./include/so_long.h"
+#include "../../include/so_long.h"
 
-int32_t	main(int argc, char **argv)
+int	ft_not_square(t_map map)
 {
-	int		fd;
-	t_map	map;
-	char	*file;
-	int		i;
+	size_t	i;
+	size_t	j;
 
-	if (argc < 2)
-		return (ft_printf("no map found"), 0);
-	file = argv[1];
-	fd = open(file, O_RDONLY);
-	map.fd = fd;
 	i = 0;
-	while (i++ < ft_strlen(*argv))
-		ft_printf("%s", get_next_line(map.fd));
+	j = 0;
+	while (map.map[i][j])
+	{
+		while (map.map[i][j])
+			j++;
+		i++;
+	}
+	if (i > j)
+		return (1);
+	else if (j > i)
+		return (1);
+	return (0);
+}
+
+int	ft_verify_wall(t_map map)
+{
+	size_t	i;
+	size_t	j;
+
+	i = 0;
+	j = 0;
+	while (map.map[i][j])
+		i++;
 	return (0);
 }

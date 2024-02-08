@@ -1,31 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   element.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/22 14:52:13 by anoukan           #+#    #+#             */
-/*   Updated: 2024/02/08 09:46:41 by anoukan          ###   ########.fr       */
+/*   Created: 2024/02/08 10:49:51 by anoukan           #+#    #+#             */
+/*   Updated: 2024/02/08 10:56:15 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./include/so_long.h"
+#include "../../include/so_long.h"
 
-int32_t	main(int argc, char **argv)
+int ft_verify_element(t_map map)
 {
-	int		fd;
-	t_map	map;
-	char	*file;
-	int		i;
+    size_t  i;
+    size_t  j;
 
-	if (argc < 2)
-		return (ft_printf("no map found"), 0);
-	file = argv[1];
-	fd = open(file, O_RDONLY);
-	map.fd = fd;
-	i = 0;
-	while (i++ < ft_strlen(*argv))
-		ft_printf("%s", get_next_line(map.fd));
-	return (0);
+    i = 0;
+    j = 0;
+    while(map[i][j])
+    {
+            while(map[i][j])
+    {
+          if (map[i][j] == e)
+            map.e = 1;
+        if (map[i][j] == p)
+            map.e = 1;
+            j++;
+    }
+      i++;
+    }
+    return (0);
 }

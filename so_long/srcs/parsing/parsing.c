@@ -6,23 +6,17 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 10:51:58 by anoukan           #+#    #+#             */
-/*   Updated: 2024/01/29 15:11:30 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/02/08 10:50:39 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/so_long.h"
 
-int	ft_verify_wall(t_map map)
-{
-	size_t	i;
-
-	i = 0;
-	while(map->*map[i])
-}
-
 int	ft_valid(t_map map)
 {
-	if (map.e >= 1 && map.p == 1 && map.w == 1)
+	map.w = ft_verify_wall(map);
+	map.r = ft_not_square(map);
+	if (map.e >= 1 && map.p == 1 && map.w == 1 && map.r == 1)
 		return (1);
 	return (0);
 }
