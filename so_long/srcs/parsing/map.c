@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 10:49:48 by anoukan           #+#    #+#             */
-/*   Updated: 2024/02/08 10:58:00 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/02/08 13:37:00 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,14 @@ int	ft_verify_wall(t_map map)
 
 	i = 0;
 	j = 0;
-	while (map.map[i][j])
+	while (map.map[0][j] == 1)
+		j++;
+    while (map.map[i][0] == 1)
 		i++;
+    i = 0;
+	while (map.map[i][j] == 1)
+		i++;
+    while (map.map[i][j] == 1)
+		j--;
 	return (0);
 }
