@@ -6,13 +6,13 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 10:49:48 by anoukan           #+#    #+#             */
-/*   Updated: 2024/02/08 13:44:57 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/02/12 15:10:32 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/so_long.h"
 
-int	ft_not_square(t_map map)
+void	ft_not_square(t_map map)
 {
 	size_t	i;
 	size_t	j;
@@ -26,13 +26,14 @@ int	ft_not_square(t_map map)
 		i++;
 	}
 	if (i > j)
-		return (1);
+		map.notsquare = 1;
 	else if (j > i)
-		return (1);
-	return (0);
+		map.notsquare = 1;
+	else
+		map.notsquare = 0;
 }
 
-int	ft_verify_wall(t_map map)
+void	ft_verify_wall(t_map map)
 {
 	size_t	i;
 	size_t	j;
@@ -48,5 +49,5 @@ int	ft_verify_wall(t_map map)
 		i++;
 	while (map.map[i][j] == 1)
 		j--;
-	return (0);
+	map.w = 1;
 }

@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 10:51:58 by anoukan           #+#    #+#             */
-/*   Updated: 2024/02/08 13:45:01 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/02/12 15:10:58 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,8 @@
 
 int	ft_valid(t_map map)
 {
-	map.w = ft_verify_wall(map);
-	map.r = ft_not_square(map);
-	if (map.e >= 1 && map.p == 1 && map.w == 1 && map.r == 1)
+	if (map.e == 1 && map.p == 1 && map.w == 1 && map.c <= 1
+		&& map.notsquare == 1)
 		return (1);
 	return (0);
 }
