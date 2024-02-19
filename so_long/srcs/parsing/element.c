@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 10:49:51 by anoukan           #+#    #+#             */
-/*   Updated: 2024/02/15 10:42:08 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/02/19 14:28:09 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	ft_verify_element(t_map map)
 			if (map.map[i][j] == 'e')
 				map.e += 1;
 			if (map.map[i][j] == 'p')
-				map.e += 1;
+				map.p += 1;
 			if (map.map[i][j] == 'c')
 				map.c += 1;
 			if (map.map[i][j] == '0')

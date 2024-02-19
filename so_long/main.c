@@ -6,18 +6,28 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 14:52:13 by anoukan           #+#    #+#             */
-/*   Updated: 2024/02/15 14:04:22 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/02/19 14:49:09 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./include/so_long.h"
 
-int32_t	main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	t_map	map;
 
 	if (argc < 2)
 		return (ft_printf("no map found"), 0);
+	map.fd = 0;
+	map.map = 0;
+	map.e = 0;
+	map.p = 0;
+	map.w = 0;
+	map.c = 0;
+	map.notsquare = 0;
+	map.y = 0;
+	map.x = 0;
+	map.s = 0;
 	ft_parsing(map, argv);
 	ft_window();
 	return (0);
