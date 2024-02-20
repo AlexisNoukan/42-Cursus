@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 10:51:58 by anoukan           #+#    #+#             */
-/*   Updated: 2024/02/19 14:28:50 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/02/20 15:03:39 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,29 @@
 
 void	ft_parsing(t_map map, char **argv)
 {
-	int		fd;
-	char	*file;
-
-	file = argv[1];
-	fd = open(file, O_RDONLY);
-	map.fd = fd;
-	ft_map_chequer(map);
+	ft_map_chequer(map, argv);
 	ft_verify_element(map);
 	ft_not_square(map);
+	ft_valid(map);
+}
+
+int	open_fd(char **argv, t_map map)
+{
+	size_t	i;
+	char	*line;
+
+	map.fd = open(argv[1], O_RDONLY);
+	i = 1;
+	line = get_next_line(map.fd);
+	while (line != NULL)
+	{
+		line = get_next_line(map.fd);
+		free(line);
+		i++;
+	}
+	close(map.fd);
+	map.fd = open(argv[1], O_RDONLY);
+	return (i);
 }
 
 int	ft_valid(t_map map)
@@ -34,16 +48,22 @@ int	ft_valid(t_map map)
 	return (0);
 }
 
-int	ft_map_chequer(t_map map)
+void	ft_map_chequer(t_map map, char **argv)
 {
 	size_t	i;
+	char	*line;
 
 	i = 0;
-	while (get_next_line(map.fd) != 0)
+	map.y = open_fd(argv, map);
+	map.map = (char **)malloc(sizeof(char *) * map.y + 1);
+	if (map.map == NULL)
+		return ;
+	line = get_next_line(map.fd);
+	while (line != NULL)
 	{
-		map.map[i] = get_next_line(map.fd);
+		line = get_next_line(map.fd);
+		map.map[i] = ft_strdup(line);
+		free(line);
 		i++;
 	}
-	map.y = i;
-	return (ft_valid(map));
 }

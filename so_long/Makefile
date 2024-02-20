@@ -48,6 +48,9 @@ ${NAME}:	${OBJS}
 
 all:		${NAME}
 
+libmlx:
+	@cmake $(LIBMLX) -B $(LIBMLX)/build && make -C $(LIBMLX)/build -j4
+
 bonus:		all
 
 clean:
