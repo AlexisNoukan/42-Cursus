@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 10:51:58 by anoukan           #+#    #+#             */
-/*   Updated: 2024/02/20 15:03:39 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/02/21 13:08:44 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,11 @@ int	open_fd(char **argv, t_map map)
 	line = get_next_line(map.fd);
 	while (line != NULL)
 	{
-		line = get_next_line(map.fd);
 		free(line);
+		line = get_next_line(map.fd);
 		i++;
 	}
+	free(line);
 	close(map.fd);
 	map.fd = open(argv[1], O_RDONLY);
 	return (i);
@@ -61,9 +62,10 @@ void	ft_map_chequer(t_map map, char **argv)
 	line = get_next_line(map.fd);
 	while (line != NULL)
 	{
-		line = get_next_line(map.fd);
 		map.map[i] = ft_strdup(line);
+		line = get_next_line(map.fd);
 		free(line);
 		i++;
 	}
+	free(line);
 }
