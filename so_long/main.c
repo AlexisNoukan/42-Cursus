@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 14:52:13 by anoukan           #+#    #+#             */
-/*   Updated: 2024/02/21 12:58:22 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/02/22 09:41:43 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,6 @@ int	main(int argc, char **argv)
 	map.x = 0;
 	map.s = 0;
 	ft_parsing(map, argv);
-	ft_window();
+	ft_window(map);
 	return (0);
 }

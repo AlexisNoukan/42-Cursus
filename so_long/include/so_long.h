@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 11:45:33 by anoukan           #+#    #+#             */
-/*   Updated: 2024/02/20 14:53:42 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/02/22 09:42:14 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,6 @@ void			ft_map_chequer(t_map map, char **argv);
 void		ft_verify_element(t_map map);
 
 // window
-int			ft_window(void);
+int			ft_window(t_map map);
 
 #endif

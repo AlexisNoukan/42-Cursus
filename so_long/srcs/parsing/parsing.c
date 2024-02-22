@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 10:51:58 by anoukan           #+#    #+#             */
-/*   Updated: 2024/02/21 13:08:44 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/02/22 09:26:30 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,10 @@
 void	ft_parsing(t_map map, char **argv)
 {
 	ft_map_chequer(map, argv);
-	ft_verify_element(map);
-	ft_not_square(map);
-	ft_valid(map);
+	// ft_verify_element(map);
+	// ft_not_square(map);
+	if (ft_valid(map) != 1)
+		return ;
 }
 
 int	open_fd(char **argv, t_map map)
@@ -28,7 +29,7 @@ int	open_fd(char **argv, t_map map)
 	map.fd = open(argv[1], O_RDONLY);
 	i = 1;
 	line = get_next_line(map.fd);
-	while (line != NULL)
+	while (line)
 	{
 		free(line);
 		line = get_next_line(map.fd);
@@ -56,15 +57,15 @@ void	ft_map_chequer(t_map map, char **argv)
 
 	i = 0;
 	map.y = open_fd(argv, map);
-	map.map = (char **)malloc(sizeof(char *) * map.y + 1);
+	map.map = (char **)malloc(sizeof(char *) * (map.y + 100));
 	if (map.map == NULL)
 		return ;
 	line = get_next_line(map.fd);
-	while (line != NULL)
+	while (line)
 	{
 		map.map[i] = ft_strdup(line);
-		line = get_next_line(map.fd);
 		free(line);
+		line = get_next_line(map.fd);
 		i++;
 	}
 	free(line);
