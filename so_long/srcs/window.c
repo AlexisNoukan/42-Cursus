@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 13:11:19 by anoukan           #+#    #+#             */
-/*   Updated: 2024/02/22 09:43:07 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/02/22 18:18:24 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,18 +21,21 @@ static void	ft_error(void)
 
 int	ft_window(t_map map)
 {
-	int		i;
-	mlx_t	*mlx;
+	mlx_t			*mlx;
+	mlx_image_t		*image;
+	unsigned char	*image_data;
+	mlx_image_t		*image;
 
-	i = 0;
 	mlx_set_setting(MLX_MAXIMIZED, true);
 	mlx = mlx_init(WIDTH, HEIGHT, "Game", true);
 	if (!mlx)
 		ft_error();
-	while (map.map)
+	image_data = load_image_data("./assets/Sprout\ Lands\ -\ Sprites\ -\ Basic\ pack/Tilesets/Wooden\ House.png ", 50, 50, 32);
+	if (image_data)
 	{
-		mlx_put_string(mlx, map.map[i], 0, 0);
-		i++;
+		image = mlx_create_image(mlx, 50, 50, 32, image_data);
+		mlx_put_image_to_window(mlx, mlx, image, 0, 0);
+		free(image_data);
 	}
 	mlx_loop(mlx);
 	mlx_terminate(mlx);
