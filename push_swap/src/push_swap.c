@@ -6,7 +6,14 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 09:34:52 by anoukan           #+#    #+#             */
-/*   Updated: 2024/03/04 09:34:53 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/03/11 13:44:24 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../includes/push_swap.h"
+
+int main(int argc, char **argv)
+{
+    
+    return (0);
+}
