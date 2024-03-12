@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 09:35:14 by anoukan           #+#    #+#             */
-/*   Updated: 2024/03/12 11:18:07 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/03/12 11:28:43 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,17 @@
 # include <unistd.h>
 
 // Struct
-typedef struct s_list
+typedef struct s_list2
 {
 	int				number;
 	int				index;
 	struct s_list	*next;
-}					t_list;
+}					t_list2;
 // Functions
 
 //      t_list
 void				ft_print(t_list *a);
-t_list				*ft_lstnew2(int number);
+t_list2				*ft_lstnew2(int number);
 
 // Main
 

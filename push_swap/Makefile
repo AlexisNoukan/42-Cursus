@@ -6,12 +6,13 @@
 #    By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/04 09:44:33 by anoukan           #+#    #+#              #
-#    Updated: 2024/03/12 11:24:42 by anoukan          ###   ########.fr        #
+#    Updated: 2024/03/12 11:39:43 by anoukan          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 FLAGS = -Werror -Wextra -Wall
 CC = gcc
+NAME = push_swap
 
 SRC = ./src/push_swap.c\
 		./src/utils/t_list.c\
@@ -19,13 +20,15 @@ SRC = ./src/push_swap.c\
 
 OBJ = $(SRC:.c=.o)
 
-all: lib main 
+.PHONY: all clean fclean re lib
 
-main: $(OBJ)
-	ar rc $(NAME) $(OBJ)
+all: lib $(NAME)
 
-main: %.o: %.c
-	$(CC) $(CFLAGS) $(INC) -c $< -o $@
+$(NAME): $(OBJ)
+	$(CC) $(FLAGS) -o $@ $^ -L./LibFt/compiled -lft
+
+$(OBJ): %.o: %.c
+	$(CC) $(FLAGS) -c $< -o $@
 
 lib:
 	@echo "Compiling in libft"
@@ -37,9 +40,10 @@ main:
 
 clean:
 	@$(MAKE) -C ./LibFt clean
+	rm -f $(OBJ)
 
 fclean:
 	@$(MAKE) -C ./LibFt clean
-
+	rm -f $(NAME)
 
 re: fclean all
