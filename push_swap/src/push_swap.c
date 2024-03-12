@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 09:34:52 by anoukan           #+#    #+#             */
-/*   Updated: 2024/03/12 13:16:23 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/03/12 21:45:26 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ void	ft_init(char **argv, t_list2 **a)
 	{
 		new = ft_lstnew2(ft_atoi(dest[i]));
 		ft_lstadd_back2(a, new);
+		free(new);
 		i++;
 	}
 }
@@ -35,8 +36,8 @@ int	main(int argc, char **argv)
 
 	if (argc < 2)
 		return (-1);
-	a = (t_list2 **)malloc(sizeof(t_list2));
-	b = (t_list2 **)malloc(sizeof(t_list2));
+	a = (t_list2 **)malloc(sizeof(t_list2 *));
+	b = (t_list2 **)malloc(sizeof(t_list2 *));
 	*a = NULL;
 	*b = NULL;
 	ft_init(argv, a);
