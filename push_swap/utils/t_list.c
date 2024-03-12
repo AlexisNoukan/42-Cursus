@@ -1,34 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   t_list.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/04 09:35:14 by anoukan           #+#    #+#             */
-/*   Updated: 2024/03/12 10:24:54 by anoukan          ###   ########.fr       */
+/*   Created: 2024/03/12 10:19:51 by anoukan           #+#    #+#             */
+/*   Updated: 2024/03/12 10:24:05 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "../../includes/push_swap.h"
 
-// Lib
-# include "../LibFt/libft/libft.h"
-# include <unistd.h>
-
-// Struct
-typedef struct s_list
+t_list	*ft_lstnew(int number)
 {
-	int				number;
-	int				index;
-	struct s_list	*next;
-}					t_list;
-// Functions
+	t_list	*new_node;
 
-//      t_list
-t_list				*ft_lstnew(int number);
-
-// Main
-
-#endif
+	new_node = (t_list *)malloc(sizeof(t_list));
+	if (new_node)
+	{
+		new_node->number = number;
+		new_node->index = -1;
+		new_node->next = NULL;
+	}
+	return (new_node);
+}
