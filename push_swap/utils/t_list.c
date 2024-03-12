@@ -6,13 +6,13 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 10:19:51 by anoukan           #+#    #+#             */
-/*   Updated: 2024/03/12 10:24:05 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/03/12 11:18:40 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-t_list	*ft_lstnew(int number)
+t_list	*ft_lstnew2(int number)
 {
 	t_list	*new_node;
 

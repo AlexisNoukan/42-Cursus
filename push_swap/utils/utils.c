@@ -6,20 +6,17 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 21:20:52 by anoukan           #+#    #+#             */
-/*   Updated: 2024/03/11 21:23:26 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/03/12 11:17:40 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	ft_free(char **str)
+void	ft_print(t_list *a)
 {
-	int	i;
-
-	i = 0;
-	while (str[i])
+	while (!a)
 	{
-		free(str[i]);
-		i++;
+		ft_printf("%d", a->number);
+		a = a->next;
 	}
 }
