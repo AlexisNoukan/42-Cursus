@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 10:19:51 by anoukan           #+#    #+#             */
-/*   Updated: 2024/03/12 11:28:49 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/03/12 13:15:39 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,4 +24,22 @@ t_list2	*ft_lstnew2(int number)
 		new_node->next = NULL;
 	}
 	return (new_node);
+}
+
+void	ft_lstadd_back2(t_list2 **lst, t_list2 *new)
+{
+	t_list2	*temp;
+
+	if (lst && new)
+	{
+		if (!*lst)
+			*lst = new;
+		else
+		{
+			temp = *lst;
+			while (temp->next)
+				temp = temp->next;
+			temp->next = new;
+		}
+	}
 }

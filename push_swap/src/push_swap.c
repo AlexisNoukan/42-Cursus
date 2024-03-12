@@ -6,16 +6,16 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 09:34:52 by anoukan           #+#    #+#             */
-/*   Updated: 2024/03/12 11:27:32 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/03/12 13:16:23 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	ft_init(char **argv, t_list **a)
+void	ft_init(char **argv, t_list2 **a)
 {
 	char	**dest;
-	t_list	*new;
+	t_list2	*new;
 	int		i;
 
 	dest = ft_split(*argv, ' ');
@@ -23,7 +23,7 @@ void	ft_init(char **argv, t_list **a)
 	while (dest[i])
 	{
 		new = ft_lstnew2(ft_atoi(dest[i]));
-		ft_lstadd_back(a, new);
+		ft_lstadd_back2(a, new);
 		i++;
 	}
 }

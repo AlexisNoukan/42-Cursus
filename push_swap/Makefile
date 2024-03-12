@@ -6,44 +6,44 @@
 #    By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/04 09:44:33 by anoukan           #+#    #+#              #
-#    Updated: 2024/03/12 11:39:43 by anoukan          ###   ########.fr        #
+#    Updated: 2024/03/12 13:54:02 by anoukan          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-FLAGS = -Werror -Wextra -Wall
 CC = gcc
 NAME = push_swap
+SRC_DIR = src
+UTILS_DIR = $(SRC_DIR)/utils
 
-SRC = ./src/push_swap.c\
-		./src/utils/t_list.c\
-		./src/utils/utils.c\
+SRC =	$(SRC_DIR)/push_swap.c\
+		$(UTILS_DIR)/t_list.c\
+		$(UTILS_DIR)/utils.c
 
-OBJ = $(SRC:.c=.o)
+OBJ_DIR = obj
+OBJ = $(SRC:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
 
 .PHONY: all clean fclean re lib
 
 all: lib $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(FLAGS) -o $@ $^ -L./LibFt/compiled -lft
+	ar rc $(NAME) $(OBJ)
 
-$(OBJ): %.o: %.c
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
+	@mkdir -p $(@D)
 	$(CC) $(FLAGS) -c $< -o $@
 
 lib:
 	@echo "Compiling in libft"
 	@$(MAKE) -C ./LibFt
 
-main:
-	@echo "Compiling the main"
-	CC FLAGS SRC
-
 clean:
 	@$(MAKE) -C ./LibFt clean
-	rm -f $(OBJ)
+	rm -rf $(OBJ_DIR)
 
 fclean:
-	@$(MAKE) -C ./LibFt clean
+	@$(MAKE) -C ./LibFt fclean
+	rm -rf $(OBJ_DIR)
 	rm -f $(NAME)
 
 re: fclean all

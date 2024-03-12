@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 09:35:14 by anoukan           #+#    #+#             */
-/*   Updated: 2024/03/12 11:28:43 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/03/12 13:16:43 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,9 @@ typedef struct s_list2
 // Functions
 
 //      t_list
-void				ft_print(t_list *a);
+void				ft_print(t_list2 *a);
 t_list2				*ft_lstnew2(int number);
+void				ft_lstadd_back2(t_list2 **lst, t_list2 *new);
 
 // Main
 
