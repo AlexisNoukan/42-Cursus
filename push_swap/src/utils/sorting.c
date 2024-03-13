@@ -1,22 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   sorting.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/11 21:20:52 by anoukan           #+#    #+#             */
-/*   Updated: 2024/03/13 10:28:47 by anoukan          ###   ########.fr       */
+/*   Created: 2024/03/13 13:08:19 by anoukan           #+#    #+#             */
+/*   Updated: 2024/03/13 13:12:19 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-void	ft_print(t_stack *a)
+bool	stack_sorted(t_stack *stack)
 {
-	while (a)
+	if (!stack)
+		return (1);
+	while (stack->next)
 	{
-		ft_printf("%d", a->number);
-		a = a->next;
+		if (stack->number > stack->next->number)
+			return (false);
+		stack = stack->next;
 	}
+	return (true);
 }

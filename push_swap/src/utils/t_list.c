@@ -6,17 +6,17 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 10:19:51 by anoukan           #+#    #+#             */
-/*   Updated: 2024/03/12 21:15:12 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/03/13 10:28:52 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-t_list2	*ft_lstnew2(int number)
+t_stack	*ft_lstnew2(int number)
 {
-	t_list2	*new_node;
+	t_stack	*new_node;
 
-	new_node = (t_list2 *)malloc(sizeof(t_list2));
+	new_node = (t_stack *)malloc(sizeof(t_stack));
 	if (new_node)
 	{
 		new_node->number = number;
@@ -26,9 +26,9 @@ t_list2	*ft_lstnew2(int number)
 	return (new_node);
 }
 
-void	ft_lstadd_back2(t_list2 **lst, t_list2 *new)
+void	ft_lstadd_back2(t_stack **lst, t_stack *new)
 {
-	t_list2	*temp;
+	t_stack	*temp;
 
 	if (lst && new)
 	{

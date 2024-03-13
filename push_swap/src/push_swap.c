@@ -6,19 +6,19 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 09:34:52 by anoukan           #+#    #+#             */
-/*   Updated: 2024/03/12 21:45:26 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/03/13 13:16:08 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	ft_init(char **argv, t_list2 **a)
+void	ft_init(char **argv, t_stack **a)
 {
 	char	**dest;
-	t_list2	*new;
+	t_stack	*new;
 	int		i;
 
-	dest = ft_split(*argv, ' ');
+	dest = ft_split(argv[1], ' ');
 	i = 0;
 	while (dest[i])
 	{
@@ -31,16 +31,19 @@ void	ft_init(char **argv, t_list2 **a)
 
 int	main(int argc, char **argv)
 {
-	t_list2	**a;
-	t_list2	**b;
+	t_stack	**a;
+	t_stack	**b;
 
-	if (argc < 2)
-		return (-1);
-	a = (t_list2 **)malloc(sizeof(t_list2 *));
-	b = (t_list2 **)malloc(sizeof(t_list2 *));
 	*a = NULL;
 	*b = NULL;
+	if (argc < 2)
+		return (-1);
+	else if (argc == 2)
+		argv = ft_split(argv[1], ' ');
 	ft_init(argv, a);
+	if (!stack_sorted(a))
+	{
+	}
 	ft_print(*a);
 	return (0);
 }
