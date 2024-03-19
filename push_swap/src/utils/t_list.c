@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 10:19:51 by anoukan           #+#    #+#             */
-/*   Updated: 2024/03/19 09:05:25 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/03/19 14:49:17 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,4 +64,13 @@ int	ft_lstsize2(t_stack *lst)
 		i++;
 	}
 	return (i);
+}
+
+void	ft_lstadd_front2(t_stack **lst, t_stack *new)
+{
+	if (lst && new)
+	{
+		new->next = *lst;
+		*lst = new;
+	}
 }

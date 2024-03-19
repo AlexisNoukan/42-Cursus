@@ -6,20 +6,20 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 20:56:44 by anoukan           #+#    #+#             */
-/*   Updated: 2024/03/19 09:07:34 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/03/19 14:47:37 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-int	rotate(t_stack *stack)
+int	rotate(t_stack **stack)
 {
 	t_list	*head;
 	t_list	*tail;
 
-	if (ft_lstsize2(stack) < 2)
+	if (ft_lstsize2(*stack) < 2)
 		return (-1);
-	head = stack;
+	head = *stack;
 	tail = ft_lstlast2(head);
 	stack = head->next;
 	head->next = NULL;
@@ -27,7 +27,7 @@ int	rotate(t_stack *stack)
 	return (0);
 }
 
-int	ra(t_stack *a)
+int	ra(t_stack **a)
 {
 	if (rotate(a) == -1)
 		return (-1);
@@ -35,7 +35,7 @@ int	ra(t_stack *a)
 	return (0);
 }
 
-int	rb(t_stack *b)
+int	rb(t_stack **b)
 {
 	if (rotate(b) == -1)
 		return (-1);
@@ -43,9 +43,9 @@ int	rb(t_stack *b)
 	return (0);
 }
 
-int	rr(t_stack *a, t_stack *b)
+int	rr(t_stack **a, t_stack **b)
 {
-	if (ft_lstsize2(a) < 2 || ft_lstsize2(b) < 2)
+	if (ft_lstsize2(*a) < 2 || ft_lstsize2(*b) < 2)
 		return (-1);
 	rotate(a);
 	rotate(b);
