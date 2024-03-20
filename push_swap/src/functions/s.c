@@ -6,8 +6,23 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 14:22:58 by anoukan           #+#    #+#             */
-/*   Updated: 2024/03/19 14:23:00 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/03/20 12:11:39 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
+
+int	swap(t_stack **stack)
+{
+	return (0);
+}
+
+int	sa(t_stack **a)
+{
+	return (0);
+}
+
+int	sb(t_stack **b)
+{
+	return (0);
+}
