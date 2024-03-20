@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 14:22:36 by anoukan           #+#    #+#             */
-/*   Updated: 2024/03/19 20:14:46 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/03/20 12:16:54 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,10 @@ int	rrb(t_stack **b)
 
 int	rr(t_stack **a, t_stack **b)
 {
+	if (ft_lstsize2(*a) < 2 || ft_lstsize2(*b) < 2)
+		return (-1);
+	revers_rotate(a);
+	reverse_rotate(b);
+	ft_putendl_fd("rrr", 1);
 	return (0);
 }
