@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 10:19:51 by anoukan           #+#    #+#             */
-/*   Updated: 2024/03/19 14:49:17 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/03/25 13:11:51 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	ft_lstadd_back2(t_stack **lst, t_stack *new)
 	}
 }
 
-t_list	*ft_lstlast2(t_stack *lst)
+t_stack	*ft_lstlast2(t_stack *lst)
 {
 	if (!lst)
 		return (NULL);
