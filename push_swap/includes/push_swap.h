@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 09:35:14 by anoukan           #+#    #+#             */
-/*   Updated: 2024/03/25 13:15:06 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/04/05 13:24:04 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,14 +34,18 @@ typedef struct s_stack
 
 // Sort
 bool				stack_sorted(t_stack **stack);
+void				ft_sort(t_stack **stack_a, t_stack **stack_b);
 
 //      t_list
 void				ft_print(t_stack *a);
 t_stack				*ft_lstnew2(int number);
 void				ft_lstadd_back2(t_stack **lst, t_stack *new);
 t_stack				*ft_lstlast2(t_stack *lst);
+void				ft_lstadd_front2(t_stack **lst, t_stack *new);
 
 // Main
+void				ft_init(char **argv, t_stack **a);
+
 // Rotate
 int					rotate(t_stack **stack);
 int					ra(t_stack **a);
@@ -57,7 +61,8 @@ int					rra(t_stack **a);
 int					rrb(t_stack **b);
 int					rr(t_stack **a, t_stack **b);
 // Swap
-int					swap(t_stack **stack);
+int					swap(t_stack **stack_a, t_stack **stack_b);
+
 int					sa(t_stack **a);
 int					sb(t_stack **b);
 #endif
