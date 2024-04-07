@@ -16,11 +16,11 @@ int	swap(t_stack **stack_a, t_stack **stack_b)
 {
 	t_stack	*temp;
 
-	if (ft_lstsize2(stack_a) < 2)
+	if (ft_lstsize2(*stack_a) < 2)
 		return (-1);
 	temp = *stack_a;
 	ft_lstadd_front2(stack_b, temp);
-	*stack_a = stack_a->next;
+	*stack_a = temp->next;
 	return (0);
 }
 

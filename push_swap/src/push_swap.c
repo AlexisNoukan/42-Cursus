@@ -43,7 +43,7 @@ int	main(int argc, char **argv)
 	ft_init(argv, a);
 	if (!stack_sorted(a))
 		ft_sort(a, b);
-	ft_print(a);
-	ft_print(b);
+	ft_print(*a);
+	ft_print(*b);
 	return (0);
 }

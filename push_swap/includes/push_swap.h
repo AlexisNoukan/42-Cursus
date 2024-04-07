@@ -62,7 +62,11 @@ int					rrb(t_stack **b);
 int					rr(t_stack **a, t_stack **b);
 // Swap
 int					swap(t_stack **stack_a, t_stack **stack_b);
-
 int					sa(t_stack **a);
 int					sb(t_stack **b);
+
+// Utils
+int is_max(t_stack **stack);
+int iterator(int i);
+
 #endif

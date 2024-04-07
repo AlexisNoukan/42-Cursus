@@ -14,18 +14,31 @@
 
 bool	stack_sorted(t_stack **stack)
 {
+  t_stack *temp;
+
 	if (!stack)
-		return (1);
-	while (stack->next)
+		return (-1);
+	temp = *stack;
+  while (temp->next)
 	{
-		if (stack->number > stack->next->number)
+		if (temp->number > temp->next->number)
 			return (false);
-		stack = stack->next;
+		temp = temp->next;
 	}
 	return (true);
 }
 
+void  small_sort(t_stack **stack_a, t_stack **stack_b)
+{
+  return ;
+}
+
 void	ft_sort(t_stack **stack_a, t_stack **stack_b)
 {
-	return ;
+  int i;
+  int n;
+
+  i = is_max(stack_a);
+	n = iterator(i);
+  return ;
 }
