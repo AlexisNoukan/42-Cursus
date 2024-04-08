@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
+/*   By: saliinger <saliinger@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 21:20:52 by anoukan           #+#    #+#             */
-/*   Updated: 2024/03/21 14:37:17 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/04/07 19:46:23 by saliinger        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,25 +21,26 @@ void	ft_print(t_stack *a)
 	}
 }
 
-int iterator(int i)
+int	iterator(int i)
 {
-  int n;
-  while ((i % 10) != 0)
-    ++n;
-  return (n);
+	int	n;
+
+	while ((i % 10) != 0)
+		++n;
+	return (n);
 }
 
-int is_max(t_stack **stack)
+int	is_max(t_stack **stack)
 {
-  int     i;
-  t_stack *temp;
+	int		i;
+	t_stack	*temp;
 
-  i = 0;
-  temp = *stack;
-  while(temp->next)
-  {
-    if (temp->number > i)
-      i = temp->number;
-  }
-  return(i);
+	i = 0;
+	temp = *stack;
+	while (temp->next)
+	{
+		if (temp->number > i)
+			i = temp->number;
+	}
+	return (i);
 }

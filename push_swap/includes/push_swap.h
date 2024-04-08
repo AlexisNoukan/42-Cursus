@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
+/*   By: saliinger <saliinger@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 09:35:14 by anoukan           #+#    #+#             */
-/*   Updated: 2024/04/05 13:24:04 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/04/07 19:47:34 by saliinger        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ int					sa(t_stack **a);
 int					sb(t_stack **b);
 
 // Utils
-int is_max(t_stack **stack);
-int iterator(int i);
+int					is_max(t_stack **stack);
+int					iterator(int i);
 
 #endif

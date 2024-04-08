@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sorting.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
+/*   By: saliinger <saliinger@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 13:08:19 by anoukan           #+#    #+#             */
-/*   Updated: 2024/04/05 13:24:42 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/04/07 19:50:39 by saliinger        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 bool	stack_sorted(t_stack **stack)
 {
-  t_stack *temp;
+	t_stack	*temp;
 
 	if (!stack)
 		return (-1);
 	temp = *stack;
-  while (temp->next)
+	while (temp->next)
 	{
 		if (temp->number > temp->next->number)
 			return (false);
@@ -28,17 +28,20 @@ bool	stack_sorted(t_stack **stack)
 	return (true);
 }
 
-void  small_sort(t_stack **stack_a, t_stack **stack_b)
+void	small_sort(t_stack **stack_a, t_stack **stack_b)
 {
-  return ;
+	return ;
 }
 
 void	ft_sort(t_stack **stack_a, t_stack **stack_b)
 {
-  int i;
-  int n;
+	int	i;
+	int	n;
 
-  i = is_max(stack_a);
-	n = iterator(i);
-  return ;
+	i = 0;
+	n = iterator(is_max(stack_a));
+	while (++i < n)
+	{
+		
+	}
 }

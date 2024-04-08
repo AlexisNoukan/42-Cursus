@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
+/*   By: saliinger <saliinger@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 12:20:10 by anoukan           #+#    #+#             */
-/*   Updated: 2024/01/19 09:22:19 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/04/07 19:47:12 by saliinger        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ char	*get_next_line(int fd)
 	int			bytes_read;
 
 	if (fd < 0 || BUFFER_SIZE <= 0 || fd >= 1024)
-		return (free(s[fd]), s[fd ] = NULL, NULL);
+		return (free(s[fd]), s[fd] = NULL, NULL);
 	b = malloc((BUFFER_SIZE + 1) * sizeof(char));
 	if (!b)
 		return (NULL);
