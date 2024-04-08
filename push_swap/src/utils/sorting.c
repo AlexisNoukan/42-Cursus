@@ -6,7 +6,7 @@
 /*   By: saliinger <saliinger@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 13:08:19 by anoukan           #+#    #+#             */
-/*   Updated: 2024/04/08 17:02:40 by saliinger        ###   ########.fr       */
+/*   Updated: 2024/04/08 19:37:32 by saliinger        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ void	small_sort(t_stack **stack_a, t_stack **stack_b)
 	t_stack	*sorted;
 	t_stack	*current;
 	t_stack	*next;
-	t_stack	*temp;
 
 	sorted = NULL;
 	current = *stack_a;
@@ -41,19 +40,20 @@ void	small_sort(t_stack **stack_a, t_stack **stack_b)
 	{
 		next = current->next;
 		if (sorted == NULL || sorted->number >= current->number)
-		{
-			current->next = sorted;
-			sorted = current;
-		}
+			push(&sorted, current->number);
 		else
 		{
-			temp = sorted;
-			while (temp->next != NULL && temp->next->number < current->number)
+			while (sorted != NULL && sorted->number < current->number)
 			{
-				temp = temp->next;
+				pa(stack_a, stack_b);
+				sa(stack_a);
+				ra(stack_a);
 			}
-			current->next = temp->next;
-			temp->next = current;
+			ft_lstadd_front2(&sorted, current->number);
+			while (*stack_b != NULL)
+				pa(stack_a, stack_b);
+			while ((*stack_a)->number != sorted->number)
+				ra(stack_a);
 		}
 		current = next;
 	}
