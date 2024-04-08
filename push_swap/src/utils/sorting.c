@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sorting.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: saliinger <saliinger@student.42.fr>        +#+  +:+       +#+        */
+/*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 13:08:19 by anoukan           #+#    #+#             */
-/*   Updated: 2024/04/07 19:50:39 by saliinger        ###   ########.fr       */
+/*   Updated: 2024/04/08 14:43:25 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,5 @@ void	ft_sort(t_stack **stack_a, t_stack **stack_b)
 	n = iterator(is_max(stack_a));
 	while (++i < n)
 	{
-		
 	}
 }
