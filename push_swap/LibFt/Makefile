@@ -32,4 +32,4 @@ move_libs:
 	@mkdir -p compiled
 	@mv ./libft/libft.a compiled/
 	@mv ./printf/printf.a compiled/
-	@mv ./GNL/GNL.a compiled/
+	@mv ./GNL/gnl.a compiled/

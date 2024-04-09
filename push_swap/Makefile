@@ -24,7 +24,7 @@ OBJ_UTILS = $(UTILS:$(UTILS_DIR)/%.c=$(OBJ_DIR)/%.o)
 OBJ = $(OBJ_SRC) $(OBJ_FUNCTION) $(OBJ_UTILS)
 
 # Compilation flags
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror 
 
 .PHONY: all clean fclean re lib
 
