@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 20:56:44 by anoukan           #+#    #+#             */
-/*   Updated: 2024/03/19 14:47:37 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/04/10 09:30:05 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 int	rotate(t_stack **stack)
 {
-	t_list	*head;
-	t_list	*tail;
+	t_stack	*head;
+	t_stack	*tail;
 
 	if (ft_lstsize2(*stack) < 2)
 		return (-1);
 	head = *stack;
 	tail = ft_lstlast2(head);
-	stack = head->next;
+	*stack = head->next;
 	head->next = NULL;
 	tail->next = head;
 	return (0);

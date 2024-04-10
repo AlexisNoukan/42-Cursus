@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 09:34:52 by anoukan           #+#    #+#             */
-/*   Updated: 2024/04/05 13:25:58 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/04/09 15:03:15 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,14 @@ int	main(int argc, char **argv)
 	t_stack	**a;
 	t_stack	**b;
 
-	*a = NULL;
-	*b = NULL;
 	if (argc < 2)
 		return (-1);
 	else if (argc == 2)
 		argv = ft_split(argv[1], ' ');
+	a = malloc(sizeof(t_stack *));
+	b = malloc(sizeof(t_stack *));
+	*a = NULL;
+	*b = NULL;
 	ft_init(argv, a);
 	if (!stack_sorted(a))
 		ft_sort(a, b);
