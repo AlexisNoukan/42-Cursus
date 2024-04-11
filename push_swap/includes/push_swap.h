@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 09:35:14 by anoukan           #+#    #+#             */
-/*   Updated: 2024/04/09 15:04:51 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/04/10 14:29:45 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,8 +63,8 @@ int					rrb(t_stack **b);
 int					rr(t_stack **a, t_stack **b);
 // Swap
 int					swap(t_stack **stack_a, t_stack **stack_b);
-int					sa(t_stack **a);
-int					sb(t_stack **b);
+int					sa(t_stack **a, t_stack **b);
+int					sb(t_stack **b, t_stack **a);
 
 // Utils
 int					is_max(t_stack **stack);

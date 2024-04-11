@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 14:22:36 by anoukan           #+#    #+#             */
-/*   Updated: 2024/04/10 09:31:18 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/04/10 14:26:39 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ int	reverse_rotate(t_stack **stack)
 		return (-1);
 	head = *stack;
 	tail = ft_lstlast2(head);
-	ft_lstadd_front2(tail);
-	stack = head->next;
+	ft_lstadd_front2(stack, tail);
+	*stack = head->next;
 	tail->next = head;
 	return (0);
 }
