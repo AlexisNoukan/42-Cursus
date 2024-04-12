@@ -6,7 +6,7 @@
 #    By: saliinger <saliinger@student.42.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/07 11:38:23 by anoukan           #+#    #+#              #
-#    Updated: 2024/04/12 17:08:24 by saliinger        ###   ########.fr        #
+#    Updated: 2024/04/12 20:26:19 by saliinger        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,25 +15,27 @@ CFLAGS = -Wall -Wextra -Werror
 NAME = libprintf.a
 
 INCDIR = includes
+LIBDIR = ../libft
 
 # Printf
-PTF_SRCS =		ft_countdigit.c \
-				ft_decimal.c\
-				ft_hex.c \
-				ft_pointeurhex.c \
-				ft_printchar.c\
-				ft_printf.c \
-				ft_putnbr_u.c \
-				ft_putstr.c\
-				ft_selector.c\
-				ft_string.c\
-				ft_uint.c
+PTF_SRCS =	ft_countdigit.c \
+			ft_decimal.c \
+			ft_hex.c \
+			ft_pointeurhex.c \
+			ft_printchar.c \
+			ft_printf.c \
+			ft_putnbr_u.c \
+			ft_putstr.c \
+			ft_selector.c \
+			ft_string.c \
+			ft_uint.c
 
 PTF_OBJ = $(PTF_SRCS:%.c=%.o)
 
 # Makefile Command
 OBJ = $(PTF_OBJ)
 INC = -I$(INCDIR)
+LIB = -L$(LIBDIR) -lft
 
 .PHONY: all clean fclean re
 
@@ -52,4 +54,3 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
-

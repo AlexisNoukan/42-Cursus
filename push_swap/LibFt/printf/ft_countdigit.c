@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_countdigit.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
+/*   By: saliinger <saliinger@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 0008/11/20 12:27:11 by noukan            #+#    #+#             */
-/*   Updated: 2023/11/14 10:51:19 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/04/12 21:11:50 by saliinger        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
 int	ft_countdigit(long nbr)
 {

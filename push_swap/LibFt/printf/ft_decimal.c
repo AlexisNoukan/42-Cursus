@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_decimal.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
+/*   By: saliinger <saliinger@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 10:54:54 by anoukan           #+#    #+#             */
-/*   Updated: 2023/11/14 10:56:30 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/04/12 21:11:50 by saliinger        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
 int	ft_decimal(int n)
 {

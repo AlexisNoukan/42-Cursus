@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+         #
+#    By: saliinger <saliinger@student.42.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/19 12:59:54 by anoukan           #+#    #+#              #
-#    Updated: 2024/01/22 17:36:02 by anoukan          ###   ########.fr        #
+#    Updated: 2024/04/12 21:13:18 by saliinger        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,7 +49,18 @@ SRC =   ft_isalpha.c\
 		ft_putchar_fd.c\
 		ft_putstr_fd.c\
 		ft_putendl_fd.c\
-		ft_putnbr_fd.c
+		ft_putnbr_fd.c \
+		ft_countdigit.c \
+		ft_decimal.c \
+		ft_hex.c \
+		ft_pointeurhex.c \
+		ft_printchar.c \
+		ft_printf.c \
+		ft_putnbr_u.c \
+		ft_putstr.c \
+		ft_selector.c \
+		ft_string.c \
+		ft_uint.c
 
 BONUS = ft_lstnew_bonus.c\
 		ft_lstadd_front_bonus.c\

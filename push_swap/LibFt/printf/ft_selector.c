@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_selector.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
+/*   By: saliinger <saliinger@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 13:01:50 by anoukan           #+#    #+#             */
-/*   Updated: 2023/11/14 15:25:33 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/04/12 21:11:50 by saliinger        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
 void	ft_selector(const char *format, va_list args, int *count)
 {

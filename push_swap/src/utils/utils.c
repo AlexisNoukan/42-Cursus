@@ -6,20 +6,13 @@
 /*   By: saliinger <saliinger@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 21:20:52 by anoukan           #+#    #+#             */
-/*   Updated: 2024/04/12 17:04:48 by saliinger        ###   ########.fr       */
+/*   Updated: 2024/04/12 21:30:41 by saliinger        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-void	ft_print(t_stack *a)
-{
-	while (a)
-	{
-		ft_printf("%d", a->number);
-		a = a->next;
-	}
-}
+
 
 int	iterator(int i)
 {

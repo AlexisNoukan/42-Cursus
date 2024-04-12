@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_hex.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
+/*   By: saliinger <saliinger@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 0006/11/20 14:18:23 by noukan            #+#    #+#             */
-/*   Updated: 2023/11/13 14:54:23 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/04/12 21:11:50 by saliinger        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
 void	ft_putnb(unsigned int nb, const char c)
 {

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
+/*   By: saliinger <saliinger@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 09:50:46 by anoukan           #+#    #+#             */
-/*   Updated: 2024/01/22 18:11:42 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/04/12 21:11:04 by saliinger        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,14 @@
 
 //# include "../GNL/get_next_line.h"
 # include "../GNL/get_next_line.h"
-# include "../printf/ft_printf.h"
 # include <limits.h>
 # include <stddef.h>
 # include <stdint.h>
 # include <stdlib.h>
 # include <unistd.h>
+// printf
+# include <stdarg.h>
+# include <stdint.h>
 
 int					ft_isalpha(int c);
 int					ft_isdigit(int c);
@@ -74,5 +76,31 @@ void				ft_lstclear(t_list **lst, void (*del)(void *));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 						void (*del)(void *));
+
+// printf
+int					ft_printf(const char *format, ...);
+
+// Selector
+void				ft_selector(const char *format, va_list args, int *count);
+
+// Char/String part
+int					ft_printchar(char c);
+int					ft_putstr(char *str);
+int					ft_string(char *str);
+
+// Decimal part
+int					ft_countdigit(long nbr);
+int					ft_decimal(int n);
+
+// Unsigned Int
+int					ft_uint(int value);
+int					ft_countdigit_u(unsigned long nbr);
+void				ft_putnbr_u(unsigned long nbr);
+
+// Hex part
+int					ft_hex(unsigned int nbr, const char c);
+int					ft_hexcount(unsigned int n);
+int					ft_pointertohex(unsigned long long ptr);
+int					ft_ptrlen(uintptr_t ptr);
 
 #endif
