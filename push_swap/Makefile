@@ -26,12 +26,15 @@ OBJ = $(OBJ_SRC) $(OBJ_FUNCTION) $(OBJ_UTILS)
 # Compilation flags
 FLAGS = -Wall -Wextra -Werror 
 
+# Library flags
+LIBS = -L./LibFt/compiled -lft -lprintf -lgnl
+
 .PHONY: all clean fclean re lib
 
 all: lib $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(FLAGS) -o $@ $^
+	$(CC) $(FLAGS) -o $@ $^ $(LIBS)
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	@mkdir -p $(@D)

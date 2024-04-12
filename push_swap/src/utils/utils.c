@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
+/*   By: saliinger <saliinger@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 21:20:52 by anoukan           #+#    #+#             */
-/*   Updated: 2024/04/11 10:51:12 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/04/12 17:04:48 by saliinger        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,10 +45,10 @@ int	is_max(t_stack **stack)
 	return (i);
 }
 
-int	meanvalue(t_stack **a)
+int	mean_value(t_stack **a)
 {
 	int		i;
-	t_stack	temp;
+	t_stack	*temp;
 	int		n;
 
 	i = ft_lstsize2(*a);

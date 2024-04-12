@@ -3,16 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+         #
+#    By: saliinger <saliinger@student.42.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/22 17:10:26 by anoukan           #+#    #+#              #
-#    Updated: 2024/01/22 17:13:34 by anoukan          ###   ########.fr        #
+#    Updated: 2024/04/12 17:08:34 by saliinger        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
-NAME = gnl.a
+NAME = libgnl.a
 
 INCDIR = includes
 

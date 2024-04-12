@@ -31,5 +31,5 @@ re: fclean all
 move_libs:
 	@mkdir -p compiled
 	@mv ./libft/libft.a compiled/
-	@mv ./printf/printf.a compiled/
-	@mv ./GNL/gnl.a compiled/
+	@mv ./printf/libprintf.a compiled/
+	@mv ./GNL/libgnl.a compiled/

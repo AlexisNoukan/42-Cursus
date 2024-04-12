@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
+/*   By: saliinger <saliinger@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 09:35:14 by anoukan           #+#    #+#             */
-/*   Updated: 2024/04/10 14:29:45 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/04/12 17:51:14 by saliinger        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void				ft_init(char **argv, t_stack **a);
 int					rotate(t_stack **stack);
 int					ra(t_stack **a);
 int					rb(t_stack **b);
-int					rr(t_stack **a, t_stack **b);
+int					rotate_rotate(t_stack **a, t_stack **b);
 // Push
 int					push(t_stack **to, t_stack **from);
 int					pa(t_stack **a, t_stack **b);
@@ -69,5 +69,6 @@ int					sb(t_stack **b, t_stack **a);
 // Utils
 int					is_max(t_stack **stack);
 int					iterator(int i);
+int					mean_value(t_stack **a);
 
 #endif

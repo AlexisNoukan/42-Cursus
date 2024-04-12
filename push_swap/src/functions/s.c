@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   s.c                                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
+/*   By: saliinger <saliinger@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 14:22:58 by anoukan           #+#    #+#             */
-/*   Updated: 2024/04/10 14:30:07 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/04/12 17:10:35 by saliinger        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,13 @@ int	swap(t_stack **stack_a, t_stack **stack_b)
 int	sa(t_stack **a, t_stack **b)
 {
 	swap(a, b);
-	ft_putendl_fd("sa", 1);
+	ft_printf("sa", 1);
 	return (0);
 }
 
 int	sb(t_stack **a, t_stack **b)
 {
 	swap(b, a);
-	ft_putendl_fd("sb", 1);
+	ft_printf("sb", 1);
 	return (0);
 }
