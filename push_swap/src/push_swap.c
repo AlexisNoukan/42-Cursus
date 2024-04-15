@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 09:34:52 by anoukan           #+#    #+#             */
-/*   Updated: 2024/04/15 15:32:19 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/04/15 15:38:55 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	ft_init(char **argv, t_stack **a)
 	{
 		j = ft_atoi(dest[i]);
 		new = ft_lstnew2(j);
-		ft_lstadd_back2(a, new);
+		ft_lstadd_front2(a, new);
 		i++;
 		printf("j loop : %d\n", j);
 		free(new);
