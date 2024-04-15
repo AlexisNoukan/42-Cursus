@@ -3,16 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: saliinger <saliinger@student.42.fr>        +#+  +:+       +#+        */
+/*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 21:20:52 by anoukan           #+#    #+#             */
-/*   Updated: 2024/04/12 21:30:41 by saliinger        ###   ########.fr       */
+/*   Updated: 2024/04/15 11:10:13 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
-
-
 
 int	iterator(int i)
 {
@@ -53,4 +51,26 @@ int	mean_value(t_stack **a)
 		temp = temp->next;
 	}
 	return (n / i);
+}
+
+void	ft_free(t_stack **stack)
+{
+	t_stack	*temp;
+
+	temp = *stack;
+	while (temp)
+	{
+		temp = temp->next;
+		free(temp);
+	}
+}
+
+void	ft_print(t_stack **stack)
+{
+	while (*stack)
+	{
+		ft_printf("%d", (*stack)->number);
+		*stack = (*stack)->next;
+	}
+	ft_printf("\n");
 }

@@ -1,12 +1,12 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
+#    MakeFile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/19 12:59:54 by anoukan           #+#    #+#              #
-#    Updated: 2024/01/22 17:36:02 by anoukan          ###   ########.fr        #
+#    Updated: 24/10/2023 11:33:37 by anoukan          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ NAME = libft.a
 
 INCDIR = includes
 
-SRC =	ft_isalpha.c\
+SRC =   ft_isalpha.c\
         ft_isdigit.c\
         ft_isalnum.c\
         ft_isascii.c\
@@ -61,6 +61,7 @@ BONUS = ft_lstnew_bonus.c\
 		ft_lstiter_bonus.c\
 		ft_lstmap_bonus.c
 
+        
 OBJ = $(SRC:.c=.o)
 
 OBJ_BONUS = $(BONUS:.c=.o)

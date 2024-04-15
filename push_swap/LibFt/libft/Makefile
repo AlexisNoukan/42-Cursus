@@ -1,12 +1,12 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
+#    MakeFile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: saliinger <saliinger@student.42.fr>        +#+  +:+       +#+         #
+#    By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/19 12:59:54 by anoukan           #+#    #+#              #
-#    Updated: 2024/04/12 21:13:18 by saliinger        ###   ########.fr        #
+#    Updated: 24/10/2023 11:33:37 by anoukan          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,7 +49,7 @@ SRC =   ft_isalpha.c\
 		ft_putchar_fd.c\
 		ft_putstr_fd.c\
 		ft_putendl_fd.c\
-		ft_putnbr_fd.c \
+		ft_putnbr_fd.c\
 		ft_countdigit.c \
 		ft_decimal.c \
 		ft_hex.c \
@@ -72,6 +72,7 @@ BONUS = ft_lstnew_bonus.c\
 		ft_lstiter_bonus.c\
 		ft_lstmap_bonus.c
 
+        
 OBJ = $(SRC:.c=.o)
 
 OBJ_BONUS = $(BONUS:.c=.o)

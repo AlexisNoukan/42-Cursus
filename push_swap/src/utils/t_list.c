@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 10:19:51 by anoukan           #+#    #+#             */
-/*   Updated: 2024/03/25 13:11:51 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/04/15 10:15:37 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ t_stack	*ft_lstnew2(int number)
 	if (new_node)
 	{
 		new_node->number = number;
-		new_node->index = -1;
 		new_node->next = NULL;
 	}
 	return (new_node);

@@ -6,21 +6,19 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 09:50:46 by anoukan           #+#    #+#             */
-/*   Updated: 2024/01/22 18:11:42 by anoukan          ###   ########.fr       */
+/*   Updated: 2023/11/01 08:27:41 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-//# include "../GNL/get_next_line.h"
-# include "../GNL/get_next_line.h"
-# include "../printf/ft_printf.h"
 # include <limits.h>
 # include <stddef.h>
-# include <stdint.h>
+# include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdint.h>
 
 int					ft_isalpha(int c);
 int					ft_isdigit(int c);
