@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 09:34:52 by anoukan           #+#    #+#             */
-/*   Updated: 2024/04/15 15:38:55 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/04/16 16:09:49 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,10 @@ void	ft_init(char **argv, t_stack **a)
 	{
 		j = ft_atoi(dest[i]);
 		new = ft_lstnew2(j);
-		ft_lstadd_front2(a, new);
-		i++;
-		printf("j loop : %d\n", j);
+		ft_lstadd_back2(a, new);
+		printf("new loop : %d\n", new->number);
 		free(new);
+		i++;
 	}
 	printf("init done\n");
 	i = 0;
@@ -40,7 +40,6 @@ void	ft_init(char **argv, t_stack **a)
 		free(dest[i]);
 		i++;
 	}
-	free(dest);
 }
 
 int	main(int argc, char **argv)
@@ -57,13 +56,14 @@ int	main(int argc, char **argv)
 	ft_init(argv, a);
 	ft_printf("initialized\n");
 	ft_print(a);
+	ft_printf("stack a \n");
 	if (stack_sorted(a) == false)
 		ft_sort(a, b);
 	ft_printf("sorted\n");
 	ft_printf("Stack A: ");
 	ft_print(a);
 	ft_printf("Stack B: ");
-	ft_print(b);
+	// ft_print(b);
 	ft_free(a);
 	ft_free(b);
 	return (0);

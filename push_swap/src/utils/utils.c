@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 21:20:52 by anoukan           #+#    #+#             */
-/*   Updated: 2024/04/15 11:10:13 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/04/16 15:37:16 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,10 +67,14 @@ void	ft_free(t_stack **stack)
 
 void	ft_print(t_stack **stack)
 {
-	while (*stack)
+	t_stack	*temp;
+
+	if (!stack)
+		return ;
+	temp = *stack;
+	while (temp)
 	{
-		ft_printf("%d", (*stack)->number);
-		*stack = (*stack)->next;
+		ft_printf("%d\n", temp->number);
+		temp = temp->next;
 	}
-	ft_printf("\n");
 }

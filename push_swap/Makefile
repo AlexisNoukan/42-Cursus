@@ -27,7 +27,7 @@ OBJ = $(OBJ_SRC) $(OBJ_FUNCTION) $(OBJ_UTILS)
 FLAGS = -Wall -Wextra -Werror 
 
 # Library flags
-LIBS = -L./LibFt/compiled -lft -lgnl #-lprintf
+LIBS = -L./LibFt/compiled -lft -lgnl -g3 -fsanitize=address #-lprintf
 
 .PHONY: all clean fclean re lib
 
