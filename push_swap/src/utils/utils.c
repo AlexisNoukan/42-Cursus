@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 21:20:52 by anoukan           #+#    #+#             */
-/*   Updated: 2024/04/17 13:43:52 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/04/17 15:00:44 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,12 +56,16 @@ int	mean_value(t_stack **a)
 void	ft_free(t_stack **stack)
 {
 	t_stack	*temp;
+	t_stack	*next;
 
+	if (!stack) // Otherwise segfault
+		return ;
 	temp = *stack;
 	while (temp)
 	{
-		temp = temp->next;
+		next = temp->next; // you can't delete Temp direclty
 		free(temp);
+		temp = next; // use a "next"
 	}
 }
 
@@ -69,7 +73,7 @@ void	ft_print(t_stack **stack)
 {
 	t_stack	*temp;
 
-	if (!stack)
+	if (!stack || !*stack)
 		return ;
 	temp = *stack;
 	while (temp)

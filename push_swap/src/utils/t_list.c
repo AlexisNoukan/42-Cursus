@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 10:19:51 by anoukan           #+#    #+#             */
-/*   Updated: 2024/04/17 13:35:43 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/04/17 14:55:13 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,16 @@ t_stack	*ft_lstnew2(int number)
 {
 	t_stack	*new_node;
 
-	new_node = (t_stack *)malloc(sizeof(t_stack));
+	new_node = (t_stack *)malloc(sizeof(*new_node));
 	if (new_node)
 	{
 		new_node->number = number;
 		new_node->next = NULL;
+	}
+	else
+	{
+		free(new_node);
+		return (NULL);
 	}
 	return (new_node);
 }
