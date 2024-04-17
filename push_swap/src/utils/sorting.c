@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 13:08:19 by anoukan           #+#    #+#             */
-/*   Updated: 2024/04/15 14:55:38 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/04/17 14:03:32 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,6 @@ void	ft_sort(t_stack **stack_a, t_stack **stack_b)
 		*stack_a = (*stack_a)->next;
 		meanvalue = mean_value(stack_a);
 	}
-	ft_printf("%d", stack_a[1]);
+	ft_printf("stack a first step : %d\n", stack_a[1]);
 	counting_sort(stack_a, stack_b);
 }

@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 21:20:52 by anoukan           #+#    #+#             */
-/*   Updated: 2024/04/16 15:37:16 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/04/17 13:43:52 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,8 @@ void	ft_print(t_stack **stack)
 	while (temp)
 	{
 		ft_printf("%d\n", temp->number);
+		if (temp->next == NULL)
+			break ;
 		temp = temp->next;
 	}
 }

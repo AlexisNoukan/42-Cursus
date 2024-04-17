@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   r.c                                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: saliinger <saliinger@student.42.fr>        +#+  +:+       +#+        */
+/*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 20:56:44 by anoukan           #+#    #+#             */
-/*   Updated: 2024/04/12 17:51:27 by saliinger        ###   ########.fr       */
+/*   Updated: 2024/04/17 14:04:33 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	ra(t_stack **a)
 {
 	if (rotate(a) == -1)
 		return (-1);
-	ft_printf("ra", 1);
+	ft_printf("ra\n", 1);
 	return (0);
 }
 
@@ -39,7 +39,7 @@ int	rb(t_stack **b)
 {
 	if (rotate(b) == -1)
 		return (-1);
-	ft_printf("rb", 1);
+	ft_printf("rb\n", 1);
 	return (0);
 }
 
@@ -49,6 +49,6 @@ int	rotate_rotate(t_stack **a, t_stack **b)
 		return (-1);
 	rotate(a);
 	rotate(b);
-	ft_printf("rr", 1);
+	ft_printf("rr\n", 1);
 	return (0);
 }
