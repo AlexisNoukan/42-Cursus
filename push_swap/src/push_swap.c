@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 09:34:52 by anoukan           #+#    #+#             */
-/*   Updated: 2024/04/18 12:47:51 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/04/18 15:16:01 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,12 @@ void	ft_init(char **argv, t_stack **a)
 		j = ft_atoi(dest[i]);
 		new = ft_lstnew2(j);
 		ft_lstadd_front2(a, new);
-		printf("new loop : %d\n", new->number);
 		i++;
 	}
 	printf("init done\n");
 	i = 0;
 	while (dest[i])
 	{
-		printf("dest free %s\n", dest[i]);
 		free(dest[i]);
 		i++;
 	}
@@ -54,9 +52,9 @@ int	main(int argc, char **argv)
 	else if (argc != 2)
 		return (0);
 	ft_init(argv, a);
-	ft_printf("initialized\n");
 	ft_printf("stack a \n");
 	ft_print(a);
+	ft_printf("\n");
 	if (stack_sorted(a) == false)
 		ft_sort(a, b);
 	ft_printf("sorted\n");

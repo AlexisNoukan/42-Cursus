@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 14:39:17 by anoukan           #+#    #+#             */
-/*   Updated: 2024/04/18 13:04:25 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/04/18 15:16:41 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,11 @@ int	pa(t_stack **a, t_stack **b)
 	if (push(a, b) == -1)
 		return (-1);
 	ft_printf("pa\n", 1);
+	ft_printf("stack b\n");
+	ft_print(b);
+	ft_printf("stack a\n");
+	ft_print(a);
+	ft_printf("\n");
 	return (0);
 }
 
@@ -43,5 +48,6 @@ int	pb(t_stack **b, t_stack **a)
 	ft_print(b);
 	ft_printf("stack a\n");
 	ft_print(a);
+	ft_printf("\n");
 	return (0);
 }

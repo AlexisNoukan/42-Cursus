@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 21:20:52 by anoukan           #+#    #+#             */
-/*   Updated: 2024/04/18 13:00:06 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/04/18 14:46:27 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,18 +46,12 @@ int	mean_value(t_stack **a)
 	i = ft_lstsize2(*a);
 	temp = *a;
 	n = 0;
-	printf("mean value\n");
 	while (temp)
 	{
 		n += temp->number;
-		printf("n : %d\n", n);
-		printf("number : %d\n", temp->number);
 		temp = temp->next;
 	}
-	printf("n final : %d\n", n);
-	printf("i : %d\n", i);
 	result = n / i;
-	printf("result : %d\n", result);
 	return (result);
 }
 

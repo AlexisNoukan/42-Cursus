@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 13:08:19 by anoukan           #+#    #+#             */
-/*   Updated: 2024/04/18 13:05:22 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/04/18 15:21:24 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,17 +31,14 @@ bool	stack_sorted(t_stack **stack)
 
 void	counting_sort(t_stack **stack_a, t_stack **stack_b)
 {
-	while ((*stack_b)->next != NULL || *stack_b != NULL)
+	while (*stack_b != NULL)
 	{
-		while ((*stack_a)->next != NULL || *stack_a != NULL)
+		while (*stack_a != NULL)
 		{
-			if ((*stack_a)->number - (*stack_b)->number > 0)
-				*stack_a = (*stack_a)->next;
-			else
-			{
+			if ((*stack_a)->number > (*stack_b)->number)
 				pa(stack_a, stack_b);
-				break ;
-			}
+			else
+				ra(stack_a);
 		}
 		*stack_b = (*stack_b)->next;
 	}
@@ -54,14 +51,13 @@ void	ft_sort(t_stack **stack_a, t_stack **stack_b)
 	if (*stack_a == NULL)
 		return ;
 	meanvalue = mean_value(stack_a);
-	printf("mean value : %d\n", meanvalue);
-	while ((*stack_a)->next != NULL && ft_lstsize2(*stack_a) >= 5)
+	while (ft_lstsize2(*stack_a) >= 6)
 	{
-		if ((*stack_a)->number <= meanvalue)
+		printf("mean value : %d\n", meanvalue);
+		if ((*stack_a)->number < meanvalue)
 			pb(stack_b, stack_a);
 		else
 			ra(stack_a);
-		*stack_a = (*stack_a)->next;
 		meanvalue = mean_value(stack_a);
 	}
 	counting_sort(stack_a, stack_b);
