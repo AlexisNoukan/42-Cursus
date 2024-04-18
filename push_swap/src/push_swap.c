@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 09:34:52 by anoukan           #+#    #+#             */
-/*   Updated: 2024/04/17 15:02:03 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/04/18 12:47:51 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@ void	ft_init(char **argv, t_stack **a)
 
 	dest = ft_split(argv[1], ' ');
 	i = 0;
-	j = ft_atoi(dest[i]);
-	printf("j init : %d\n", j);
 	while (dest[i])
 	{
 		j = ft_atoi(dest[i]);
@@ -49,8 +47,8 @@ int	main(int argc, char **argv)
 
 	a = (t_stack **)malloc(sizeof(t_stack **));
 	b = (t_stack **)malloc(sizeof(t_stack **));
-	a = NULL;
-	b = NULL;
+	*a = NULL;
+	*b = NULL;
 	if (argc < 2)
 		return (-1);
 	else if (argc != 2)

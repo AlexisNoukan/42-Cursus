@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 21:20:52 by anoukan           #+#    #+#             */
-/*   Updated: 2024/04/17 15:00:44 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/04/18 13:00:06 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,16 +41,24 @@ int	mean_value(t_stack **a)
 	int		i;
 	t_stack	*temp;
 	int		n;
+	int		result;
 
 	i = ft_lstsize2(*a);
 	temp = *a;
 	n = 0;
-	while (temp->next != NULL)
+	printf("mean value\n");
+	while (temp)
 	{
 		n += temp->number;
+		printf("n : %d\n", n);
+		printf("number : %d\n", temp->number);
 		temp = temp->next;
 	}
-	return (n / i);
+	printf("n final : %d\n", n);
+	printf("i : %d\n", i);
+	result = n / i;
+	printf("result : %d\n", result);
+	return (result);
 }
 
 void	ft_free(t_stack **stack)
@@ -58,14 +66,14 @@ void	ft_free(t_stack **stack)
 	t_stack	*temp;
 	t_stack	*next;
 
-	if (!stack) // Otherwise segfault
+	if (!stack)
 		return ;
 	temp = *stack;
 	while (temp)
 	{
-		next = temp->next; // you can't delete Temp direclty
+		next = temp->next;
 		free(temp);
-		temp = next; // use a "next"
+		temp = next;
 	}
 }
 
