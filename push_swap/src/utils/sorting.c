@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 13:08:19 by anoukan           #+#    #+#             */
-/*   Updated: 2024/04/18 15:21:24 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/04/19 15:12:14 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	counting_sort(t_stack **stack_a, t_stack **stack_b)
 	{
 		while (*stack_a != NULL)
 		{
-			if ((*stack_a)->number > (*stack_b)->number)
+			if ((*stack_b)->number - (*stack_a)->number  > 0)
 				pa(stack_a, stack_b);
 			else
 				ra(stack_a);
