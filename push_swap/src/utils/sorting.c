@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sorting.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
+/*   By: saliinger <saliinger@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 13:08:19 by anoukan           #+#    #+#             */
-/*   Updated: 2024/04/19 16:14:43 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/04/19 18:01:18 by saliinger        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	counting_sort(t_stack **stack_a, t_stack **stack_b)
 	{
 		while (*stack_a != NULL && *stack_b != NULL)
 		{
-			if ((*stack_b)->number - (*stack_a)->number > 0)
+			if ((*stack_b)->number - (*stack_a)->number < 0)
 				pa(stack_a, stack_b);
 			else
 				ra(stack_a);
@@ -45,11 +45,10 @@ void	counting_sort(t_stack **stack_a, t_stack **stack_b)
 		else
 			break ;
 	}
-	printf("base sort done\n");
 	while (ft_lstlast2(*stack_a)->number != is_max(stack_a))
 		ra(stack_a);
+	printf("base sort done\n");
 }
-
 void	ft_sort(t_stack **stack_a, t_stack **stack_b)
 {
 	int	meanvalue;
