@@ -6,7 +6,7 @@
 /*   By: saliinger <saliinger@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 16:43:20 by saliinger         #+#    #+#             */
-/*   Updated: 2024/04/20 19:25:29 by saliinger        ###   ########.fr       */
+/*   Updated: 2024/04/20 19:31:41 by saliinger        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ int	main(int argc, char **argv)
 	ft_printf("██║     ██║     ██║██╔══╝  ██║╚██╗██║   ██║   \n");
 	ft_printf("╚██████╗███████╗██║███████╗██║ ╚████║   ██║   \n");
 	ft_printf(" ╚═════╝╚══════╝╚═╝╚══════╝╚═╝  ╚═══╝   ╚═╝   \n");
-	if (argc < 3)
-		return (0);
+	if (argc != 3)
+		return (EXIT_FAILURE);
 	pid = ft_atoi(argv[1]);
 	ft_printf("pid : %d\n", pid);
 	ft_printf("Message : \n%s", argv[2]);
