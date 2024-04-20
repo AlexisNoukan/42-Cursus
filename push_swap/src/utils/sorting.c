@@ -6,7 +6,7 @@
 /*   By: saliinger <saliinger@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 13:08:19 by anoukan           #+#    #+#             */
-/*   Updated: 2024/04/19 18:01:18 by saliinger        ###   ########.fr       */
+/*   Updated: 2024/04/20 12:45:07 by saliinger        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ void	counting_sort(t_stack **stack_a, t_stack **stack_b)
 		ra(stack_a);
 	printf("base sort done\n");
 }
+
 void	ft_sort(t_stack **stack_a, t_stack **stack_b)
 {
 	int	meanvalue;
