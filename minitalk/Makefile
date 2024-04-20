@@ -6,7 +6,7 @@
 #    By: saliinger <saliinger@student.42.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/20 17:03:59 by saliinger         #+#    #+#              #
-#    Updated: 2024/04/20 19:25:14 by saliinger        ###   ########.fr        #
+#    Updated: 2024/04/20 22:38:43 by saliinger        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,10 +16,14 @@ CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 SRCDIR= ./src
 
-SRC_CLIENT = $(SRCDIR)/client/client.c
-OBJ_CLIENT = $(SRC_CLIENT:.c=.o)
+SRC_CLIENT =	$(SRCDIR)/client/client.c
 
-SRC_SERVER = $(SRCDIR)/server/server.c
+
+
+SRC_SERVER =	$(SRCDIR)/server/server.c\
+				$(SRCDIR)/server/server.c
+
+OBJ_CLIENT = $(SRC_CLIENT:.c=.o)
 OBJ_SERVER = $(SRC_SERVER:.c=.o)
 
 LIBFT = libft/libft.a

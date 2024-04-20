@@ -1,25 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minitalk.h                                         :+:      :+:    :+:   */
+/*   handler.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: saliinger <saliinger@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/20 16:16:20 by saliinger         #+#    #+#             */
-/*   Updated: 2024/04/20 22:37:50 by saliinger        ###   ########.fr       */
+/*   Created: 2024/04/20 21:39:29 by saliinger         #+#    #+#             */
+/*   Updated: 2024/04/20 22:52:24 by saliinger        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINITALK_H
-# define MINITALK_H
+#include "../../includes/minitalk.h"
 
-// ---Lib---
-# include "../libft/libft.h"
-# include <signal.h>
-
-//---Server---
-void	handler(int sig);
-
-//---Client---
-
-#endif
+void	handler(int sig)
+{
+    
+}

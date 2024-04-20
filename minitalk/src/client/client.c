@@ -6,11 +6,11 @@
 /*   By: saliinger <saliinger@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 16:43:20 by saliinger         #+#    #+#             */
-/*   Updated: 2024/04/20 19:31:41 by saliinger        ###   ########.fr       */
+/*   Updated: 2024/04/20 22:35:37 by saliinger        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/minitalk.h"
+	#include "../../includes/minitalk.h"
 
 int	main(int argc, char **argv)
 {
