@@ -6,99 +6,89 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 16:18:25 by saliinger         #+#    #+#             */
-/*   Updated: 2024/04/22 14:39:57 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/04/22 18:57:59 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/minitalk.h"
 
-char	*g_message;
-
-char	*new_char(char *str, char c)
+void	sig_error(void)
 {
-	char	*result;
-	int		i;
+	ft_printf("\n server: error\n");
+	exit(EXIT_FAILURE);
+}
 
-	if (!str || !c)
-		return (NULL);
-	result = (char *)malloc(sizeof(char) * (ft_strlen(str) + 2));
-	if (!result)
-		return (NULL);
-	i = 0;
-	while (str[i])
+void	extended_action(char *c, int *received, int *client_pid, int *bit)
+{
+	ft_printf("%c", *c);
+	if (*c == '\0')
 	{
-		result[i] = str[i];
-		i++;
+		ft_printf("\n%d signal recieved from client PID: %d\n", *received,
+			*client_pid);
+		*received = 0;
+		*c = 0;
+		if (kill(*client_pid, SIGUSR1) == -1)
+			sig_error();
+		return ;
 	}
-	result[i] = c;
-	result[i + 1] = '\0';
-	free(str);
-	return (result);
+	*bit = 0;
 }
 
-void	terminate_message(char *c, int *bit, int *p, char pid[8])
+void	action(int sig, siginfo_t *info, void *context)
 {
-	(*c) = 0;
-	(*bit) = -1;
-	(*p) = 0;
-	ft_printf("%s\n", g_message);
-	free(g_message);
-	g_message = NULL;
-	kill(ft_atoi(pid), SIGUSR2);
-}
+	static int	client_pid;
+	static int	bit;
+	static char	c;
+	static int	received;
+	static int	current_pid;
 
-void	fill_pid(char pid[8], int *p, char *c)
-{
-	pid[(*p)++] = *c;
-	if ((*p) == 7)
+	(void)context;
+	if (!client_pid)
+		client_pid = info->si_pid;
+	current_pid = info->si_pid;
+	if (client_pid != current_pid)
 	{
-		pid[*p] = '\0';
-		(*c) = 0;
+		client_pid = current_pid;
+		bit = 0;
+		c = 0;
+		received = 0;
 	}
+	c |= (sig == SIGUSR2);
+	received++;
+	bit++;
+	if (bit == 8)
+		extended_action(&c, &received, &client_pid, &bit);
+	c <<= 1;
+	usleep(100);
+	kill(client_pid, SIGUSR2);
 }
 
-void	sig_handler(int signal)
+void	banner(pid_t pid)
 {
-	static char	c = 0;
-	static int	bit = -1;
-	static int	p = 0;
-	static char	pid[8];
-
-	if (bit < 0 && !c && p >= 7)
-		ft_printf("\033[36mClient say:\033[0m");
-	if (!g_message)
-		g_message = ft_strdup("");
-	if (bit < 0)
-		bit = 7;
-	if (signal == SIGUSR1)
-		c |= 1 << bit;
-	else if (signal == SIGUSR2)
-		c &= ~(1 << bit);
-	if (!bit && c && p >= 7)
-		g_message = new_char(g_message, c);
-	else if (!bit && !c && p >= 7)
-		terminate_message(&c, &bit, &p, pid);
-	if (!bit-- && p < 7)
-		fill_pid(pid, &p, &c);
-	if (p >= 7)
-		kill(ft_atoi(pid), SIGUSR1);
-}
-
-int	main(void)
-{
-	int	pid;
-
-	pid = getpid();
 	ft_printf("███████╗███████╗██████╗ ██╗   ██╗███████╗██████╗ \n");
 	ft_printf("██╔════╝██╔════╝██╔══██╗██║   ██║██╔════╝██╔══██╗\n");
 	ft_printf("███████╗█████╗  ██████╔╝██║   ██║█████╗  ██████╔╝\n");
 	ft_printf("╚════██║██╔══╝  ██╔══██╗╚██╗ ██╔╝██╔══╝  ██╔══██╗\n");
 	ft_printf("███████║███████╗██║  ██║ ╚████╔╝ ███████╗██║  ██║\n");
 	ft_printf("╚══════╝╚══════╝╚═╝  ╚═╝  ╚═══╝  ╚══════╝╚═╝  ╚═╝\n");
-	ft_printf("pid : %d\n\nMessage : \n", pid);
-	signal(SIGUSR1, sig_handler);
-	signal(SIGUSR2, sig_handler);
+	ft_printf("pid : %d\n\n", pid);
+}
+
+int	main(void)
+{
+	pid_t				pid;
+	struct sigaction	sig;
+
+	pid = getpid();
+	banner(pid);
+	sig.sa_sigaction = action;
+	sigemptyset(&sig.sa_mask);
+	sig.sa_flags = SA_SIGINFO;
 	while (1)
-		sleep(1);
-	return (0);
+	{
+		sigaction(SIGUSR1, &sig, 0);
+		sigaction(SIGUSR2, &sig, 0);
+		pause();
+	}
+	return (EXIT_FAILURE);
 }

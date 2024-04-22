@@ -6,14 +6,14 @@
 #    By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/20 17:03:59 by saliinger         #+#    #+#              #
-#    Updated: 2024/04/22 13:11:42 by anoukan          ###   ########.fr        #
+#    Updated: 2024/04/22 18:49:42 by anoukan          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME_SERVER = server
 NAME_CLIENT = client
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g
 SRCDIR= ./src
 
 SRC_CLIENT =	$(SRCDIR)/client/client.c
