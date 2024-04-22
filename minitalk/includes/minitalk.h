@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 16:16:20 by saliinger         #+#    #+#             */
-/*   Updated: 2024/04/22 11:15:41 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/04/22 13:13:12 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@
 # include <sys/types.h>
 
 //---Server---
-void	handler(int sig);
 
 //---Client---
 

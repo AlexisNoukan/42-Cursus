@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 16:18:25 by saliinger         #+#    #+#             */
-/*   Updated: 2024/04/22 11:57:21 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/04/22 14:39:57 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	terminate_message(char *c, int *bit, int *p, char pid[8])
 	(*c) = 0;
 	(*bit) = -1;
 	(*p) = 0;
-	ft_putendl_fd(g_message, 1);
+	ft_printf("%s\n", g_message);
 	free(g_message);
 	g_message = NULL;
 	kill(ft_atoi(pid), SIGUSR2);
@@ -65,7 +65,7 @@ void	sig_handler(int signal)
 	static char	pid[8];
 
 	if (bit < 0 && !c && p >= 7)
-		ft_putendl_fd("\033[36mClient say:\033[0m", 1);
+		ft_printf("\033[36mClient say:\033[0m");
 	if (!g_message)
 		g_message = ft_strdup("");
 	if (bit < 0)
@@ -75,9 +75,9 @@ void	sig_handler(int signal)
 	else if (signal == SIGUSR2)
 		c &= ~(1 << bit);
 	if (!bit && c && p >= 7)
-		g_message = add_char(g_message, c);
+		g_message = new_char(g_message, c);
 	else if (!bit && !c && p >= 7)
-		end_of_message(&c, &bit, &p, pid);
+		terminate_message(&c, &bit, &p, pid);
 	if (!bit-- && p < 7)
 		fill_pid(pid, &p, &c);
 	if (p >= 7)
@@ -96,8 +96,8 @@ int	main(void)
 	ft_printf("███████║███████╗██║  ██║ ╚████╔╝ ███████╗██║  ██║\n");
 	ft_printf("╚══════╝╚══════╝╚═╝  ╚═╝  ╚═══╝  ╚══════╝╚═╝  ╚═╝\n");
 	ft_printf("pid : %d\n\nMessage : \n", pid);
-	signal(SIGUSR1, handler);
-	signal(SIGUSR2, handler);
+	signal(SIGUSR1, sig_handler);
+	signal(SIGUSR2, sig_handler);
 	while (1)
 		sleep(1);
 	return (0);
