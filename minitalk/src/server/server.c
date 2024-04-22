@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 16:18:25 by saliinger         #+#    #+#             */
-/*   Updated: 2024/04/22 18:57:59 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/04/22 20:58:43 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,24 @@ void	sig_error(void)
 
 void	extended_action(char *c, int *received, int *client_pid, int *bit)
 {
-	ft_printf("%c", *c);
+	static char	*g_message = NULL;
+
+	if (!g_message)
+	{
+		g_message = ft_strdup("");
+		if (!g_message)
+			sig_error();
+	}
+	g_message = ft_strjoin((const char *)g_message, (const char *)c);
 	if (*c == '\0')
 	{
+		ft_printf("\n%s\n", g_message);
 		ft_printf("\n%d signal recieved from client PID: %d\n", *received,
 			*client_pid);
 		*received = 0;
 		*c = 0;
+		free(g_message);
+		g_message = NULL;
 		if (kill(*client_pid, SIGUSR1) == -1)
 			sig_error();
 		return ;

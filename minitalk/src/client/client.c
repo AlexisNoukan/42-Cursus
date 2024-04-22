@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 16:43:20 by saliinger         #+#    #+#             */
-/*   Updated: 2024/04/22 19:08:39 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/04/22 19:28:08 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	sent_text(char *str, int pid)
 	send_char('\0', pid);
 }
 
-void	recieved(int sig)
+void	received(int sig)
 {
 	static int	sent;
 
@@ -80,8 +80,8 @@ int	main(int argc, char **argv)
 	ft_printf("\npid of the client : %d\n", client_pid);
 	if (argc == 3)
 	{
-		signal(SIGUSR1, recieved);
-		signal(SIGUSR2, recieved);
+		signal(SIGUSR1, received);
+		signal(SIGUSR2, received);
 		server_pid = ft_atoi(argv[1]);
 		ft_printf("Text currently sending.. \n");
 		sent_text(argv[2], server_pid);
