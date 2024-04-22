@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minitalk.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: saliinger <saliinger@student.42.fr>        +#+  +:+       +#+        */
+/*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 16:16:20 by saliinger         #+#    #+#             */
-/*   Updated: 2024/04/20 22:37:50 by saliinger        ###   ########.fr       */
+/*   Updated: 2024/04/22 11:15:41 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 // ---Lib---
 # include "../libft/libft.h"
 # include <signal.h>
+# include <sys/types.h>
 
 //---Server---
 void	handler(int sig);
