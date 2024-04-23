@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 16:18:25 by saliinger         #+#    #+#             */
-/*   Updated: 2024/04/22 20:58:43 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/04/23 12:55:45 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	extended_action(char *c, int *received, int *client_pid, int *bit)
 		if (!g_message)
 			sig_error();
 	}
-	g_message = ft_strjoin((const char *)g_message, (const char *)c);
+	g_message = ft_strjoin_frees1(g_message, (const char *)c);
 	if (*c == '\0')
 	{
 		ft_printf("\n%s\n", g_message);

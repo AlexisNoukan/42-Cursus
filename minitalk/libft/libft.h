@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 09:50:46 by anoukan           #+#    #+#             */
-/*   Updated: 2024/04/15 14:20:19 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/04/23 12:54:46 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,8 @@ void				ft_putchar_fd(char c, int fd);
 void				ft_putstr_fd(char *s, int fd);
 void				ft_putendl_fd(char *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
+// CUSTOM
+char				*ft_strjoin_frees1(char *s1, char const *s2);
 // BONUS
 typedef struct s_list
 {

@@ -1,12 +1,12 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    MakeFile                                           :+:      :+:    :+:    #
+#    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/19 12:59:54 by anoukan           #+#    #+#              #
-#    Updated: 24/10/2023 11:33:37 by anoukan          ###   ########.fr        #
+#    Updated: 2024/04/23 12:55:15 by anoukan          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -60,7 +60,8 @@ SRC =   ft_isalpha.c\
 		ft_putstr.c \
 		ft_selector.c \
 		ft_string.c \
-		ft_uint.c
+		ft_uint.c\
+		ft_strjoin_frees1.c
 
 BONUS = ft_lstnew_bonus.c\
 		ft_lstadd_front_bonus.c\
