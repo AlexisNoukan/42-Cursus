@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 09:35:14 by anoukan           #+#    #+#             */
-/*   Updated: 2024/04/23 15:46:30 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/04/23 15:48:37 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,10 @@ typedef struct s_stack
 {
 	int				number;
 	int				index;
-	int				position;
-	int				target;
+	int				push_cost;
+	int				above_median;
+	int				cheapest;
+	struct s_stack	*target;
 	struct s_stack	*prev;
 	struct s_stack	*next;
 }					t_stack;
