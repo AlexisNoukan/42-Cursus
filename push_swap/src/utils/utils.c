@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: saliinger <saliinger@student.42.fr>        +#+  +:+       +#+        */
+/*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 21:20:52 by anoukan           #+#    #+#             */
-/*   Updated: 2024/04/19 18:04:01 by saliinger        ###   ########.fr       */
+/*   Updated: 2024/04/23 14:41:28 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,17 +21,16 @@ int	iterator(int i)
 	return (n);
 }
 
-int	is_max(t_stack **stack)
+int	get_max(t_stack *stack)
 {
-	t_stack	*temp;
+	int	max;
 
-	int max = INT_MIN; // Initialize max to the smallest possible integer value
-	temp = *stack;
-	while (temp != NULL)
+	max = INT_MIN;
+	while (stack != NULL)
 	{
-		if (temp->number > max)
-			max = temp->number;
-		temp = temp->next;
+		if (stack->number > max)
+			max = stack->number;
+		stack = stack->next;
 	}
 	return (max);
 }

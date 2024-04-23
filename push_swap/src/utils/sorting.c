@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sorting.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: saliinger <saliinger@student.42.fr>        +#+  +:+       +#+        */
+/*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 13:08:19 by anoukan           #+#    #+#             */
-/*   Updated: 2024/04/20 12:45:07 by saliinger        ###   ########.fr       */
+/*   Updated: 2024/04/23 14:42:42 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,22 @@ void	counting_sort(t_stack **stack_a, t_stack **stack_b)
 	while (ft_lstlast2(*stack_a)->number != is_max(stack_a))
 		ra(stack_a);
 	printf("base sort done\n");
+}
+
+// Radix sort function with a while loop
+void	radix_sort(t_stack **stack)
+{
+	int	max;
+	int	exp;
+
+	max = get_max(*stack);
+	exp = 1;
+	while (max / exp > 0)
+	{
+		// Perform counting sort for each digit
+		counting_sort(stack, exp);
+		exp *= 10;
+	}
 }
 
 void	ft_sort(t_stack **stack_a, t_stack **stack_b)
