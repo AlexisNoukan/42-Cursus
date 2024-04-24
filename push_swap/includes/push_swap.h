@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 09:35:14 by anoukan           #+#    #+#             */
-/*   Updated: 2024/04/23 15:48:37 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/04/24 15:21:36 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,5 +74,6 @@ int					iterator(int i);
 int					mean_value(t_stack **a);
 void				ft_free(t_stack **stack);
 void				ft_print(t_stack **a);
+void				ft_error(void);
 
 #endif
