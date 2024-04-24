@@ -1,20 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   3_sort.c                                           :+:      :+:    :+:   */
+/*   is_sorted.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/24 15:24:09 by anoukan           #+#    #+#             */
-/*   Updated: 2024/04/24 16:16:20 by anoukan          ###   ########.fr       */
+/*   Created: 2024/04/24 16:16:36 by anoukan           #+#    #+#             */
+/*   Updated: 2024/04/24 16:22:00 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-void	three_sort(t_stack **a)
+bool	is_sorted(t_stack **a)
 {
-	sa(a);
-	while (is_sorted(a) != true)
-		ra(a);
+	t_stack	*new;
+	int		i;
+
+	new = *a;
+	i = new->number;
+	while (new)
+	{
+		if (new->next == *a)
+			return (true);
+		if (i > new->number)
+			return (false);
+		i = new->number;
+		new = new->next;
+	}
+	return (true);
 }
