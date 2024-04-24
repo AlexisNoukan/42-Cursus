@@ -1,32 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   init_a.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/04 09:34:52 by anoukan           #+#    #+#             */
-/*   Updated: 2024/04/24 23:05:24 by anoukan          ###   ########.fr       */
+/*   Created: 2024/04/24 22:31:56 by anoukan           #+#    #+#             */
+/*   Updated: 2024/04/24 22:32:51 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../../includes/push_swap.h"
 
-int	main(int argc, char **argv)
+void	init_a(t_stack **a, t_stack **b)
 {
-	t_stack	**a;
-	t_stack	**b;
-
-	if (argc < 2)
-		ft_error();
-	a = (t_stack **)malloc(sizeof(t_stack **));
-	b = (t_stack **)malloc(sizeof(t_stack **));
-	*a = NULL;
-	*b = NULL;
-	ft_init(argv, a);
-	if (!is_sorted(a))
-		ft_sort(a, b);
-	ft_free(a);
-	ft_free(b);
-	return (0);
+	index_init(a);
+	index_init(b);
+	median_init(a);
+	median_init(b);
+	target_init(a, b);
+	push_cost_init(a, b);
+	cheapest_init(a);
 }

@@ -6,34 +6,39 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 14:22:58 by anoukan           #+#    #+#             */
-/*   Updated: 2024/04/23 14:36:25 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/04/24 23:42:26 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-int	swap(t_stack **stack_a, t_stack **stack_b)
+int	swap(t_stack **stack_s)
 {
-	t_stack	*temp;
+	t_stack	*top;
+	t_stack	*next;
+	t_stack	*rest;
 
-	if (ft_lstsize2(*stack_a) < 2)
+	if (ft_lstsize2(*stack_s) < 2)
 		return (-1);
-	temp = *stack_a;
-	ft_lstadd_front2(stack_b, temp);
-	*stack_a = temp->next;
+	top = *stack_s;
+	next = (*stack_s)->next;
+	rest = next->next;
+	next->next = top;
+	top->next = rest->next;
+	*stack_s = next;
 	return (0);
 }
 
-int	sa(t_stack **a, t_stack **b)
+int	sa(t_stack **a)
 {
-	swap(a, b);
-	ft_printf("sa\n", 1);
+	swap(a);
+	ft_printf("sa\n");
 	return (0);
 }
 
-int	sb(t_stack **a, t_stack **b)
+int	sb(t_stack **b)
 {
-	swap(b, a);
-	ft_printf("sb\n", 1);
+	swap(b);
+	ft_printf("sb\n");
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 21:20:52 by anoukan           #+#    #+#             */
-/*   Updated: 2024/04/24 15:22:41 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/04/24 23:10:31 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,20 @@ void	ft_error(void)
 {
 	ft_printf("ERROR");
 	exit(EXIT_FAILURE);
+}
+
+t_stack	*is_max(t_stack **s)
+{
+	t_stack	*max;
+	t_stack	*temp;
+
+	max = ft_lstnew2(INT_MIN);
+	temp = *s;
+	while (temp)
+	{
+		if (temp->number > max->number)
+			max = temp;
+		temp = temp->next;
+	}
+	return (max);
 }

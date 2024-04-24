@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 15:05:10 by anoukan           #+#    #+#             */
-/*   Updated: 2024/04/24 15:14:20 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/04/24 23:23:42 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,14 @@ void	split_init(char **argv, t_stack **a)
 	t_stack	*new;
 	int		j;
 
-	temp = ft_split(argv[2]);
+	temp = ft_split(argv[2], ' ');
 	i = 0;
 	j = 0;
 	while (temp[i])
 	{
 		while (temp[i][j])
 		{
-			if (temp[i][j] >= "0" && temp[i][j] <= "9")
+			if (temp[i][j] >= '0' && temp[i][j] <= '9')
 				j++;
 			else
 				ft_error();

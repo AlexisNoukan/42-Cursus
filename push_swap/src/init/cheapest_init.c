@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   cheapest_init.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/04 09:34:52 by anoukan           #+#    #+#             */
-/*   Updated: 2024/04/24 23:05:24 by anoukan          ###   ########.fr       */
+/*   Created: 2024/04/24 21:36:37 by anoukan           #+#    #+#             */
+/*   Updated: 2024/04/24 21:42:50 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../../includes/push_swap.h"
 
-int	main(int argc, char **argv)
+void	cheapest_init(t_stack **s)
 {
-	t_stack	**a;
-	t_stack	**b;
+	t_stack	*temp;
+	long	cheap;
+	t_stack	*cheapest;
 
-	if (argc < 2)
-		ft_error();
-	a = (t_stack **)malloc(sizeof(t_stack **));
-	b = (t_stack **)malloc(sizeof(t_stack **));
-	*a = NULL;
-	*b = NULL;
-	ft_init(argv, a);
-	if (!is_sorted(a))
-		ft_sort(a, b);
-	ft_free(a);
-	ft_free(b);
-	return (0);
+	temp = *s;
+	cheap = LONG_MAX;
+	while (temp)
+	{
+		if (temp->push_cost < cheap)
+		{
+			cheapest = temp;
+			cheap = temp->push_cost;
+		}
+		temp = temp->next;
+	}
+	cheapest->cheapest = 1;
 }

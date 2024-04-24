@@ -1,31 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   median_init.c                                      :+:      :+:    :+:   */
+/*   target_init.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/24 16:26:27 by anoukan           #+#    #+#             */
-/*   Updated: 2024/04/24 23:18:10 by anoukan          ###   ########.fr       */
+/*   Created: 2024/04/24 20:25:06 by anoukan           #+#    #+#             */
+/*   Updated: 2024/04/24 23:30:08 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-void	median_init(t_stack **s)
+void	target_init(t_stack **a, t_stack **b)
 {
-	int		i;
-	int		j;
-	t_stack	*temp;
+	t_stack	*temp_a;
+	t_stack	*temp_b;
+	long	match;
 
-	j = 0;
-	temp = *s;
-	i = ft_lstsize2(temp) / 2;
-	while (temp)
+	temp_a = *a;
+	while (temp_a)
 	{
-		if (i > j)
-			temp->above_median = 1;
+		temp_b = *b;
+		match = LONG_MIN;
+		while (temp_b)
+		{
+			if (temp_a->number < temp_b->number && temp_b->number > match)
+			{
+				match = temp_b->number;
+				temp_a->target = temp_b;
+			}
+			temp_b = temp_b->next;
+		}
+		if (match == LONG_MIN)
+			temp_a->target = is_max(b);
 		else
-			temp->above_median = 0;
+			temp_a->target = temp_a;
+		temp_a = temp_a->next;
 	}
 }

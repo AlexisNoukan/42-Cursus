@@ -1,31 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   median_init.c                                      :+:      :+:    :+:   */
+/*   push_cost_init.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/24 16:26:27 by anoukan           #+#    #+#             */
-/*   Updated: 2024/04/24 23:18:10 by anoukan          ###   ########.fr       */
+/*   Created: 2024/04/24 20:21:34 by anoukan           #+#    #+#             */
+/*   Updated: 2024/04/24 23:19:26 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-void	median_init(t_stack **s)
+void	push_cost_init(t_stack **a, t_stack **b)
 {
+	t_stack	*temp_a;
 	int		i;
-	int		j;
-	t_stack	*temp;
 
-	j = 0;
-	temp = *s;
-	i = ft_lstsize2(temp) / 2;
-	while (temp)
+	temp_a = *a;
+	while (temp_a)
 	{
-		if (i > j)
-			temp->above_median = 1;
+		if (temp_a->above_median == 1)
+		{
+			i = temp_a->index;
+			if (temp_a->target->above_median == 1)
+				i += temp_a->target->index;
+			else
+				i += ft_lstsize2(*b) - temp_a->target->index;
+		}
 		else
-			temp->above_median = 0;
+		{
+			i = ft_lstsize2(*a) - temp_a->index;
+			if (temp_a->target->above_median == 1)
+				i += temp_a->target->index;
+			else
+				i += ft_lstsize2(*b) - temp_a->target->index;
+		}
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 09:35:14 by anoukan           #+#    #+#             */
-/*   Updated: 2024/04/24 16:34:10 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/04/24 23:40:27 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,11 @@ typedef struct s_stack
 //		--Sort--
 void				three_sort(t_stack **a);
 bool				is_sorted(t_stack **a);
+t_stack				*get_cheapest(t_stack **s);
+void				a_b(t_stack **a, t_stack **b);
+void				reverse_ab(t_stack **a, t_stack **b, t_stack *cheapest);
+void				rotate_ab(t_stack **a, t_stack **b, t_stack *cheapest);
+void				ft_sort(t_stack **a, t_stack **b);
 
 //      --t_list--
 t_stack				*ft_lstnew2(int number);
@@ -49,6 +54,13 @@ int					ft_lstsize2(t_stack *lst);
 void				ft_init(char **argv, t_stack **a);
 void				split_init(char **argv, t_stack **a);
 void				unsplit_init(char **argv, t_stack **a);
+void				median_init(t_stack **s);
+void				index_init(t_stack **s);
+void				push_cost_init(t_stack **a, t_stack **b);
+void				target_init(t_stack **a, t_stack **b);
+void				cheapest_init(t_stack **s);
+void				init_b(t_stack **a, t_stack **b);
+void				init_a(t_stack **a, t_stack **b);
 
 //		--Rotate--
 int					rotate(t_stack **stack);
@@ -65,13 +77,14 @@ int					rra(t_stack **a);
 int					rrb(t_stack **b);
 int					rr(t_stack **a, t_stack **b);
 //		--Swap--
-int					swap(t_stack **stack_a, t_stack **stack_b);
-int					sa(t_stack **a, t_stack **b);
-int					sb(t_stack **b, t_stack **a);
+int					swap(t_stack **stack_a);
+int					sa(t_stack **a);
+int					sb(t_stack **b);
 
 //		--Utils--
 void				ft_free(t_stack **stack);
 void				ft_print(t_stack **a);
 void				ft_error(void);
+t_stack				*is_max(t_stack **s);
 
 #endif

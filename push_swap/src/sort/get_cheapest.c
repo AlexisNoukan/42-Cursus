@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   get_cheapest.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/04 09:34:52 by anoukan           #+#    #+#             */
-/*   Updated: 2024/04/24 23:05:24 by anoukan          ###   ########.fr       */
+/*   Created: 2024/04/24 22:25:57 by anoukan           #+#    #+#             */
+/*   Updated: 2024/04/24 23:43:16 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../../includes/push_swap.h"
 
-int	main(int argc, char **argv)
+t_stack	*get_cheapest(t_stack **s)
 {
-	t_stack	**a;
-	t_stack	**b;
+	t_stack	*temp;
 
-	if (argc < 2)
-		ft_error();
-	a = (t_stack **)malloc(sizeof(t_stack **));
-	b = (t_stack **)malloc(sizeof(t_stack **));
-	*a = NULL;
-	*b = NULL;
-	ft_init(argv, a);
-	if (!is_sorted(a))
-		ft_sort(a, b);
-	ft_free(a);
-	ft_free(b);
-	return (0);
+	temp = *s;
+	while (temp)
+	{
+		if (temp->cheapest == 1)
+			return (temp);
+		temp = temp->next;
+	}
+	return (temp);
 }
