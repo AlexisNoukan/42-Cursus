@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 09:35:14 by anoukan           #+#    #+#             */
-/*   Updated: 2024/04/24 15:21:36 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/04/24 15:27:19 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,10 @@ t_stack				*ft_lstlast2(t_stack *lst);
 void				ft_lstadd_front2(t_stack **lst, t_stack *new);
 int					ft_lstsize2(t_stack *lst);
 
-//		--Main--
+//		--Init--
 void				ft_init(char **argv, t_stack **a);
+void				split_init(char **argv, t_stack **a);
+void				unsplit_init(char **argv, t_stack **a);
 
 //		--Rotate--
 int					rotate(t_stack **stack);
