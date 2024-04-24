@@ -6,8 +6,14 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 15:23:52 by anoukan           #+#    #+#             */
-/*   Updated: 2024/04/24 15:24:03 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/04/24 16:35:36 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
+
+void	ft_sort(t_stack **a, t_stack **b)
+{
+	if (ft_lstsize2(a) <= 3)
+		three_sort(a);
+}

@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 09:35:14 by anoukan           #+#    #+#             */
-/*   Updated: 2024/04/24 16:05:25 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/04/24 16:34:10 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,10 @@ typedef struct s_stack
 //		--Functions--
 
 //		--Sort--
-bool				stack_sorted(t_stack **stack);
-void				ft_sort(t_stack **stack_a, t_stack **stack_b);
+void				three_sort(t_stack **a);
+bool				is_sorted(t_stack **a);
 
 //      --t_list--
-
 t_stack				*ft_lstnew2(int number);
 void				ft_lstadd_back2(t_stack **lst, t_stack *new);
 t_stack				*ft_lstlast2(t_stack *lst);
@@ -71,9 +70,6 @@ int					sa(t_stack **a, t_stack **b);
 int					sb(t_stack **b, t_stack **a);
 
 //		--Utils--
-int					is_max(t_stack **stack);
-int					iterator(int i);
-int					mean_value(t_stack **a);
 void				ft_free(t_stack **stack);
 void				ft_print(t_stack **a);
 void				ft_error(void);

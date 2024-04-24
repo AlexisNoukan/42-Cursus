@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 09:34:52 by anoukan           #+#    #+#             */
-/*   Updated: 2024/04/24 15:23:14 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/04/24 16:33:55 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	main(int argc, char **argv)
 	*a = NULL;
 	*b = NULL;
 	if (argc < 2)
-		return (-1);
+		ft_error();
 	ft_init(argv, a);
 	ft_printf("\n");
 	ft_printf("Stack A: \n");
