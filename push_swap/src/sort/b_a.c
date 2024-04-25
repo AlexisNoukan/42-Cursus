@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 23:43:39 by anoukan           #+#    #+#             */
-/*   Updated: 2024/04/24 23:48:26 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/04/25 10:53:41 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,9 @@ void	reverse_ba(t_stack **a, t_stack **b, t_stack *cheapest)
 	init_a(a, b);
 }
 
-void b_a(t_stack **a, t_stack **b)
+void	b_a(t_stack **a, t_stack **b)
 {
-    	t_stack	*cheapest;
+	t_stack	*cheapest;
 
 	cheapest = get_cheapest(a);
 	if (cheapest->above_median && cheapest->target->above_median)
