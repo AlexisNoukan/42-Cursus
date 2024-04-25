@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 09:35:14 by anoukan           #+#    #+#             */
-/*   Updated: 2024/04/24 23:40:27 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/04/25 20:47:03 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define PUSH_SWAP_H
 
 //		--Lib--
-# include "../LibFt/libft/libft.h"
+# include "../libft/libft.h"
 # include <limits.h>
 # include <stdbool.h>
 # include <stdio.h>
@@ -42,6 +42,7 @@ void				a_b(t_stack **a, t_stack **b);
 void				reverse_ab(t_stack **a, t_stack **b, t_stack *cheapest);
 void				rotate_ab(t_stack **a, t_stack **b, t_stack *cheapest);
 void				ft_sort(t_stack **a, t_stack **b);
+void				b_a(t_stack **a, t_stack **b);
 
 //      --t_list--
 t_stack				*ft_lstnew2(int number);

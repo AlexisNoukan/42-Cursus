@@ -2,13 +2,19 @@
   "files.associations": {
     "*.embeddedhtml": "html",
     "push_swap.h": "c",
-    "libft.h": "c"
+    "libft.h": "c",
+    "unistd.h": "c"
   },
   "C_Cpp.errorSquiggles": "disabled",
   "makefile.launchConfigurations": [
     {
       "cwd": "/home/anoukan/Desktop/42-Cursus/push_swap",
       "binaryPath": "/home/anoukan/Desktop/42-Cursus/push_swap/push_swap",
+      "binaryArgs": []
+    },
+    {
+      "cwd": "/home/saliinger/Desktop/42-Cursus/push_swap",
+      "binaryPath": "/home/saliinger/Desktop/42-Cursus/push_swap/push_swap",
       "binaryArgs": []
     }
   ]
