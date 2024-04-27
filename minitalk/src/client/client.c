@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 17:25:08 by anoukan           #+#    #+#             */
-/*   Updated: 2024/04/25 17:25:18 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/04/27 13:05:19 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ void	send_char(unsigned char c, int pid)
 		c <<= 1;
 		bit++;
 		pause();
-		usleep(100);
 	}
 }
 

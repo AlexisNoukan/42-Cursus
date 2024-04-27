@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 17:25:14 by anoukan           #+#    #+#             */
-/*   Updated: 2024/04/25 17:25:17 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/04/27 13:48:28 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ void	sig_error(void)
 void	extended_action(char *c, int *received, int *client_pid, int *bit)
 {
 	static char	*g_message = NULL;
+	char		*c2;
 
 	if (!g_message)
 	{
@@ -28,7 +29,12 @@ void	extended_action(char *c, int *received, int *client_pid, int *bit)
 		if (!g_message)
 			sig_error();
 	}
-	g_message = ft_strjoin_frees1(g_message, (const char *)c);
+	c2 = malloc(sizeof(char) + 1);
+	if (!c2)
+		sig_error();
+	c2[0] = c[0];
+	c2[1] = '\0';
+	g_message = ft_strjoin_frees1(g_message, c2);
 	if (*c == '\0')
 	{
 		ft_printf("\n%s\n", g_message);
@@ -36,6 +42,8 @@ void	extended_action(char *c, int *received, int *client_pid, int *bit)
 			*client_pid);
 		*received = 0;
 		*c = 0;
+		free(c2);
+		c2 = NULL;
 		free(g_message);
 		g_message = NULL;
 		if (kill(*client_pid, SIGUSR1) == -1)

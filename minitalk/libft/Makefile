@@ -6,12 +6,12 @@
 #    By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/25 17:25:34 by anoukan           #+#    #+#              #
-#    Updated: 2024/04/25 17:25:39 by anoukan          ###   ########.fr        #
+#    Updated: 2024/04/27 13:25:30 by anoukan          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g3 -fsanitize=address
 NAME = libft.a
 
 INCDIR = includes
