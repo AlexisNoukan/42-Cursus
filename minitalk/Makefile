@@ -6,7 +6,7 @@
 #    By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/20 17:03:59 by saliinger         #+#    #+#              #
-#    Updated: 2024/04/30 14:38:34 by anoukan          ###   ########.fr        #
+#    Updated: 2024/04/30 16:57:34 by anoukan          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,16 +14,21 @@ NAME_SERVER = server
 NAME_CLIENT = client
 CC = cc
 CFLAGS = -Wall -Wextra -Werror -g3 -fsanitize=address
-SRCDIR= ./src
+SRC_DIR= ./src
+C_DIR= $(SRC_DIR)/client
+S_DIR= $(SRC_DIR)/server
+FUNC_DIR= $(SRC_DIR)/function
 
-SRC_CLIENT =	$(SRCDIR)/client/client.c
+SRC_CLIENT =	$(C_DIR)/client.c\
 
+SRC_SERVER =	$(S_DIR)/server.c\
 
-
-SRC_SERVER =	$(SRCDIR)/server/server.c\
+SRC_FUNCTION=	$(FUNC_DIR)/ft_banner.c\
+				$(FUNC_DIR)/ft_error.c
 
 OBJ_CLIENT = $(SRC_CLIENT:.c=.o)
 OBJ_SERVER = $(SRC_SERVER:.c=.o)
+OBJ_FUNC = $(SRC_FUNCTION:.c=.o)
 
 LIBFT = libft/libft.a
 MAKE_LIBFT = make -C libft
@@ -34,11 +39,11 @@ all: $(NAME_CLIENT) $(NAME_SERVER)
 
 $(NAME_CLIENT): $(OBJ_CLIENT)
 	$(MAKE_LIBFT)
-	$(CC) $(CFLAGS) $(OBJ_CLIENT) $(LIBFT) -o $(NAME_CLIENT)
+	$(CC) $(CFLAGS) $(OBJ_CLIENT) $(OBJ_FUNC) $(LIBFT) -o $(NAME_CLIENT)
 
 $(NAME_SERVER): $(OBJ_SERVER)
 	$(MAKE_LIBFT)
-	$(CC) $(CFLAGS) $(OBJ_SERVER) $(LIBFT) -o $(NAME_SERVER)
+	$(CC) $(CFLAGS) $(OBJ_SERVER) $(OBJ_FUNC) $(LIBFT) -o $(NAME_SERVER)
 
 clean:
 	rm -f $(OBJ_SERVER) $(OBJ_CLIENT)
