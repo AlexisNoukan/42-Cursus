@@ -6,13 +6,13 @@
 #    By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/20 17:03:59 by saliinger         #+#    #+#              #
-#    Updated: 2024/04/27 09:02:15 by anoukan          ###   ########.fr        #
+#    Updated: 2024/04/30 14:38:34 by anoukan          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME_SERVER = server
 NAME_CLIENT = client
-CC = gcc
+CC = cc
 CFLAGS = -Wall -Wextra -Werror -g3 -fsanitize=address
 SRCDIR= ./src
 
@@ -41,11 +41,11 @@ $(NAME_SERVER): $(OBJ_SERVER)
 	$(CC) $(CFLAGS) $(OBJ_SERVER) $(LIBFT) -o $(NAME_SERVER)
 
 clean:
-	rm -rf $(OBJ_SERVER) $(OBJ_CLIENT)
+	rm -f $(OBJ_SERVER) $(OBJ_CLIENT)
 	$(MAKE_LIBFT) clean
 
 fclean: clean
-	rm -rf $(NAME_SERVER) $(NAME_CLIENT)
+	rm -f $(NAME_SERVER) $(NAME_CLIENT)
 	$(MAKE_LIBFT) fclean
 
 re: fclean all

@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   server.c                                           :+:      :+:    :+:   */
+/*   ft_is_received.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/25 17:25:14 by anoukan           #+#    #+#             */
-/*   Updated: 2024/04/30 12:30:22 by anoukan          ###   ########.fr       */
+/*   Created: 2024/04/30 14:46:31 by anoukan           #+#    #+#             */
+/*   Updated: 2024/04/30 14:49:17 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/minitalk.h"
 
-int	main(void)
+void	ft_is_received(int sig)
 {
-	int					server_pid;
-	struct sigaction	sa;
+	int	bit_sent;
 
-	sa.sa_sigaction = server_handler;
-	sa.sa_flags = SA_SIGINFO;
-
-	server_pid = getpid();
-	ft_banner(1, server_pid);
-	return (0);
+	bit_sent = 0;
+	if (sig == SIGUSR1)
+		bit_sent++;
+	if (sig == SIGUSR2)
+	{
+		ft_printf("Message sent\n");
+		exit(EXIT_SUCCESS);
+	}
 }

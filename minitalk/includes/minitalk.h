@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 17:26:06 by anoukan           #+#    #+#             */
-/*   Updated: 2024/04/30 12:12:45 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/04/30 13:53:16 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,14 @@
 # include <sys/types.h>
 
 //---Server---
+void	server_handler(int signum, siginfo_t info, void *context);
 
 //---Client---
+void	ft_send_char(char c, pid_t server_pid);
+void	ft_send_message(char *str, pid_t server_pid);
 
 //---Function---
 void	ft_error(int i);
+void	ft_banner(int i, pid_t pid);
 
 #endif

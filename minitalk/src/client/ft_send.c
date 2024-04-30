@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   server.c                                           :+:      :+:    :+:   */
+/*   ft_send.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/25 17:25:14 by anoukan           #+#    #+#             */
-/*   Updated: 2024/04/30 12:30:22 by anoukan          ###   ########.fr       */
+/*   Created: 2024/04/30 13:41:11 by anoukan           #+#    #+#             */
+/*   Updated: 2024/04/30 14:44:14 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/minitalk.h"
 
-int	main(void)
+void	ft_send_message(char *str, pid_t server_pid)
 {
-	int					server_pid;
-	struct sigaction	sa;
+	int	i;
 
-	sa.sa_sigaction = server_handler;
-	sa.sa_flags = SA_SIGINFO;
-
-	server_pid = getpid();
-	ft_banner(1, server_pid);
-	return (0);
+	while (str[i])
+	{
+		ft_send_char(str[i], server_pid);
+		i++;
+	}
 }
