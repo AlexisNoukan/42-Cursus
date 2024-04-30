@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 17:25:08 by anoukan           #+#    #+#             */
-/*   Updated: 2024/04/30 14:45:58 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/04/30 14:53:44 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ int	main(int argc, char **argv)
 	ft_banner(0, client_pid);
 	if (argc == 3)
 	{
+		signal(SIGUSR1, client_handler);
+		signal(SIGUSR2, client_handler);
 		server_pid = ft_atoi(argv[1]);
 		ft_send_message(argv[2], server_pid);
 	}

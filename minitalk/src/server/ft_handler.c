@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 12:26:38 by anoukan           #+#    #+#             */
-/*   Updated: 2024/04/30 13:37:45 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/04/30 14:53:15 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,5 +18,4 @@ void	server_handler(int signum, siginfo_t info, void *context)
 	static char	current_char;
 
 	client_pid = info.si_pid;
-    
 }
