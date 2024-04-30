@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minitalk.h                                         :+:      :+:    :+:   */
+/*   ft_error.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/25 17:26:06 by anoukan           #+#    #+#             */
-/*   Updated: 2024/04/30 12:12:45 by anoukan          ###   ########.fr       */
+/*   Created: 2024/04/30 12:08:45 by anoukan           #+#    #+#             */
+/*   Updated: 2024/04/30 12:11:15 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINITALK_H
-# define MINITALK_H
+#include "../../includes/minitalk.h"
 
-// ---Lib---
-# include "../libft/libft.h"
-# include <signal.h>
-# include <sys/types.h>
-
-//---Server---
-
-//---Client---
-
-//---Function---
-void	ft_error(int i);
-
-#endif
+void	ft_error(int i)
+{
+	if (i == 0)
+	{
+		ft_printf("client: error");
+		exit(EXIT_FAILURE);
+	}
+	else if (i == 1)
+	{
+		ft_printchar("server: error");
+		exit(EXIT_FAILURE);
+	}
+	return ;
+}
