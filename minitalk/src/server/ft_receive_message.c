@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 14:54:34 by anoukan           #+#    #+#             */
-/*   Updated: 2024/05/01 13:38:44 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/05/01 15:50:06 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,12 @@ void	ft_receive_message(char c, int bit_recived, pid_t client_pid)
 			ft_error(1);
 	}
 	char_to_add = malloc(sizeof(char) * 2);
+	if (!char_to_add)
+	{
+		free(message);
+		message = NULL;
+		ft_error(1);
+	}
 	char_to_add[0] = c;
 	char_to_add[1] = '\0';
 	message = ft_strjoin_frees1(message, char_to_add);
