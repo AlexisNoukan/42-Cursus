@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 12:26:38 by anoukan           #+#    #+#             */
-/*   Updated: 2024/05/01 15:51:08 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/05/01 16:42:06 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 void	server_handler(int signum, siginfo_t *info, void *context)
 {
-	static pid_t client_pid = 0;
-	static char current_char = 0;
-	static int bit = 0;
-	static int bit_received = 0;
+	static pid_t	client_pid = 0;
+	static char		current_char = 0;
+	static int		bit = 0;
+	static int		bit_received = 0;
 
 	(void)context;
 	if (!client_pid)
