@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 12:26:38 by anoukan           #+#    #+#             */
-/*   Updated: 2024/05/01 13:37:28 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/05/01 14:35:36 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,8 @@ void	server_handler(int signum, siginfo_t *info, void *context)
 	static int	bit_received = 0;
 
 	(void)context;
-	client_pid = info->si_pid;
-	current_char |= (signum == SIGUSR1);
-	bit_received++;
-	bit++;
+	if (!client_pid)
+		client_pid = info->si_pid;
 	if (bit == 8)
 	{
 		ft_receive_message(current_char, bit_received, client_pid);
@@ -32,8 +30,10 @@ void	server_handler(int signum, siginfo_t *info, void *context)
 		if (!current_char)
 			bit_received = 0;
 	}
-	else
-		current_char <<= 1;
+	current_char |= (signum == SIGUSR1);
+	bit_received++;
+	bit++;
+	current_char <<= 1;
 	usleep(100);
 	if (kill(client_pid, SIGUSR1) == -1)
 		ft_error(0);
