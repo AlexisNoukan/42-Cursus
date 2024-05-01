@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 12:08:45 by anoukan           #+#    #+#             */
-/*   Updated: 2024/04/30 12:11:15 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/05/01 12:33:47 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_error(int i)
 	}
 	else if (i == 1)
 	{
-		ft_printchar("server: error");
+		ft_printf("server: error");
 		exit(EXIT_FAILURE);
 	}
 	return ;

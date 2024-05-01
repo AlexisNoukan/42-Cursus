@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 17:25:14 by anoukan           #+#    #+#             */
-/*   Updated: 2024/04/30 12:30:22 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/05/01 12:44:03 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,14 @@ int	main(void)
 
 	sa.sa_sigaction = server_handler;
 	sa.sa_flags = SA_SIGINFO;
-
+	sigemptyset(&sa.sa_mask);
 	server_pid = getpid();
 	ft_banner(1, server_pid);
+	while (1)
+	{
+		sigaction(SIGUSR1, &sa, 0);
+		sigaction(SIGUSR2, &sa, 0);
+		pause();
+	}
 	return (0);
 }

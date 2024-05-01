@@ -6,7 +6,7 @@
 #    By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/20 17:03:59 by saliinger         #+#    #+#              #
-#    Updated: 2024/04/30 17:00:18 by anoukan          ###   ########.fr        #
+#    Updated: 2024/05/01 12:33:23 by anoukan          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,8 +20,13 @@ S_DIR= $(SRC_DIR)/server
 FUNC_DIR= $(SRC_DIR)/function
 
 SRC_CLIENT =	$(C_DIR)/client.c\
+				$(C_DIR)/ft_handler.c\
+				$(C_DIR)/ft_send_char.c\
+				$(C_DIR)/ft_send.c
 
 SRC_SERVER =	$(S_DIR)/server.c\
+				$(S_DIR)/ft_handler.c\
+				$(S_DIR)/ft_receive_message.c
 
 SRC_FUNCTION=	$(FUNC_DIR)/ft_banner.c\
 				$(FUNC_DIR)/ft_error.c
@@ -37,11 +42,11 @@ MAKE_LIBFT = make -C libft
 
 all: $(NAME_CLIENT) $(NAME_SERVER)
 
-$(NAME_CLIENT): $(OBJ_CLIENT)
+$(NAME_CLIENT): $(OBJ_CLIENT) $(OBJ_FUNC) 
 	$(MAKE_LIBFT)
 	$(CC) $(CFLAGS) $(OBJ_CLIENT) $(OBJ_FUNC) $(LIBFT) -o $(NAME_CLIENT)
 
-$(NAME_SERVER): $(OBJ_SERVER)
+$(NAME_SERVER): $(OBJ_SERVER) $(OBJ_FUNC) 
 	$(MAKE_LIBFT)
 	$(CC) $(CFLAGS) $(OBJ_SERVER) $(OBJ_FUNC) $(LIBFT) -o $(NAME_SERVER)
 
