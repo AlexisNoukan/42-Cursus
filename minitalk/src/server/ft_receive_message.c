@@ -6,11 +6,12 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 14:54:34 by anoukan           #+#    #+#             */
-/*   Updated: 2024/05/03 11:33:16 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/05/03 15:17:50 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/minitalk.h"
+
 
 void	ft_receive_message(char c, int bit_recived, pid_t client_pid)
 {
@@ -39,6 +40,7 @@ void	ft_receive_message(char c, int bit_recived, pid_t client_pid)
 		ft_printf("\nbit received: %d from: %d\n\n", bit_recived, client_pid);
 		free(message);
 		message = NULL;
+        bit_recived = 0;
         if (kill(client_pid, SIGUSR2) == -1)
             ft_error(1);
 	}

@@ -13,7 +13,7 @@
 NAME_SERVER = server
 NAME_CLIENT = client
 CC = cc
-CFLAGS = -Wall -Wextra -Werror #-g3 #-fsanitize=address
+CFLAGS = -Wall -Wextra -Werror
 SRC_DIR= ./src
 C_DIR= $(SRC_DIR)/client
 S_DIR= $(SRC_DIR)/server
@@ -51,7 +51,7 @@ $(NAME_SERVER): $(OBJ_SERVER) $(OBJ_FUNC)
 	$(CC) $(CFLAGS) $(OBJ_SERVER) $(OBJ_FUNC) $(LIBFT) -o $(NAME_SERVER)
 
 clean:
-	rm -f $(OBJ_SERVER) $(OBJ_CLIENT)
+	rm -f $(OBJ_SERVER) $(OBJ_CLIENT) $(OBJ_FUNC)
 	$(MAKE_LIBFT) clean
 
 fclean: clean

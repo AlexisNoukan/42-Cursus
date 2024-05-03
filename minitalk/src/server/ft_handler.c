@@ -39,8 +39,6 @@ void	server_handler(int signum, siginfo_t *info, void *context)
 		ft_receive_message(current_char, bit_received, client_pid);
 		bit = 0;
 		current_char = 0;
-		if (!current_char)
-			bit_received = 0;
 	}
 	else
 		current_char <<= 1;
