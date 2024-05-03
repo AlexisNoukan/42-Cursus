@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 12:53:52 by anoukan           #+#    #+#             */
-/*   Updated: 2024/04/27 13:39:38 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/05/03 11:20:00 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,6 @@ char	*ft_strjoin_frees1(char *s1, char *s2)
 	ft_strcpy(d, (char *)s1);
 	ft_strcpy(d + i, (char *)s2);
 	free(s1);
+    free(s2);
 	return (d);
 }

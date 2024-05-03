@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 14:54:34 by anoukan           #+#    #+#             */
-/*   Updated: 2024/05/01 15:50:06 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/05/03 11:33:16 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	ft_receive_message(char c, int bit_recived, pid_t client_pid)
 		if (!message)
 			ft_error(1);
 	}
-	char_to_add = malloc(sizeof(char) * 2);
+	char_to_add = (char *)malloc(sizeof(char) * 2);
 	if (!char_to_add)
 	{
 		free(message);
@@ -39,7 +39,7 @@ void	ft_receive_message(char c, int bit_recived, pid_t client_pid)
 		ft_printf("\nbit received: %d from: %d\n\n", bit_recived, client_pid);
 		free(message);
 		message = NULL;
-		free(char_to_add);
-		char_to_add = NULL;
+        if (kill(client_pid, SIGUSR2) == -1)
+            ft_error(1);
 	}
 }

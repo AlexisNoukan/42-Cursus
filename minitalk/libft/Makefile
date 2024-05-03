@@ -10,8 +10,8 @@
 #                                                                              #
 # **************************************************************************** #
 
-CC = gcc
-CFLAGS = -Wall -Wextra -Werror -g3 -fsanitize=address
+CC = cc
+CFLAGS = -Wall -Wextra -Werror #-g3 #-fsanitize=address
 NAME = libft.a
 
 INCDIR = includes
