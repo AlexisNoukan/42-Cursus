@@ -16,7 +16,13 @@ void	ft_receive_message(char c, int bit_recived, pid_t client_pid)
 {
 	static char	*message;
 	char		*char_to_add;
+    pid_t       current_pid = -1;
 
+    if (current_pid == -1)
+    {
+        current_pid = client_pid;
+        free(message);
+    }
 	if (!message)
 	{
 		message = ft_strdup("");
