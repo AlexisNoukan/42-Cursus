@@ -18,9 +18,24 @@
 # include <signal.h>
 # include <sys/types.h>
 
+//---Structure---
+typedef struct Client {
+    pid_t pid;
+    char           *message;
+    int            bit;
+    int            bit_received;
+    char           *current_char;
+   struct Client  *next;
+} Client;
+
 //---Server---
 void	server_handler(int signum, siginfo_t *info, void *context);
-void	ft_receive_message(char c, int bit_recived, pid_t client_pid);
+Client **init_waitlist(void );
+void print_message(Client *client);
+void    add_client(Client **waitlist, pid_t pid);
+Client *find_client(pid_t client, Client **list);
+void free_waitlist(Client **waitlist);
+void remove_client(Client *to_remove, Client **waitlist);
 
 //---Client---
 void	ft_send_char(char c, pid_t server_pid);

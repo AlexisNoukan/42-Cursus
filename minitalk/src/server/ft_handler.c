@@ -1,41 +1,36 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_handler.c                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/30 12:26:38 by anoukan           #+#    #+#             */
-/*   Updated: 2024/05/01 16:42:06 by anoukan          ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+//
+// Created by boy67 on 5/4/2024.
+//
 
 #include "../../includes/minitalk.h"
 
-void	server_handler(int signum, siginfo_t *info, void *context)
+void server_handler(int signum, siginfo_t *info, void *context)
 {
-	static pid_t	client_pid = 0;
-	static char		current_char = 0;
-	static int		bit = 0;
-	static int		bit_received = 0;
+    static Client **waitlist;
+    Client *current_client;
 
-	(void)context;
-	if (!client_pid)
-		client_pid = info->si_pid;
-	current_char |= (signum == SIGUSR1);
-	bit_received++;
-	bit++;
-	if (bit == 8)
-	{
-		ft_receive_message(current_char, bit_received, client_pid);
-		bit = 0;
-		current_char = 0;
-		if (!current_char)
-			bit_received = 0;
-	}
-	else
-		current_char <<= 1;
-	usleep(100);
-	if (kill(client_pid, SIGUSR1) == -1)
-		ft_error(0);
+    (void)context;
+    if(!waitlist)
+        waitlist = init_waitlist();
+    current_client = find_client(info->si_pid, waitlist);
+    if (!current_client)
+    {
+        add_client(waitlist, info->si_pid);
+        current_client = find_client(current_client->pid, waitlist);
+    }
+    current_client->current_char[0] |= (signum == SIGUSR1);
+    current_client->bit_received++;
+    current_client->bit++;
+    if (current_client->bit == 8)
+    {
+        if(current_client->current_char[0] == '\0')
+            print_message(current_client);
+        current_client->bit = 0;
+        current_client->current_char[0] = 0;
+    }
+    else
+        current_client->current_char[0] <<= 1;
+    usleep(100);
+    if (kill(current_client->pid, SIGUSR1) == -1)
+        ft_error(0);
 }

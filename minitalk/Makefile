@@ -26,7 +26,12 @@ SRC_CLIENT =	$(C_DIR)/client.c\
 
 SRC_SERVER =	$(S_DIR)/server.c\
 				$(S_DIR)/ft_handler.c\
-				$(S_DIR)/ft_receive_message.c
+				$(S_DIR)/print_message.c\
+				$(S_DIR)/init_waitlist.c\
+				$(S_DIR)/add_client.c\
+				$(S_DIR)/find_client.c\
+				$(S_DIR)/free_waitlist.c\
+				$(S_DIR)/remove_client.c
 
 SRC_FUNCTION=	$(FUNC_DIR)/ft_banner.c\
 				$(FUNC_DIR)/ft_error.c
