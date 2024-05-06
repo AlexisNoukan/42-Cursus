@@ -12,6 +12,8 @@
 
 #include "../../includes/minitalk.h"
 
+
+
 int	main(void)
 {
 	int					server_pid;
