@@ -4,7 +4,7 @@
 
 #include "../../includes/minitalk.h"
 
-Client **init_waitlist(void )
+Client **init_waitlist(void)
 {
     Client **waitlist;
 

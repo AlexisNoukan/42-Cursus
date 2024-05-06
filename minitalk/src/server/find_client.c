@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   find_client.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: anoukan <anoukan@student.1337.ma>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/05/06 12:00:37 by anoukan           #+#    #+#             */
+/*   Updated: 2024/05/06 12:03:34 by anoukan          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 //
 // Created by boy67 on 5/4/2024.
 //
@@ -12,12 +24,13 @@ Client *find_client(pid_t client, Client **list)
     if (temp != NULL)
     {
         target = temp;
-        while (temp->pid != client && temp->next != NULL)
+        while (temp->next != NULL && temp->pid != client )
             temp = temp->next;
         if(temp->pid == client)
+        {
             target = temp;
+            return (target);
+        }
     }
-    else
-        return (NULL);
-    return (target);
+    return (NULL);
 }
