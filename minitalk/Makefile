@@ -56,7 +56,7 @@ $(NAME_SERVER): $(OBJ_SERVER) $(OBJ_FUNC)
 	$(CC) $(CFLAGS) $(OBJ_SERVER) $(OBJ_FUNC) $(LIBFT) -o $(NAME_SERVER)
 
 clean:
-	rm -f $(OBJ_SERVER) $(OBJ_CLIENT)
+	rm -f $(OBJ_SERVER) $(OBJ_CLIENT) $(OBJ_FUNC)
 	$(MAKE_LIBFT) clean
 
 fclean: clean

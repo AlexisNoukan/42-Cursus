@@ -7,6 +7,9 @@
 
 void print_message(Client *client)
 {
-    ft_printf("%s", client->message);
-    ft_printf("\nbits received: %d from: %d\n", client->bit_received, client->pid);
+    if(client)
+    {
+        ft_printf("%s", client->message);
+        ft_printf("\nbits received: %d from: %d\n", client->bit_received, client->pid);
+    }
 }
