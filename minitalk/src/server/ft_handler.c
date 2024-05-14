@@ -6,13 +6,9 @@
 /*   By: anoukan <anoukan@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 16:12:23 by anoukan           #+#    #+#             */
-/*   Updated: 2024/05/07 16:31:14 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/05/14 14:04:30 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-//
-// Created by boy67 on 5/4/2024.
-//
 
 #include "../../includes/minitalk.h"
 
@@ -41,6 +37,7 @@ void server_handler(int signum, siginfo_t *info, void *context)
             print_message(current_client);
             if (kill(current_client->pid, SIGUSR2) == -1)
                 ft_error(1);
+            remove_client(current_client, waitlist);
         }
         current_client->bit = 0;
         current_client->current_char[0] = 0;
@@ -48,6 +45,6 @@ void server_handler(int signum, siginfo_t *info, void *context)
     else
         current_client->current_char[0] <<= 1;
     usleep(100);
-    if (kill(current_client->pid, SIGUSR1) == -1)
+    if (kill(info->si_pid, SIGUSR1) == -1)
         ft_error(0);
 }
