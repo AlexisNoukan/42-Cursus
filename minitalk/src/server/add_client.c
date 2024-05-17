@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 16:13:07 by anoukan           #+#    #+#             */
-/*   Updated: 2024/05/07 16:18:24 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/05/17 12:38:24 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,10 @@ void    add_client(Client **waitlist, pid_t pid)
     top = *waitlist;
     new = (Client *)malloc(sizeof(Client));
     if (!new)
+    {
+        printf("!new\n");
         free_waitlist(waitlist);
-
+    }
     new->current_char = (char *)malloc(sizeof(char) * 2);
     if(!new->current_char)
         free_waitlist(waitlist);
@@ -39,4 +41,5 @@ void    add_client(Client **waitlist, pid_t pid)
     new->bit_received = 0;
     new->next = top;
     *waitlist = new;
+    printf("add client : %d\n", (*waitlist)->pid);
 }

@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 16:12:23 by anoukan           #+#    #+#             */
-/*   Updated: 2024/05/14 14:04:30 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/05/17 12:52:13 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,11 @@ void server_handler(int signum, siginfo_t *info, void *context)
     {
         add_client(waitlist, info->si_pid);
         current_client = find_client(info->si_pid, waitlist);
+        if(current_client == NULL)
+        {
+            free_waitlist(waitlist);
+            return ;
+        }
     }
     current_client->current_char[0] |= (signum == SIGUSR1);
     current_client->bit_received++;
@@ -32,15 +37,15 @@ void server_handler(int signum, siginfo_t *info, void *context)
     if (current_client->bit == 8)
     {
         current_client->message = ft_strjoin_frees1(current_client->message, current_client->current_char);
+        current_client->bit = 0;
         if(current_client->current_char[0] == '\0')
         {
-            print_message(current_client);
-            if (kill(current_client->pid, SIGUSR2) == -1)
+            print_message(current_client, waitlist);
+            if (kill(info->si_pid, SIGUSR2) == -1)
                 ft_error(1);
-            remove_client(current_client, waitlist);
         }
-        current_client->bit = 0;
-        current_client->current_char[0] = 0;
+        else
+            current_client->current_char[0] = 0;
     }
     else
         current_client->current_char[0] <<= 1;

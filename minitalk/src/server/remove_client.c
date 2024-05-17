@@ -1,4 +1,4 @@
-/ * ************************************************************************** */
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   remove_client.c                                    :+:      :+:    :+:   */
@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 12:27:02 by anoukan           #+#    #+#             */
-/*   Updated: 2024/05/14 12:27:02 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/05/17 11:16:49 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,23 @@ void remove_client(Client *to_remove, Client **waitlist)
 {
     Client *temp;
     Client *prev;
+    Client *next;
 
     temp = *waitlist;
-    while (temp != to_remove)
+    if(temp->next)
     {
-        if (temp->next == to_remove)
-            prev = temp;
-        temp = temp->next;
+        while (temp != to_remove)
+        {
+            if (temp->next == to_remove)
+                prev = temp;
+            temp = temp->next;
+        }
+        next = temp->next;
+        prev->next = next;
     }
-    prev->next = temp->next;
+    else
+        *waitlist = NULL;
+    free(temp->current_char);
+    free(temp->message);
     free(temp);
 }

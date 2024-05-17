@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 17:26:06 by anoukan           #+#    #+#             */
-/*   Updated: 2024/05/01 15:50:11 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/05/14 14:30:06 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ typedef struct Client {
 //---Server---
 void	server_handler(int signum, siginfo_t *info, void *context);
 Client **init_waitlist(void );
-void print_message(Client *client);
+void print_message(Client *client, Client **waitlist);
 void    add_client(Client **waitlist, pid_t pid);
 Client *find_client(pid_t client, Client **list);
 void free_waitlist(Client **waitlist);
