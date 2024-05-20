@@ -31,6 +31,7 @@ typedef struct Client
 
 //---Server---
 void	server_handler(int signum, siginfo_t *info, void *context);
+void	extend_handler(Client *current_client, pid_t current_pid, Client **waitlist);
 Client	**init_waitlist(void);
 void	print_message(Client *client, Client **waitlist);
 void	add_client(Client **waitlist, pid_t pid);
