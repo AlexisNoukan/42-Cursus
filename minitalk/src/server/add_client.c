@@ -10,11 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-//
-// Created by boy67 on 5/4/2024.
-//
-// add client to the wait list
-
 #include "../../includes/minitalk.h"
 
 void    add_client(Client **waitlist, pid_t pid)
