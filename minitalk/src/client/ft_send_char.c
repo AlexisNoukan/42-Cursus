@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 13:41:24 by anoukan           #+#    #+#             */
-/*   Updated: 2024/05/01 13:32:51 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/05/20 14:07:33 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,6 @@ void	ft_send_char(char c, pid_t server_pid)
 		}
 		bit++;
 		c <<= 1;
-		pause();
+		usleep(100000);
 	}
 }

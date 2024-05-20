@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 12:27:02 by anoukan           #+#    #+#             */
-/*   Updated: 2024/05/17 11:16:49 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/05/20 14:22:21 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ void remove_client(Client *to_remove, Client **waitlist)
     Client *next;
 
     temp = *waitlist;
+    printf("free : %d\n", to_remove->pid);
     if(temp->next)
     {
         while (temp != to_remove)
@@ -35,4 +36,5 @@ void remove_client(Client *to_remove, Client **waitlist)
     free(temp->current_char);
     free(temp->message);
     free(temp);
+    temp = NULL;
 }
