@@ -17,14 +17,11 @@ void	client_handler(int sig)
 	static int	bit_sent = 1;
 
 	if (sig == SIGUSR1)
-    {
-        //printf("bit sent : %d\n", bit_sent);
-        bit_sent++;
-    }
+		bit_sent++;
 	if (sig == SIGUSR2)
 	{
 		ft_printf("Message sent\n %d bit sent", bit_sent);
-        bit_sent = 0;
+		bit_sent = 0;
 		exit(EXIT_SUCCESS);
 	}
 }
