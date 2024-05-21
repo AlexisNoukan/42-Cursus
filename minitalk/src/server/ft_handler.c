@@ -6,14 +6,14 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 16:12:23 by anoukan           #+#    #+#             */
-/*   Updated: 2024/05/21 13:16:00 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/05/21 13:27:23 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/minitalk.h"
 
-void	extend_handler(Client *current_client, pid_t current_pid,
-		Client **waitlist)
+void	extend_handler(t_client *current_client, pid_t current_pid,
+		t_client **waitlist)
 {
 	current_client->bit_received++;
 	current_client->bit++;
@@ -40,8 +40,8 @@ void	extend_handler(Client *current_client, pid_t current_pid,
 
 void	server_handler(int signum, siginfo_t *info, void *context)
 {
-	static Client	**waitlist;
-	Client			*current_client;
+	static t_client	**waitlist;
+	t_client		*current_client;
 
 	(void)context;
 	if (!waitlist)

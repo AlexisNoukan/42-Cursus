@@ -6,19 +6,19 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 16:13:07 by anoukan           #+#    #+#             */
-/*   Updated: 2024/05/20 18:15:51 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/05/21 13:27:56 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/minitalk.h"
 
-void	add_client(Client **waitlist, pid_t pid)
+void	add_client(t_client **waitlist, pid_t pid)
 {
-	Client	*new;
-	Client	*top;
+	t_client	*new;
+	t_client	*top;
 
 	top = *waitlist;
-	new = (Client *)malloc(sizeof(Client));
+	new = (t_client *)malloc(sizeof(t_client));
 	if (!new)
 	{
 		printf("!new\n");

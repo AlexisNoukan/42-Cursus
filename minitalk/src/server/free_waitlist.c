@@ -6,16 +6,16 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 11:29:11 by anoukan           #+#    #+#             */
-/*   Updated: 2024/05/20 18:13:35 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/05/21 13:28:32 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/minitalk.h"
 
-void	free_waitlist(Client **waitlist)
+void	free_waitlist(t_client **waitlist)
 {
-	Client	*temp;
-	Client	*buffer;
+	t_client	*temp;
+	t_client	*buffer;
 
 	temp = *waitlist;
 	while (temp)

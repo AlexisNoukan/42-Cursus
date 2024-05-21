@@ -19,27 +19,27 @@
 # include <sys/types.h>
 
 //---Structure---
-typedef struct Client
+typedef struct s_client
 {
-	pid_t pid;
-	char *message;
-	int bit;
-	int bit_received;
-	char *current_char;
-	struct Client *next;
-} Client;
+	pid_t 				pid;
+	char 				*message;
+	int 				bit;
+	int 				bit_received;
+	char 				*current_char;
+	struct s_client 		*next;
+} 						t_client;
 
 //---Server---
 void	server_handler(int signum, siginfo_t *info, void *context);
-void	extend_handler(Client *current_client, pid_t current_pid, Client **waitlist);
-Client	**init_waitlist(void);
-void	print_message(Client *client, Client **waitlist);
-void	add_client(Client **waitlist, pid_t pid);
-Client	*find_client(pid_t client, Client **list);
-void	free_waitlist(Client **waitlist);
-void	remove_client(Client *to_remove, Client **waitlist);
+void	extend_handler(t_client *current_client, pid_t current_pid, t_client **waitlist);
+t_client	**init_waitlist(void);
+void	print_message(t_client *client, t_client **waitlist);
+void	add_client(t_client **waitlist, pid_t pid);
+t_client	*find_client(pid_t client, t_client **list);
+void	free_waitlist(t_client **waitlist);
+void	remove_client(t_client *to_remove, t_client **waitlist);
 
-//---Client---
+//---t_client---
 void	ft_send_char(char c, pid_t server_pid);
 void	ft_send_message(char *str, pid_t server_pid);
 void	client_handler(int sig);

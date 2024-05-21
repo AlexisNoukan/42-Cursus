@@ -6,15 +6,15 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 16:05:27 by anoukan           #+#    #+#             */
-/*   Updated: 2024/05/20 18:13:39 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/05/21 13:28:17 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/minitalk.h"
 
-Client	*find_client(pid_t client, Client **list)
+t_client	*find_client(pid_t client, t_client **list)
 {
-	Client	*temp;
+	t_client	*temp;
 
 	if (!*list)
 		return (NULL);

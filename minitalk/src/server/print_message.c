@@ -6,13 +6,13 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 16:32:00 by anoukan           #+#    #+#             */
-/*   Updated: 2024/05/20 18:13:20 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/05/21 13:29:02 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/minitalk.h"
 
-void	print_message(Client *client, Client **waitlist)
+void	print_message(t_client *client, t_client **waitlist)
 {
 	if (client)
 	{
