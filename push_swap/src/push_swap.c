@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 09:34:52 by anoukan           #+#    #+#             */
-/*   Updated: 2024/04/24 23:05:24 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/05/20 21:54:38 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ int	main(int argc, char **argv)
 	t_stack	**a;
 	t_stack	**b;
 
-	if (argc < 2)
-		ft_error();
 	a = (t_stack **)malloc(sizeof(t_stack **));
 	b = (t_stack **)malloc(sizeof(t_stack **));
 	*a = NULL;

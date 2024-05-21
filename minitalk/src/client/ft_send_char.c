@@ -31,6 +31,6 @@ void	ft_send_char(char c, pid_t server_pid)
 		}
 		bit++;
 		c <<= 1;
-		usleep(1000);
+		pause();
 	}
 }

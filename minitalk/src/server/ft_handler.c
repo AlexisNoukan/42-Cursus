@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 16:12:23 by anoukan           #+#    #+#             */
-/*   Updated: 2024/05/21 13:27:23 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/05/21 21:21:15 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	extend_handler(t_client *current_client, pid_t current_pid,
 	}
 	else
 		current_client->current_char[0] <<= 1;
-	usleep(100);
+	usleep(1);
 	if (kill(current_pid, SIGUSR1) == -1)
 		remove_client(current_client, waitlist);
 }
