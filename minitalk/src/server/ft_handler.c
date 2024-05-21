@@ -6,13 +6,14 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 16:12:23 by anoukan           #+#    #+#             */
-/*   Updated: 2024/05/21 10:12:09 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/05/21 13:16:00 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/minitalk.h"
 
-void	extend_handler(Client *current_client, pid_t current_pid, Client **waitlist)
+void	extend_handler(Client *current_client, pid_t current_pid,
+		Client **waitlist)
 {
 	current_client->bit_received++;
 	current_client->bit++;
@@ -25,22 +26,16 @@ void	extend_handler(Client *current_client, pid_t current_pid, Client **waitlist
 		{
 			print_message(current_client, waitlist);
 			if (kill(current_pid, SIGUSR2) == -1)
-				ft_error(1);
+				remove_client(current_client, waitlist);
 		}
 		else
-        {
-            current_client->current_char[0] = 0;
-            if (kill(current_pid, SIGUSR1) == -1)
-                ft_error(1);
-        }
+			current_client->current_char[0] = 0;
 	}
 	else
-    {
-        current_client->current_char[0] <<= 1;
-        usleep(100);
-        if (kill(current_pid, SIGUSR1) == -1)
-            ft_error(1);
-    }
+		current_client->current_char[0] <<= 1;
+	usleep(100);
+	if (kill(current_pid, SIGUSR1) == -1)
+		remove_client(current_client, waitlist);
 }
 
 void	server_handler(int signum, siginfo_t *info, void *context)
@@ -59,7 +54,7 @@ void	server_handler(int signum, siginfo_t *info, void *context)
 		if (current_client == NULL)
 		{
 			free_waitlist(waitlist);
-			return ;
+			ft_error(1);
 		}
 	}
 	current_client->current_char[0] |= (signum == SIGUSR1);

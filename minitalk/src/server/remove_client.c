@@ -32,7 +32,6 @@ void	remove_client(Client *to_remove, Client **waitlist)
 		*waitlist = next;
 	else
 		prev->next = next;
-	printf("free : %d\n", to_remove->pid);
 	free(to_remove->current_char);
 	free(to_remove->message);
 	free(to_remove);

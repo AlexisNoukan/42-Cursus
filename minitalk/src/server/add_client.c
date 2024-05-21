@@ -36,5 +36,4 @@ void	add_client(Client **waitlist, pid_t pid)
 	new->bit_received = 0;
 	new->next = top;
 	*waitlist = new;
-	printf("add client : %d\n", (*waitlist)->pid);
 }
