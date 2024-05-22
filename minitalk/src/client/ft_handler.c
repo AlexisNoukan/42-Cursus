@@ -20,7 +20,7 @@ void	client_handler(int sig)
 		bit_sent++;
 	if (sig == SIGUSR2)
 	{
-		ft_printf("Message sent\n %d bit sent\n", bit_sent);
+		ft_printf("Message sent. %d bit sent\n", bit_sent);
 		bit_sent = 0;
 		exit(EXIT_SUCCESS);
 	}

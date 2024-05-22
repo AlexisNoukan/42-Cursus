@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 16:12:23 by anoukan           #+#    #+#             */
-/*   Updated: 2024/05/21 21:21:15 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/05/22 20:47:09 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,15 +25,15 @@ void	extend_handler(t_client *current_client, pid_t current_pid,
 		if (current_client->current_char[0] == '\0')
 		{
 			print_message(current_client, waitlist);
-			if (kill(current_pid, SIGUSR2) == -1)
-				remove_client(current_client, waitlist);
+			usleep(1000);
+			kill(current_pid, SIGUSR2);
 		}
 		else
 			current_client->current_char[0] = 0;
 	}
 	else
 		current_client->current_char[0] <<= 1;
-	usleep(1);
+	usleep(1000);
 	if (kill(current_pid, SIGUSR1) == -1)
 		remove_client(current_client, waitlist);
 }
